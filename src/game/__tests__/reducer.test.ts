@@ -1,0 +1,62 @@
+import { describe, it, expect } from "vitest";
+import { reducer, initialState } from "../reducer";
+import { Puzzle } from "../types";
+
+const lepanto: Puzzle = {
+  id: "lepanto-1571",
+  era: "modern",
+  answer: 1571,
+  hints: ["h1", "h2", "h3", "h4", "h5"],
+};
+
+describe("initialState", () => {
+  it("starts with one hint revealed and no guesses", () => {
+    expect(initialState(lepanto)).toEqual({
+      puzzle: lepanto,
+      guesses: [],
+      outcome: "playing",
+      hintsRevealed: 1,
+    });
+  });
+});
+
+describe("reducer", () => {
+  it("appends a wrong guess and reveals the next hint", () => {
+    const next = reducer(initialState(lepanto), { type: "submitGuess", year: 1500, currentYear: 2026 });
+    expect(next.guesses).toHaveLength(1);
+    expect(next.guesses[0].year).toBe(1500);
+    expect(next.guesses[0].bucket).toBe("orange");
+    expect(next.hintsRevealed).toBe(2);
+    expect(next.outcome).toBe("playing");
+  });
+
+  it("sets outcome to won on an exact guess", () => {
+    const next = reducer(initialState(lepanto), { type: "submitGuess", year: 1571, currentYear: 2026 });
+    expect(next.outcome).toBe("won");
+    expect(next.guesses[0].bucket).toBe("perfect");
+  });
+
+  it("sets outcome to lost after the 5th wrong guess", () => {
+    let state = initialState(lepanto);
+    for (const y of [1500, 1600, 1700, 1455, 1788]) {
+      state = reducer(state, { type: "submitGuess", year: y, currentYear: 2026 });
+    }
+    expect(state.guesses).toHaveLength(5);
+    expect(state.outcome).toBe("lost");
+  });
+
+  it("ignores further guesses after the game ends", () => {
+    let state = initialState(lepanto);
+    state = reducer(state, { type: "submitGuess", year: 1571, currentYear: 2026 });
+    const after = reducer(state, { type: "submitGuess", year: 1500, currentYear: 2026 });
+    expect(after).toBe(state);
+  });
+
+  it("caps hintsRevealed at 5", () => {
+    let state = initialState(lepanto);
+    for (const y of [1500, 1600, 1700, 1455]) {
+      state = reducer(state, { type: "submitGuess", year: y, currentYear: 2026 });
+    }
+    expect(state.hintsRevealed).toBe(5);
+  });
+});
