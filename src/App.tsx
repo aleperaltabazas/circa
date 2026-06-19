@@ -67,6 +67,9 @@ function Game({
     };
     save(window.localStorage, next);
     setPersisted(next);
+    // persisted is intentionally excluded — previouslyFinished guard makes
+    // stale-closure reads idempotent, so excluding it prevents the effect
+    // from running on every persisted change (which would loop).
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state]);
 
