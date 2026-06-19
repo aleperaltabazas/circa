@@ -72,24 +72,25 @@ Each puzzle is JSON:
 3. If guess === answer → win. Game ends; show full answer and stats.
 4. Else: record the guess + its color bucket, reveal the next hint, allow another guess. After 5 total guesses → loss. Game ends; show full answer.
 
-### Color buckets
+### Color feedback
 
-Distance `d = abs(guess - answer)`. Bucket selection is relative to the era's width `W = era.to - era.from`. Six buckets, evaluated in order — first match wins:
+Distance `d = abs(guess - answer)`. Era width `W = era.to - era.from`.
 
-| bucket | condition | color |
+`scoring.ts` returns two values for each guess:
+
+1. **`distanceRatio`** — a continuous `number` in `[0, 1]`, where `0` = exact and `1` = at or beyond era width. Formula: `min(d / W, 1)`. The tile color is computed at render time by linearly interpolating HSL hue between green (120°) at ratio 0 and red (0°) at ratio 1, with fixed saturation/lightness. A perfect guess (ratio 0) renders as gold instead of green.
+2. **`bucket`** — a discrete enum used only for the share string emoji row, since emojis are discrete. Buckets are evaluated in order — first match wins:
+
+| bucket | condition | share emoji |
 |---|---|---|
-| perfect | d == 0 | gold |
-| green | d ≤ W × 0.01 | green |
-| lime | d ≤ W × 0.05 | lime |
-| yellow | d ≤ W × 0.15 | yellow |
-| orange | d ≤ W × 0.40 | orange |
-| red | otherwise | red |
+| perfect | d == 0 | 🟡 |
+| green | d ≤ W × 0.01 | 🟢 |
+| lime | d ≤ W × 0.05 | 🟩 |
+| yellow | d ≤ W × 0.15 | 🟨 |
+| orange | d ≤ W × 0.40 | 🟧 |
+| red | otherwise | 🟥 |
 
-Anchors at era extremes:
-- `recent` (W ≈ 237): green ≤ 2y, lime ≤ 12y, yellow ≤ 36y, orange ≤ 95y, red beyond.
-- `ancient` (W ≈ 1229): green ≤ 12y, lime ≤ 61y, yellow ≤ 184y, orange ≤ 491y, red beyond.
-
-Thresholds may be tuned during playtesting; the table above is the v1 starting point.
+Bucket thresholds may be tuned during playtesting; the table above is the v1 starting point. The continuous color is independent of these thresholds.
 
 ### Daily rotation
 
@@ -108,8 +109,8 @@ play at <url>
 
 - `N` is a sequential puzzle number: the 1-based index of today's date in the chronologically-sorted keys of `schedule.json`.
 - `G/5` is guesses used; on loss this shows `X/5`.
-- The emoji row is one square per guess, matching the bucket color. Committed mapping: 🟥 red, 🟧 orange, 🟨 yellow, 🟩 lime, 🟢 green, 🟡 perfect. (Lime and green share the green emoji family; perfect uses the yellow circle to read as "bullseye.")
-- URL is the deployed site root, read at build time from a Vite env var.
+- The emoji row is one square per guess, using the bucket → emoji mapping in the Color feedback section above.
+- URL is read at runtime from `window.location.origin + window.location.pathname`. `formatShare` is pure — it takes the URL as a parameter; the call site reads `window.location`.
 
 ### localStorage shape
 
@@ -172,11 +173,11 @@ public/
 
 ### Module responsibilities
 
-- **`scoring.ts`** — single pure function mapping `(guess, answer, era)` to a `Bucket`. Era width drives thresholds. Testable in isolation.
+- **`scoring.ts`** — single pure function mapping `(guess, answer, era)` to `{ distanceRatio, bucket }`. Era width drives both. Testable in isolation.
 - **`selectPuzzle.ts`** — pure function from `(today, schedule, puzzles)` to the day's puzzle or `null`.
 - **`reducer.ts`** — pure state machine. Actions: `submitGuess(year)`, `restoreFromStorage(state)`. No I/O.
 - **`localStorage.ts`** — only file allowed to touch `localStorage`. Wraps parse/stringify with schema-version check; on mismatch or corrupt JSON, drops state and returns the empty state. Migrations live here.
-- **`formatShare.ts`** — pure. No clipboard side effects (those live in `ShareButton.tsx`).
+- **`formatShare.ts`** — pure. Takes the URL as a parameter (caller reads `window.location`). No clipboard side effects (those live in `ShareButton.tsx`).
 
 UI components are presentational and accept state + dispatch as props. The reducer is owned by `App.tsx`.
 
@@ -207,7 +208,8 @@ No other defensive code. Internal calls between modules trust their inputs (type
 - Vite (build + dev server)
 - Vitest + @testing-library/react (tests)
 - No state library beyond `useReducer`
-- CSS modules (no framework like Tailwind in v1; the surface is small)
+- No component library. CSS modules + CSS custom properties for theming. The UI is ~6 components; MUI and similar are net-negative at this size.
+- Mobile-first responsive layout via plain media queries. Target: a single column centered with `max-width: 520px`; readable down to ~320px wide.
 
 ## Future work (post v1)
 
