@@ -1,4 +1,4 @@
-# Daily Year
+# Circa
 
 A daily browser game: guess the year of a historic event from 5 progressively revealed hints. Wordle-style 5/5 guesses, color-graded distance feedback. Static SPA, deploys to GitHub Pages.
 

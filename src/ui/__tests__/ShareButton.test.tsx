@@ -21,7 +21,7 @@ describe("ShareButton", () => {
     render(<ShareButton state={state} puzzleNumber={42} url="https://example.com/daily-year/" />);
     await userEvent.click(screen.getByRole("button", { name: /share/i }));
     expect(writeText).toHaveBeenCalledWith(
-      "Daily Year #42 — 2/5 🟧🟡\nplay at https://example.com/daily-year/",
+      "Circa #42 — 2/5 🟧🟡\nplay at https://example.com/daily-year/",
     );
   });
 });

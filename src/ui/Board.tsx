@@ -23,7 +23,7 @@ export function Board({
     <div className={styles.frame}>
       <div className={styles.header}>
         <div>
-          <div className={styles.title}>Daily Year</div>
+          <div className={styles.title}>Circa</div>
           <div className={styles.meta}>Puzzle #{puzzleNumber} — {todayLabel}</div>
         </div>
         <EraPill era={state.puzzle.era} />

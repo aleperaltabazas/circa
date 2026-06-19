@@ -22,7 +22,7 @@ export function StatsModal({
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <h2 className={styles.title}>Daily Year #{puzzleNumber}</h2>
+        <h2 className={styles.title}>Circa #{puzzleNumber}</h2>
         <p className={styles.outcome}>{outcomeMsg}</p>
         <div className={styles.statsRow}>
           <div className={styles.stat}>

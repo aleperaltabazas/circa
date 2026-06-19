@@ -16,7 +16,7 @@ beforeEach(() => {
 describe("App", () => {
   it("renders the board for today's puzzle", async () => {
     render(<App />);
-    expect(await screen.findByText(/Daily Year/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Circa/i)).toBeInTheDocument();
     expect(screen.getByText("modern")).toBeInTheDocument();
     expect(screen.getByText(/Ottoman/i)).toBeInTheDocument();
   });

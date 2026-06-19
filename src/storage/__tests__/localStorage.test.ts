@@ -24,12 +24,12 @@ describe("localStorage boundary", () => {
   });
 
   it("load returns EMPTY when stored JSON is corrupt", () => {
-    storage.setItem("daily-year", "not json{");
+    storage.setItem("circa", "not json{");
     expect(load(storage)).toEqual(EMPTY);
   });
 
   it("load returns EMPTY when schemaVersion does not match", () => {
-    storage.setItem("daily-year", JSON.stringify({ schemaVersion: 99, foo: "bar" }));
+    storage.setItem("circa", JSON.stringify({ schemaVersion: 99, foo: "bar" }));
     expect(load(storage)).toEqual(EMPTY);
   });
 

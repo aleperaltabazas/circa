@@ -1,6 +1,6 @@
 import { GameState, Stats } from "../game/types";
 
-const KEY = "daily-year";
+const KEY = "circa";
 
 export type PersistedShape = {
   schemaVersion: 1;
