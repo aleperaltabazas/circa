@@ -17,7 +17,7 @@ describe("App", () => {
   it("renders the board for today's puzzle", async () => {
     render(<App />);
     expect(await screen.findByText(/Daily Year/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/modern/i).length).toBeGreaterThan(0);
+    expect(screen.getByText("modern")).toBeInTheDocument();
     expect(screen.getByText(/Ottoman/i)).toBeInTheDocument();
   });
 
