@@ -1,0 +1,14 @@
+.bar {
+  display: flex;
+  margin: 16px 0 6px;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: linear-gradient(to right, hsl(0, 65%, 50%), hsl(60, 65%, 50%), hsl(120, 65%, 50%));
+}
+.labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #888;
+}
