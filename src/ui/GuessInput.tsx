@@ -1,23 +1,28 @@
 import { FormEvent, useState } from "react";
 import { Era } from "../game/types";
 import { eraRange } from "../game/eras";
+import { Locale } from "../i18n/types";
+import { STRINGS } from "../i18n/strings";
 import styles from "./GuessInput.module.css";
 
 export function GuessInput({
   era,
   currentYear,
   disabled,
+  locale,
   onSubmit,
 }: {
   era: Era;
   currentYear: number;
   disabled: boolean;
+  locale: Locale;
   onSubmit: (year: number) => void;
 }) {
   const [value, setValue] = useState("");
   const { from, to } = eraRange(era, currentYear);
   const min = from;
   const max = to - 1;
+  const s = STRINGS[locale];
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -41,9 +46,9 @@ export function GuessInput({
           onChange={(e) => setValue(e.target.value)}
           placeholder={`${min}–${max}`}
         />
-        <button className={styles.btn} type="submit" disabled={disabled}>Guess</button>
+        <button className={styles.btn} type="submit" disabled={disabled}>{s.guess}</button>
       </div>
-      <div className={styles.hint}>Enter a year between {min} and {max}</div>
+      <div className={styles.hint}>{s.rangeHint(min, max)}</div>
     </form>
   );
 }
