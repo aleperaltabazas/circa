@@ -21,44 +21,23 @@
     }
   },
   {
-    "id": "moon-landing-1969",
-    "era": "recent",
-    "answer": 1969,
+    "id": "constitucion-1853",
+    "era": "modern",
+    "answer": 1853,
     "hints": {
       "es": [
-        "Un año hito para la exploración espacial",
-        "Dos superpotencias estaban enfrentadas en una larga tensión política",
-        "Un presidente de EE.UU. había prometido que esto ocurriría antes del fin de la década",
-        "Neil Armstrong dijo algo memorable sobre un pequeño paso",
-        "Meses después, Woodstock convocó a medio millón de personas en una granja lechera"
+        "Un centenario de la caída del imperio Romano de Oriente",
+        "Se asocia un sillón a una de las personas involucradas en este evento.",
+        "100 años más tarde Eisenhower asume la presidencia en Estados Unidos",
+        "Hay un barrio en la Ciudad de Buenos Aires cuyo nombre refiere a lo que ocurrió este año",
+        "Se considera que a partir de este año empieza a existir oficialmente la República Argentina"
       ],
       "en": [
-        "A milestone year for spaceflight",
-        "Two superpowers were locked in a long political standoff",
-        "A US president had promised this would happen before the decade ended",
-        "Neil Armstrong said something memorable about a small step",
-        "Months later, Woodstock drew half a million people to a dairy farm"
-      ]
-    }
-  },
-  {
-    "id": "magna-carta-1215",
-    "era": "medieval",
-    "answer": 1215,
-    "hints": {
-      "es": [
-        "Un rey inglés se inclinó ante sus barones este año",
-        "Un documento fundacional del derecho constitucional fue sellado en una pradera junto al Támesis",
-        "El rey Juan fue el firmante involuntario",
-        "El Cuarto Concilio de Letrán también tuvo lugar en este año",
-        "Ocho siglos después se sigue citando como piedra angular constitucional"
-      ],
-      "en": [
-        "An English king bowed to his barons this year",
-        "A foundational document of constitutional law was sealed at a meadow by the Thames",
-        "King John was the unwilling signatory",
-        "The Fourth Lateran Council also took place in the same year",
-        "Eight centuries later it is still cited as a constitutional touchstone"
+        "A centennial of the fall of the Eastern Roman Empire",
+        "A presidential armchair is associated with this event",
+        "100 years later, Eisenhower takes office as US president",
+        "A neighborhood in the City of Buenos Aires is named after what happened this year",
+        "Considered the year the Argentine Republic officially comes into being"
       ]
     }
   }
