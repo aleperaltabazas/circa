@@ -8,6 +8,8 @@ import { initialState, reducer } from "./game/reducer";
 import { today, currentYearArt } from "./game/today";
 import { applyResult } from "./game/streak";
 import { load, save, PersistedShape } from "./storage/localStorage";
+import { Locale } from "./i18n/types";
+import { STRINGS } from "./i18n/strings";
 import { Board } from "./ui/Board";
 import { StatsModal } from "./ui/StatsModal";
 import styles from "./App.module.css";
@@ -20,12 +22,30 @@ export function App() {
   const currentYear = currentYearArt();
   const puzzle = useMemo(() => selectPuzzle(todayIso, schedule, puzzles), [todayIso]);
   const puzzleNumber = useMemo(() => puzzleNumberFor(todayIso, schedule), [todayIso]);
+  const [persisted, setPersisted] = useState<PersistedShape>(() => load(window.localStorage));
+  const locale = persisted.locale;
 
-  if (!puzzle || puzzleNumber === null) {
-    return <div className={styles.empty}>No puzzle today, check back tomorrow.</div>;
+  function handleLocaleChange(next: Locale) {
+    const updated = { ...persisted, locale: next };
+    save(window.localStorage, updated);
+    setPersisted(updated);
   }
 
-  return <Game puzzle={puzzle} puzzleNumber={puzzleNumber} todayIso={todayIso} currentYear={currentYear} />;
+  if (!puzzle || puzzleNumber === null) {
+    return <div className={styles.empty}>{STRINGS[locale].noPuzzle}</div>;
+  }
+
+  return (
+    <Game
+      puzzle={puzzle}
+      puzzleNumber={puzzleNumber}
+      todayIso={todayIso}
+      currentYear={currentYear}
+      persisted={persisted}
+      setPersisted={setPersisted}
+      onLocaleChange={handleLocaleChange}
+    />
+  );
 }
 
 function Game({
@@ -33,13 +53,18 @@ function Game({
   puzzleNumber,
   todayIso,
   currentYear,
+  persisted,
+  setPersisted,
+  onLocaleChange,
 }: {
   puzzle: Puzzle;
   puzzleNumber: number;
   todayIso: string;
   currentYear: number;
+  persisted: PersistedShape;
+  setPersisted: (p: PersistedShape) => void;
+  onLocaleChange: (loc: Locale) => void;
 }) {
-  const [persisted, setPersisted] = useState<PersistedShape>(() => load(window.localStorage));
   const [state, dispatch] = useReducer(
     reducer,
     null,
@@ -60,7 +85,8 @@ function Game({
       setModalOpen(true);
     }
     const next: PersistedShape = {
-      schemaVersion: 1,
+      ...persisted,
+      schemaVersion: 2,
       lastPlayedDate: todayIso,
       lastResult: state,
       stats: nextStats,
@@ -68,8 +94,7 @@ function Game({
     save(window.localStorage, next);
     setPersisted(next);
     // persisted is intentionally excluded — previouslyFinished guard makes
-    // stale-closure reads idempotent, so excluding it prevents the effect
-    // from running on every persisted change (which would loop).
+    // stale-closure reads idempotent.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state]);
 
@@ -82,6 +107,8 @@ function Game({
         puzzleNumber={puzzleNumber}
         todayLabel={todayIso}
         currentYear={currentYear}
+        locale={persisted.locale}
+        onLocaleChange={onLocaleChange}
         onGuess={(year) => dispatch({ type: "submitGuess", year, currentYear })}
       />
       {modalOpen && (
@@ -90,6 +117,7 @@ function Game({
           gameState={state}
           puzzleNumber={puzzleNumber}
           url={url}
+          locale={persisted.locale}
           onClose={() => setModalOpen(false)}
         />
       )}

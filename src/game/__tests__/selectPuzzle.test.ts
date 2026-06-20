@@ -6,14 +6,14 @@ const lepanto: Puzzle = {
   id: "lepanto-1571",
   era: "modern",
   answer: 1571,
-  hints: ["a", "b", "c", "d", "e"],
+  hints: { es: ["a", "b", "c", "d", "e"], en: ["a", "b", "c", "d", "e"] },
 };
 
 const moonLanding: Puzzle = {
   id: "moon-landing-1969",
   era: "recent",
   answer: 1969,
-  hints: ["a", "b", "c", "d", "e"],
+  hints: { es: ["a", "b", "c", "d", "e"], en: ["a", "b", "c", "d", "e"] },
 };
 
 describe("selectPuzzle", () => {
