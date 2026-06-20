@@ -12,7 +12,12 @@ export function LocaleToggle({
     <select
       className={styles.select}
       value={locale}
-      onChange={(e) => onChange(e.target.value as Locale)}
+      onChange={(e) => {
+        const v = e.target.value;
+        if ((LOCALES as readonly string[]).includes(v)) {
+          onChange(v as Locale);
+        }
+      }}
       aria-label="Language"
     >
       {LOCALES.map((loc) => (
