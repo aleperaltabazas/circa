@@ -3,36 +3,63 @@
     "id": "lepanto-1571",
     "era": "modern",
     "answer": 1571,
-    "hints": [
-      "A modern age war involving the Ottoman empire occurred this year",
-      "More than a century before the Byzantine empire fell",
-      "The Holy League regained Christian control in the Mediterranean",
-      "A Spaniard was inspired to write a satire of chivalric romances of the time",
-      "400 years later Led Zeppelin released 'Stairway to Heaven'"
-    ]
+    "hints": {
+      "es": [
+        "Una guerra de la edad moderna que involucró al imperio otomano ocurrió este año",
+        "Más de un siglo después de que cayó el imperio bizantino",
+        "La Liga Santa recuperó el control cristiano del Mediterráneo",
+        "Un español se inspiró para escribir una sátira de las novelas de caballerías de la época",
+        "400 años después Led Zeppelin lanzó 'Stairway to Heaven'"
+      ],
+      "en": [
+        "A modern age war involving the Ottoman empire occurred this year",
+        "More than a century after the Byzantine empire fell",
+        "The Holy League regained Christian control in the Mediterranean",
+        "A Spaniard was inspired to write a satire of chivalric romances of the time",
+        "400 years later Led Zeppelin released 'Stairway to Heaven'"
+      ]
+    }
   },
   {
     "id": "moon-landing-1969",
     "era": "recent",
     "answer": 1969,
-    "hints": [
-      "A milestone year for spaceflight",
-      "Two superpowers were locked in a long political standoff",
-      "A US president had promised this would happen before the decade ended",
-      "Neil Armstrong said something memorable about a small step",
-      "Months later, Woodstock drew half a million people to a dairy farm"
-    ]
+    "hints": {
+      "es": [
+        "Un año hito para la exploración espacial",
+        "Dos superpotencias estaban enfrentadas en una larga tensión política",
+        "Un presidente de EE.UU. había prometido que esto ocurriría antes del fin de la década",
+        "Neil Armstrong dijo algo memorable sobre un pequeño paso",
+        "Meses después, Woodstock convocó a medio millón de personas en una granja lechera"
+      ],
+      "en": [
+        "A milestone year for spaceflight",
+        "Two superpowers were locked in a long political standoff",
+        "A US president had promised this would happen before the decade ended",
+        "Neil Armstrong said something memorable about a small step",
+        "Months later, Woodstock drew half a million people to a dairy farm"
+      ]
+    }
   },
   {
     "id": "magna-carta-1215",
     "era": "medieval",
     "answer": 1215,
-    "hints": [
-      "An English king bowed to his barons this year",
-      "A foundational document of constitutional law was sealed at a meadow by the Thames",
-      "King John was the unwilling signatory",
-      "The Fourth Lateran Council also took place in the same year",
-      "Eight centuries later it is still cited as a constitutional touchstone"
-    ]
+    "hints": {
+      "es": [
+        "Un rey inglés se inclinó ante sus barones este año",
+        "Un documento fundacional del derecho constitucional fue sellado en una pradera junto al Támesis",
+        "El rey Juan fue el firmante involuntario",
+        "El Cuarto Concilio de Letrán también tuvo lugar en este año",
+        "Ocho siglos después se sigue citando como piedra angular constitucional"
+      ],
+      "en": [
+        "An English king bowed to his barons this year",
+        "A foundational document of constitutional law was sealed at a meadow by the Thames",
+        "King John was the unwilling signatory",
+        "The Fourth Lateran Council also took place in the same year",
+        "Eight centuries later it is still cited as a constitutional touchstone"
+      ]
+    }
   }
 ]
