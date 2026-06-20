@@ -1,15 +1,17 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { App } from "../App";
 
 beforeEach(() => {
   window.localStorage.clear();
-  // Pin "today" to a date present in schedule.json.
-  // Use fake timers only long enough to set the system clock, then restore
-  // real timers so RTL's findBy* polling (setTimeout-based) is not frozen.
-  vi.useFakeTimers();
+  // Pin "today" to a date present in schedule.json. Fake only the Date
+  // constructor so RTL's findBy* polling (setTimeout-based) stays real.
+  vi.useFakeTimers({ toFake: ["Date"] });
   vi.setSystemTime(new Date("2026-06-19T15:00:00Z"));
+});
+
+afterEach(() => {
   vi.useRealTimers();
 });
 

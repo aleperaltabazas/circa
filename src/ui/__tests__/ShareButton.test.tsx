@@ -18,10 +18,10 @@ describe("ShareButton", () => {
   it("copies the share string to the clipboard", async () => {
     const writeText = vi.fn().mockResolvedValue(undefined);
     Object.assign(navigator, { clipboard: { writeText } });
-    render(<ShareButton state={state} puzzleNumber={42} url="https://example.com/daily-year/" />);
+    render(<ShareButton state={state} puzzleNumber={42} url="https://example.com/circa/" />);
     await userEvent.click(screen.getByRole("button", { name: /share/i }));
     expect(writeText).toHaveBeenCalledWith(
-      "Circa #42 — 2/5 🟧🟡\nplay at https://example.com/daily-year/",
+      "Circa #42 — 2/5 🟧🟡\nplay at https://example.com/circa/",
     );
   });
 });

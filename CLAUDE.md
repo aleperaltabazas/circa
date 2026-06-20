@@ -77,7 +77,7 @@ Tests live in `__tests__/` folders next to their subject.
 
 Push to `main` triggers `.github/workflows/deploy.yml`: tests → build → upload `dist/` → deploy via `actions/deploy-pages`. Repo settings → Pages must be set to "GitHub Actions".
 
-Vite `base` is `/daily-year/` (set in `vite.config.ts`). If the GitHub Pages URL path changes, update it there.
+Vite `base` is `/circa/` (set in `vite.config.ts`). If the GitHub Pages URL path changes, update it there.
 
 ## Spec and plan
 

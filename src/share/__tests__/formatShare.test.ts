@@ -27,14 +27,14 @@ const lossState: GameState = {
 
 describe("formatShare", () => {
   it("formats a win", () => {
-    expect(formatShare(winState, 42, "https://example.com/daily-year/")).toBe(
-      "Circa #42 — 3/5 🟧🟨🟡\nplay at https://example.com/daily-year/",
+    expect(formatShare(winState, 42, "https://example.com/circa/")).toBe(
+      "Circa #42 — 3/5 🟧🟨🟡\nplay at https://example.com/circa/",
     );
   });
 
   it("formats a loss with X/5", () => {
-    expect(formatShare(lossState, 42, "https://example.com/daily-year/")).toBe(
-      "Circa #42 — X/5 🟧🟨🟧🟧🟥\nplay at https://example.com/daily-year/",
+    expect(formatShare(lossState, 42, "https://example.com/circa/")).toBe(
+      "Circa #42 — X/5 🟧🟨🟧🟧🟥\nplay at https://example.com/circa/",
     );
   });
 });
