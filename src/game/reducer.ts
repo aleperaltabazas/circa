@@ -11,13 +11,13 @@ export function reducer(state: GameState, action: Action): GameState {
   if (state.outcome !== "playing") return state;
   if (action.type !== "submitGuess") return state;
 
-  const { distanceRatio, bucket } = scoreGuess(
+  const { distanceRatio, bucket, direction } = scoreGuess(
     action.year,
     state.puzzle.answer,
     state.puzzle.era,
     action.currentYear,
   );
-  const guesses = [...state.guesses, { year: action.year, distanceRatio, bucket }];
+  const guesses = [...state.guesses, { year: action.year, distanceRatio, bucket, direction }];
 
   if (bucket === "perfect") {
     return { ...state, guesses, outcome: "won", hintsRevealed: state.hintsRevealed };

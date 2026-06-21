@@ -12,8 +12,8 @@ const state: GameState = {
     hints: { es: ["a","b","c","d","e"], en: ["a","b","c","d","e"] },
   },
   guesses: [
-    { year: 1500, distanceRatio: 0.21, bucket: "orange" },
-    { year: 1571, distanceRatio: 0, bucket: "perfect" },
+    { year: 1500, distanceRatio: 0.21, bucket: "orange", direction: "later" },
+    { year: 1571, distanceRatio: 0, bucket: "perfect", direction: "match" },
   ],
   outcome: "won",
   hintsRevealed: 2,

@@ -10,9 +10,9 @@ const baseWin: GameState = {
     hints: { es: ["a","b","c","d","e"], en: ["a","b","c","d","e"] },
   },
   guesses: [
-    { year: 1500, distanceRatio: 0.21, bucket: "orange" },
-    { year: 1600, distanceRatio: 0.08, bucket: "yellow" },
-    { year: 1571, distanceRatio: 0, bucket: "perfect" },
+    { year: 1500, distanceRatio: 0.21, bucket: "orange", direction: "later" },
+    { year: 1600, distanceRatio: 0.08, bucket: "yellow", direction: "earlier" },
+    { year: 1571, distanceRatio: 0, bucket: "perfect", direction: "match" },
   ],
   outcome: "won",
   hintsRevealed: 3,
@@ -21,11 +21,11 @@ const baseWin: GameState = {
 const baseLoss: GameState = {
   ...baseWin,
   guesses: [
-    { year: 1500, distanceRatio: 0.21, bucket: "orange" },
-    { year: 1600, distanceRatio: 0.08, bucket: "yellow" },
-    { year: 1700, distanceRatio: 0.38, bucket: "orange" },
-    { year: 1455, distanceRatio: 0.34, bucket: "orange" },
-    { year: 1755, distanceRatio: 0.54, bucket: "red" },
+    { year: 1500, distanceRatio: 0.21, bucket: "orange", direction: "later" },
+    { year: 1600, distanceRatio: 0.08, bucket: "yellow", direction: "earlier" },
+    { year: 1700, distanceRatio: 0.38, bucket: "orange", direction: "earlier" },
+    { year: 1455, distanceRatio: 0.34, bucket: "orange", direction: "later" },
+    { year: 1755, distanceRatio: 0.54, bucket: "red", direction: "earlier" },
   ],
   outcome: "lost",
 };
