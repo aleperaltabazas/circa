@@ -24,7 +24,7 @@ describe("STRINGS", () => {
       expect(s.rangeHint(1453, 1788)).toMatch(/1788/);
       expect(s.puzzleMeta(42, "2026-06-20")).toMatch(/42/);
       expect(s.outcomeWin(3)).toMatch(/3/);
-      expect(s.outcomeLoss(1571)).toMatch(/1571/);
+      expect(s.outcomeLoss("1571")).toMatch(/1571/);
       expect(s.shareTail("https://x.test/")).toMatch(/https:\/\/x\.test\//);
     }
   });

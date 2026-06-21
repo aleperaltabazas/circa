@@ -15,7 +15,7 @@ export const STRINGS = {
     legendExact: "exacto",
     noPuzzle: "No hay puzzle hoy, volvé mañana.",
     outcomeWin: (g: number) => `Ganaste en ${g}/5`,
-    outcomeLoss: (a: number) => `Se terminó — la respuesta era ${a}`,
+    outcomeLoss: (a: string) => `Se terminó — la respuesta era ${a}`,
     shareTail: (url: string) => `jugá en ${url}`,
     eraLabel: {
       prehistory: "prehistoria",
@@ -41,7 +41,7 @@ export const STRINGS = {
     legendExact: "exact",
     noPuzzle: "No puzzle today, check back tomorrow.",
     outcomeWin: (g: number) => `You won in ${g}/5`,
-    outcomeLoss: (a: number) => `Game over — the answer was ${a}`,
+    outcomeLoss: (a: string) => `Game over — the answer was ${a}`,
     shareTail: (url: string) => `play at ${url}`,
     eraLabel: {
       prehistory: "prehistory",
