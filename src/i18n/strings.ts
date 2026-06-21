@@ -17,6 +17,7 @@ export const STRINGS = {
     outcomeWin: (g: number) => `Ganaste en ${g}/5`,
     outcomeLoss: (a: string) => `Se terminó — la respuesta era ${a}`,
     shareTail: (url: string) => `jugá en ${url}`,
+    directionLabel: { earlier: "muy tarde", later: "muy temprano", match: "exacto" },
     eraLabel: {
       prehistory: "prehistoria",
       ancient: "antigua",
@@ -24,6 +25,7 @@ export const STRINGS = {
       modern: "moderna",
       recent: "reciente",
     },
+    guessAria: (year: number, dirLabel: string) => `${year}, ${dirLabel}`,
   },
   en: {
     appTitle: "Circa",
@@ -43,6 +45,7 @@ export const STRINGS = {
     outcomeWin: (g: number) => `You won in ${g}/5`,
     outcomeLoss: (a: string) => `Game over — the answer was ${a}`,
     shareTail: (url: string) => `play at ${url}`,
+    directionLabel: { earlier: "too late", later: "too early", match: "exact" },
     eraLabel: {
       prehistory: "prehistory",
       ancient: "ancient",
@@ -50,6 +53,7 @@ export const STRINGS = {
       modern: "modern",
       recent: "recent",
     },
+    guessAria: (year: number, dirLabel: string) => `${year}, ${dirLabel}`,
   },
 } as const;
 
