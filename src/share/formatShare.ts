@@ -3,7 +3,7 @@ import { Locale } from "../i18n/types";
 import { STRINGS } from "../i18n/strings";
 
 const EMOJI: Record<Bucket, string> = {
-  perfect: "🟡",
+  perfect: "✅",
   green: "🟢",
   lime: "🟩",
   yellow: "🟨",

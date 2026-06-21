@@ -33,7 +33,7 @@ const baseLoss: GameState = {
 describe("formatShare", () => {
   it("formats a win in Spanish", () => {
     expect(formatShare(baseWin, 42, "https://example.com/circa/", "es")).toBe(
-      "Circa #42 — 3/5 🟧🟨🟡\njugá en https://example.com/circa/",
+      "Circa #42 — 3/5 🟧🟨✅\njugá en https://example.com/circa/",
     );
   });
 
@@ -45,7 +45,7 @@ describe("formatShare", () => {
 
   it("formats a win in English", () => {
     expect(formatShare(baseWin, 42, "https://example.com/circa/", "en")).toBe(
-      "Circa #42 — 3/5 🟧🟨🟡\nplay at https://example.com/circa/",
+      "Circa #42 — 3/5 🟧🟨✅\nplay at https://example.com/circa/",
     );
   });
 

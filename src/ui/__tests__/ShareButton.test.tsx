@@ -26,7 +26,7 @@ describe("ShareButton", () => {
     render(<ShareButton state={state} puzzleNumber={42} url="https://example.com/circa/" locale="es" />);
     await userEvent.click(screen.getByRole("button", { name: /compartir/i }));
     expect(writeText).toHaveBeenCalledWith(
-      "Circa #42 — 2/5 🟧🟡\njugá en https://example.com/circa/",
+      "Circa #42 — 2/5 🟧✅\njugá en https://example.com/circa/",
     );
   });
 
@@ -36,7 +36,7 @@ describe("ShareButton", () => {
     render(<ShareButton state={state} puzzleNumber={42} url="https://example.com/circa/" locale="en" />);
     await userEvent.click(screen.getByRole("button", { name: /share/i }));
     expect(writeText).toHaveBeenCalledWith(
-      "Circa #42 — 2/5 🟧🟡\nplay at https://example.com/circa/",
+      "Circa #42 — 2/5 🟧✅\nplay at https://example.com/circa/",
     );
   });
 });
