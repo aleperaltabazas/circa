@@ -59,7 +59,7 @@ Tests live in `__tests__/` folders next to their subject.
    {
      "id": "kebab-case-id-YYYY",
      "era": "modern",
-     "answer": 1571,
+     "answer": { "from": 1571, "to": 1571 },
      "hints": {
       "es": ["pista vaga 1", "...", "...", "...", "ancla específica 5"],
       "en": ["vague hint 1", "...", "...", "...", "specific anchor hint 5"]
@@ -68,7 +68,8 @@ Tests live in `__tests__/` folders next to their subject.
    ```
    - Hints go vague → specific.
    - Must have exactly 5 hints for every locale in `src/i18n/types.ts` (`es` and `en`). A Vitest validation test (`src/content/__tests__/puzzles.test.ts`) enforces this.
-   - `answer` is an integer (negative for BCE).
+   - `answer` is `{ from, to }` (inclusive both ends). Exact-year puzzles use `from === to`. Range puzzles (e.g. an event that spans multiple years) use distinct values.
+   - Both `from` and `to` must fall within the era's range — `src/content/__tests__/puzzles.test.ts` enforces this.
    - `era` must match where `answer` falls (see `eras.ts` table).
 2. Add a row to `src/content/schedule.json` mapping a future ART date to the new id:
    ```json
