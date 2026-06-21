@@ -10,7 +10,7 @@ const wonState: GameState = {
   puzzle: {
     id: "lepanto-1571",
     era: "modern",
-    answer: 1571,
+    answer: { from: 1571, to: 1571 },
     hints: { es: ["a", "b", "c", "d", "e"], en: ["a", "b", "c", "d", "e"] },
   },
   guesses: [
@@ -58,6 +58,24 @@ describe("StatsModal", () => {
     expect(screen.getByText("Max")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /close/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /share/i })).toBeInTheDocument();
+  });
+
+  it("renders the en-dash for a range answer on loss", () => {
+    const rangeState = {
+      ...lostState,
+      puzzle: { ...lostState.puzzle, answer: { from: 1789, to: 1799 } },
+    };
+    render(
+      <StatsModal
+        stats={stats}
+        gameState={rangeState}
+        puzzleNumber={42}
+        url="https://example.com/circa/"
+        locale="en"
+        onClose={() => {}}
+      />,
+    );
+    expect(screen.getByText(/the answer was 1789–1799/)).toBeInTheDocument();
   });
 
   it("calls onClose when overlay is clicked", async () => {

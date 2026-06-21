@@ -2,6 +2,7 @@ import { GameState, Stats } from "../game/types";
 import { Locale } from "../i18n/types";
 import { STRINGS } from "../i18n/strings";
 import { ShareButton } from "./ShareButton";
+import { formatAnswer } from "./answer";
 import styles from "./StatsModal.module.css";
 
 export function StatsModal({
@@ -23,7 +24,7 @@ export function StatsModal({
   const outcomeMsg =
     gameState.outcome === "won"
       ? s.outcomeWin(gameState.guesses.length)
-      : s.outcomeLoss(gameState.puzzle.answer);
+      : s.outcomeLoss(formatAnswer(gameState.puzzle.answer));
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
