@@ -4,10 +4,12 @@ export type Era = "prehistory" | "ancient" | "medieval" | "modern" | "recent";
 
 export type Bucket = "perfect" | "green" | "lime" | "yellow" | "orange" | "red";
 
+export type YearRange = { from: number; to: number };
+
 export type Puzzle = {
   id: string;
   era: Era;
-  answer: number;
+  answer: YearRange;
   hints: Record<Locale, [string, string, string, string, string]>;
 };
 

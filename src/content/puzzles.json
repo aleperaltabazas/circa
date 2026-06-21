@@ -2,7 +2,7 @@
   {
     "id": "lepanto-1571",
     "era": "modern",
-    "answer": 1571,
+    "answer": { "from": 1571, "to": 1571 },
     "hints": {
       "es": [
         "Una guerra de la edad moderna que involucró al imperio otomano ocurrió este año",
@@ -23,7 +23,7 @@
   {
     "id": "constitucion-1853",
     "era": "recent",
-    "answer": 1853,
+    "answer": { "from": 1853, "to": 1853 },
     "hints": {
       "es": [
         "Un centenario de la caída del imperio Romano de Oriente",
