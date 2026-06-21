@@ -34,6 +34,13 @@ describe("STRINGS", () => {
     }
   });
 
+  it("has triviaTitle for every locale", () => {
+    for (const loc of LOCALES) {
+      expect(typeof STRINGS[loc].triviaTitle).toBe("string");
+      expect(STRINGS[loc].triviaTitle.length).toBeGreaterThan(0);
+    }
+  });
+
   it("renders parameterized strings without leaking placeholders", () => {
     for (const loc of LOCALES) {
       const s = STRINGS[loc];
