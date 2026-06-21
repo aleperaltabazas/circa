@@ -38,6 +38,17 @@ describe("puzzles.json", () => {
     }
   });
 
+  it("every puzzle has a non-empty description for every locale", () => {
+    for (const p of puzzles) {
+      for (const loc of LOCALES) {
+        const desc = p.description?.[loc];
+        expect(desc, `${p.id} missing description for ${loc}`).toBeDefined();
+        expect(typeof desc, `${p.id} description[${loc}] not a string`).toBe("string");
+        expect(desc.length, `${p.id} description[${loc}] is empty`).toBeGreaterThan(0);
+      }
+    }
+  });
+
   it("every puzzle's answer falls within its era", () => {
     const year = currentYearArt();
     for (const p of puzzles) {

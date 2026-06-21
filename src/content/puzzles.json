@@ -18,6 +18,10 @@
         "A Spaniard was inspired to write a satire of chivalric romances of the time",
         "400 years later Led Zeppelin released 'Stairway to Heaven'"
       ]
+    },
+    "description": {
+      "es": "La batalla de Lepanto (7 de octubre de 1571) fue una victoria naval decisiva de la Liga Santa — una coalición de potencias católicas liderada por España, Venecia y los Estados Pontificios — sobre el Imperio otomano en el golfo de Patras. Frenó la expansión otomana en el Mediterráneo y resonó en la cultura europea durante siglos; el propio Miguel de Cervantes combatió allí y perdió el uso de su mano izquierda.",
+      "en": "The Battle of Lepanto (7 October 1571) was a decisive naval victory of the Holy League — a coalition of Catholic powers led by Spain, Venice, and the Papal States — over the Ottoman Empire in the Gulf of Patras. It halted Ottoman expansion in the Mediterranean and echoed through European culture for centuries; Miguel de Cervantes himself fought there and lost the use of his left hand."
     }
   },
   {
@@ -39,6 +43,10 @@
         "A neighborhood in the City of Buenos Aires is named after what happened this year",
         "Considered the year the Argentine Republic officially comes into being"
       ]
+    },
+    "description": {
+      "es": "La Constitución argentina de 1853 fue sancionada por el Congreso Constituyente de Santa Fe el 1 de mayo de 1853, sentando las bases del estado federal argentino tras décadas de guerras civiles. Inspirada parcialmente en la constitución estadounidense y en el pensamiento de Juan Bautista Alberdi, organizó el régimen republicano que, con reformas, sigue vigente.",
+      "en": "Argentina's 1853 Constitution was sanctioned by the Constituent Congress of Santa Fe on 1 May 1853, laying the foundation of the Argentine federal state after decades of civil war. Partly inspired by the US Constitution and the writings of Juan Bautista Alberdi, it organised the republican system that, with amendments, remains in force."
     }
   }
 ]

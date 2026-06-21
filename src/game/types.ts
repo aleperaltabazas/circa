@@ -13,6 +13,7 @@ export type Puzzle = {
   era: Era;
   answer: YearRange;
   hints: Record<Locale, [string, string, string, string, string]>;
+  description: Record<Locale, string>;
 };
 
 export type Schedule = Record<string, string>;
