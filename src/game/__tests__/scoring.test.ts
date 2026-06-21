@@ -8,6 +8,7 @@ describe("scoreGuess (exact-year puzzles, from === to)", () => {
     expect(scoreGuess(1571, exact(1571), "modern", 2026)).toEqual({
       distanceRatio: 0,
       bucket: "perfect",
+      direction: "match",
     });
   });
 
@@ -37,6 +38,7 @@ describe("scoreGuess (exact-year puzzles, from === to)", () => {
     expect(scoreGuess(-1000, exact(-1000), "ancient", 2026)).toEqual({
       distanceRatio: 0,
       bucket: "perfect",
+      direction: "match",
     });
   });
 
@@ -51,6 +53,7 @@ describe("scoreGuess (range puzzles, from < to)", () => {
     expect(scoreGuess(1789, { from: 1789, to: 1799 }, "recent", 2026)).toEqual({
       distanceRatio: 0,
       bucket: "perfect",
+      direction: "match",
     });
   });
 
@@ -58,6 +61,7 @@ describe("scoreGuess (range puzzles, from < to)", () => {
     expect(scoreGuess(1799, { from: 1789, to: 1799 }, "recent", 2026)).toEqual({
       distanceRatio: 0,
       bucket: "perfect",
+      direction: "match",
     });
   });
 
@@ -65,6 +69,7 @@ describe("scoreGuess (range puzzles, from < to)", () => {
     expect(scoreGuess(1793, { from: 1789, to: 1799 }, "recent", 2026)).toEqual({
       distanceRatio: 0,
       bucket: "perfect",
+      direction: "match",
     });
   });
 
@@ -76,5 +81,40 @@ describe("scoreGuess (range puzzles, from < to)", () => {
   it("uses distance to nearest edge when guess is above the range", () => {
     const result = scoreGuess(1810, { from: 1789, to: 1799 }, "recent", 2026);
     expect(result.distanceRatio).toBeCloseTo(11 / 238, 5);
+  });
+});
+
+describe("scoreGuess direction", () => {
+  const exact = (year: number) => ({ from: year, to: year });
+
+  it("returns match for an exact-year hit", () => {
+    expect(scoreGuess(1571, exact(1571), "modern", 2026).direction).toBe("match");
+  });
+
+  it("returns later when guess is before an exact answer", () => {
+    expect(scoreGuess(1500, exact(1571), "modern", 2026).direction).toBe("later");
+  });
+
+  it("returns earlier when guess is after an exact answer", () => {
+    expect(scoreGuess(1600, exact(1571), "modern", 2026).direction).toBe("earlier");
+  });
+
+  it("returns match for any guess inside a range answer", () => {
+    expect(scoreGuess(1793, { from: 1789, to: 1799 }, "recent", 2026).direction).toBe("match");
+    expect(scoreGuess(1789, { from: 1789, to: 1799 }, "recent", 2026).direction).toBe("match");
+    expect(scoreGuess(1799, { from: 1789, to: 1799 }, "recent", 2026).direction).toBe("match");
+  });
+
+  it("returns later when guess is below a range answer", () => {
+    expect(scoreGuess(1780, { from: 1789, to: 1799 }, "recent", 2026).direction).toBe("later");
+  });
+
+  it("returns earlier when guess is above a range answer", () => {
+    expect(scoreGuess(1810, { from: 1789, to: 1799 }, "recent", 2026).direction).toBe("earlier");
+  });
+
+  it("handles BCE direction correctly", () => {
+    expect(scoreGuess(-2000, exact(-1000), "ancient", 2026).direction).toBe("later");
+    expect(scoreGuess(0, exact(-1000), "ancient", 2026).direction).toBe("earlier");
   });
 });

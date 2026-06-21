@@ -4,6 +4,8 @@ export type Era = "prehistory" | "ancient" | "medieval" | "modern" | "recent";
 
 export type Bucket = "perfect" | "green" | "lime" | "yellow" | "orange" | "red";
 
+export type Direction = "earlier" | "later" | "match";
+
 export type YearRange = { from: number; to: number };
 
 export type Puzzle = {
@@ -19,6 +21,7 @@ export type Guess = {
   year: number;
   bucket: Bucket;
   distanceRatio: number;
+  direction: Direction;
 };
 
 export type Outcome = "playing" | "won" | "lost";
