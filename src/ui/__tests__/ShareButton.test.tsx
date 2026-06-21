@@ -8,7 +8,7 @@ const state: GameState = {
   puzzle: {
     id: "lepanto-1571",
     era: "modern",
-    answer: 1571,
+    answer: { from: 1571, to: 1571 },
     hints: { es: ["a","b","c","d","e"], en: ["a","b","c","d","e"] },
   },
   guesses: [
