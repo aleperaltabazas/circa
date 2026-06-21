@@ -26,6 +26,7 @@ describe("reducer", () => {
     expect(next.guesses).toHaveLength(1);
     expect(next.guesses[0].year).toBe(1500);
     expect(next.guesses[0].bucket).toBe("orange");
+    expect(next.guesses[0].direction).toBe("later");
     expect(next.hintsRevealed).toBe(2);
     expect(next.outcome).toBe("playing");
   });
@@ -34,6 +35,7 @@ describe("reducer", () => {
     const next = reducer(initialState(lepanto), { type: "submitGuess", year: 1571, currentYear: 2026 });
     expect(next.outcome).toBe("won");
     expect(next.guesses[0].bucket).toBe("perfect");
+    expect(next.guesses[0].direction).toBe("match");
   });
 
   it("sets outcome to lost after the 5th wrong guess", () => {

@@ -51,7 +51,7 @@ Tests live in `__tests__/` folders next to their subject.
 - **Era ranges are bounded.** Each puzzle's `era` enum (`prehistory|ancient|medieval|modern|recent`) defines the valid input range AND calibrates the color gradient width. See `eras.ts` for the table.
 - **Color = continuous + discrete.** Tiles use a continuous HSL hue lerp (green 120° → red 0°, ratio = distance/era-width). Discrete buckets exist only for the share-string emojis.
 - **Direction is shown per tile.** Each filled `GuessTile` renders a ▲ (answer is later) or ▼ (answer is earlier); a perfect/match guess shows no arrow. Direction is computed by `scoreGuess` and stored on each `Guess`. The arrow glyph is language-independent; the tile's `aria-label` is localized.
-- **localStorage is schema-versioned.** Bump `schemaVersion` and add a migration in `src/storage/localStorage.ts` when the persisted shape changes.
+- **localStorage is schema-versioned.** Bump `schemaVersion` in `src/storage/localStorage.ts` when the persisted shape changes. Add a migration when old data can be safely upgraded forward; return `EMPTY` when it cannot (acceptable for tiny user base / in-flight games).
 
 ## Authoring a new puzzle
 
