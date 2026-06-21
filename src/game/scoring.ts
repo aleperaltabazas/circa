@@ -1,4 +1,4 @@
-import { Bucket, Era } from "./types";
+import { Bucket, Era, YearRange } from "./types";
 import { eraRange } from "./eras";
 
 const THRESHOLDS: { bucket: Bucket; max: number }[] = [
@@ -9,14 +9,19 @@ const THRESHOLDS: { bucket: Bucket; max: number }[] = [
   { bucket: "orange", max: 0.40 },
 ];
 
+function distanceToRange(guess: number, answer: YearRange): number {
+  if (guess >= answer.from && guess <= answer.to) return 0;
+  return Math.min(Math.abs(guess - answer.from), Math.abs(guess - answer.to));
+}
+
 export function scoreGuess(
   guess: number,
-  answer: number,
+  answer: YearRange,
   era: Era,
   currentYear: number,
 ): { distanceRatio: number; bucket: Bucket } {
   const { width } = eraRange(era, currentYear);
-  const d = Math.abs(guess - answer);
+  const d = distanceToRange(guess, answer);
   const distanceRatio = Math.min(d / width, 1);
 
   if (d === 0) return { distanceRatio: 0, bucket: "perfect" };

@@ -1,55 +1,80 @@
 import { describe, it, expect } from "vitest";
 import { scoreGuess } from "../scoring";
 
-describe("scoreGuess", () => {
+const exact = (year: number) => ({ from: year, to: year });
+
+describe("scoreGuess (exact-year puzzles, from === to)", () => {
   it("returns perfect for an exact match", () => {
-    const result = scoreGuess(1571, 1571, "modern", 2026);
-    expect(result).toEqual({ distanceRatio: 0, bucket: "perfect" });
+    expect(scoreGuess(1571, exact(1571), "modern", 2026)).toEqual({
+      distanceRatio: 0,
+      bucket: "perfect",
+    });
   });
 
   it("computes distanceRatio as d/W in modern era", () => {
-    const result = scoreGuess(1500, 1571, "modern", 2026);
+    const result = scoreGuess(1500, exact(1571), "modern", 2026);
     expect(result.distanceRatio).toBeCloseTo(71 / 336, 5);
   });
 
   it("caps distanceRatio at 1", () => {
-    const result = scoreGuess(1453, 2026, "recent", 2026);
+    const result = scoreGuess(1453, exact(2026), "recent", 2026);
     expect(result.distanceRatio).toBe(1);
     expect(result.bucket).toBe("red");
   });
 
   it("returns green for d <= 0.01 * W", () => {
-    const result = scoreGuess(1574, 1571, "modern", 2026);
-    expect(result.bucket).toBe("green");
+    expect(scoreGuess(1574, exact(1571), "modern", 2026).bucket).toBe("green");
   });
 
-  it("returns lime for 0.01W < d <= 0.05W", () => {
-    const result = scoreGuess(1582, 1571, "modern", 2026);
-    expect(result.bucket).toBe("lime");
+  it("returns lime / yellow / orange / red at their thresholds", () => {
+    expect(scoreGuess(1582, exact(1571), "modern", 2026).bucket).toBe("lime");
+    expect(scoreGuess(1600, exact(1571), "modern", 2026).bucket).toBe("yellow");
+    expect(scoreGuess(1700, exact(1571), "modern", 2026).bucket).toBe("orange");
+    expect(scoreGuess(1500, exact(1700), "modern", 2026).bucket).toBe("red");
   });
 
-  it("returns yellow for 0.05W < d <= 0.15W", () => {
-    const result = scoreGuess(1600, 1571, "modern", 2026);
-    expect(result.bucket).toBe("yellow");
-  });
-
-  it("returns orange for 0.15W < d <= 0.40W", () => {
-    const result = scoreGuess(1700, 1571, "modern", 2026);
-    expect(result.bucket).toBe("orange");
-  });
-
-  it("returns red for d > 0.40W", () => {
-    const result = scoreGuess(1500, 1700, "modern", 2026);
-    expect(result.bucket).toBe("red");
-  });
-
-  it("handles negative-year answers (BCE)", () => {
-    const result = scoreGuess(-1000, -1000, "ancient", 2026);
-    expect(result).toEqual({ distanceRatio: 0, bucket: "perfect" });
+  it("handles BCE answers", () => {
+    expect(scoreGuess(-1000, exact(-1000), "ancient", 2026)).toEqual({
+      distanceRatio: 0,
+      bucket: "perfect",
+    });
   });
 
   it("computes distance correctly across BCE/CE boundary", () => {
-    const result = scoreGuess(-10, 10, "ancient", 2026);
+    const result = scoreGuess(-10, exact(10), "ancient", 2026);
     expect(result.distanceRatio).toBeCloseTo(20 / 1229, 5);
+  });
+});
+
+describe("scoreGuess (range puzzles, from < to)", () => {
+  it("returns perfect for a guess at the lower bound", () => {
+    expect(scoreGuess(1789, { from: 1789, to: 1799 }, "recent", 2026)).toEqual({
+      distanceRatio: 0,
+      bucket: "perfect",
+    });
+  });
+
+  it("returns perfect for a guess at the upper bound", () => {
+    expect(scoreGuess(1799, { from: 1789, to: 1799 }, "recent", 2026)).toEqual({
+      distanceRatio: 0,
+      bucket: "perfect",
+    });
+  });
+
+  it("returns perfect for a guess inside the range", () => {
+    expect(scoreGuess(1793, { from: 1789, to: 1799 }, "recent", 2026)).toEqual({
+      distanceRatio: 0,
+      bucket: "perfect",
+    });
+  });
+
+  it("uses distance to nearest edge when guess is below the range", () => {
+    const result = scoreGuess(1780, { from: 1789, to: 1799 }, "recent", 2026);
+    expect(result.distanceRatio).toBeCloseTo(9 / 238, 5);
+  });
+
+  it("uses distance to nearest edge when guess is above the range", () => {
+    const result = scoreGuess(1810, { from: 1789, to: 1799 }, "recent", 2026);
+    expect(result.distanceRatio).toBeCloseTo(11 / 238, 5);
   });
 });
