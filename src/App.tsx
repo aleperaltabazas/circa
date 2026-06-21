@@ -18,6 +18,18 @@ import styles from "./App.module.css";
 const puzzles = puzzlesData as Puzzle[];
 const schedule = scheduleData as Schedule;
 
+function isPreviouslyFinished(
+  persisted: PersistedShape,
+  todayIso: string,
+  puzzle: Puzzle,
+): boolean {
+  return (
+    persisted.lastPlayedDate === todayIso &&
+    persisted.lastResult?.puzzle.id === puzzle.id &&
+    persisted.lastResult?.outcome !== "playing"
+  );
+}
+
 export function App() {
   const todayIso = today();
   const currentYear = currentYearArt();
@@ -74,10 +86,7 @@ function Game({
         ? persisted.lastResult
         : initialState(puzzle),
   );
-  const wasPreviouslyFinished =
-    persisted.lastPlayedDate === todayIso &&
-    persisted.lastResult?.puzzle.id === puzzle.id &&
-    persisted.lastResult?.outcome !== "playing";
+  const wasPreviouslyFinished = isPreviouslyFinished(persisted, todayIso, puzzle);
   const [modalOpen, setModalOpen] = useState(
     state.outcome !== "playing" && !wasPreviouslyFinished,
   );
@@ -85,10 +94,7 @@ function Game({
   useEffect(() => {
     const finishedNow = state.outcome !== "playing";
     let nextStats = persisted.stats;
-    const previouslyFinished =
-      persisted.lastPlayedDate === todayIso &&
-      persisted.lastResult?.puzzle.id === puzzle.id &&
-      persisted.lastResult?.outcome !== "playing";
+    const previouslyFinished = isPreviouslyFinished(persisted, todayIso, puzzle);
     if (finishedNow && !previouslyFinished) {
       nextStats = applyResult(persisted.stats, state.outcome === "won" ? "won" : "lost", todayIso);
       setModalOpen(true);

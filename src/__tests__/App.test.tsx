@@ -75,4 +75,17 @@ describe("App", () => {
     expect(screen.getByText("modern")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /guess/i })).toBeInTheDocument();
   });
+
+  it("shows both StatsModal and TriviaBox after finishing a fresh game", async () => {
+    render(<App />);
+    // Wait for board to load (Spanish hints)
+    await screen.findByText(/imperio otomano/i);
+    // Submit the correct year: 1571
+    await userEvent.type(screen.getByRole("spinbutton"), "1571");
+    await userEvent.click(screen.getByRole("button", { name: /adivinar/i }));
+    // StatsModal auto-opens on fresh finish
+    expect(await screen.findByText(/Ganaste en/)).toBeInTheDocument();
+    // TriviaBox also visible
+    expect(screen.getByText("Sobre este puzzle")).toBeInTheDocument();
+  });
 });
