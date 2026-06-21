@@ -44,7 +44,7 @@ export function Board({
         revealed={state.hintsRevealed}
         lockedLabel={s.locked}
       />
-      <GuessTiles guesses={state.guesses} />
+      <GuessTiles guesses={state.guesses} locale={locale} />
       <ColorLegend locale={locale} />
       <GuessInput
         era={state.puzzle.era}
