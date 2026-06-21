@@ -86,7 +86,9 @@ function Game({
     const finishedNow = state.outcome !== "playing";
     let nextStats = persisted.stats;
     const previouslyFinished =
-      persisted.lastPlayedDate === todayIso && persisted.lastResult?.outcome !== "playing";
+      persisted.lastPlayedDate === todayIso &&
+      persisted.lastResult?.puzzle.id === puzzle.id &&
+      persisted.lastResult?.outcome !== "playing";
     if (finishedNow && !previouslyFinished) {
       nextStats = applyResult(persisted.stats, state.outcome === "won" ? "won" : "lost", todayIso);
       setModalOpen(true);
