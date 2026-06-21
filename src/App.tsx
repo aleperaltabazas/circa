@@ -86,7 +86,7 @@ function Game({
     }
     const next: PersistedShape = {
       ...persisted,
-      schemaVersion: 2,
+      schemaVersion: 3,
       lastPlayedDate: todayIso,
       lastResult: state,
       stats: nextStats,

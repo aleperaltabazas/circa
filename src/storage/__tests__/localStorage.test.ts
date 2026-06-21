@@ -39,24 +39,14 @@ describe("localStorage boundary", () => {
     expect(load(storage)).toEqual(data);
   });
 
-  it("EMPTY has DEFAULT_LOCALE", () => {
+  it("EMPTY has DEFAULT_LOCALE and schemaVersion 3", () => {
     expect(EMPTY.locale).toBe("es");
-    expect(EMPTY.schemaVersion).toBe(2);
+    expect(EMPTY.schemaVersion).toBe(3);
   });
 
-  it("migrates v1 stored data by adding locale and bumping schemaVersion", () => {
-    const v1Stored = {
-      schemaVersion: 1,
-      lastPlayedDate: "2026-06-19",
-      lastResult: null,
-      stats: { currentStreak: 3, maxStreak: 7, lastWinDate: "2026-06-19" },
-    };
-    storage.setItem("circa", JSON.stringify(v1Stored));
-    const loaded = load(storage);
-    expect(loaded.schemaVersion).toBe(2);
-    expect(loaded.locale).toBe("es");
-    expect(loaded.lastPlayedDate).toBe("2026-06-19");
-    expect(loaded.stats.currentStreak).toBe(3);
+  it("returns EMPTY when stored schemaVersion is 2", () => {
+    storage.setItem("circa", JSON.stringify({ schemaVersion: 2, locale: "en" }));
+    expect(load(storage)).toEqual(EMPTY);
   });
 
   it("returns EMPTY for unknown schema versions", () => {
