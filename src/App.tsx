@@ -75,7 +75,9 @@ function Game({
         : initialState(puzzle),
   );
   const wasPreviouslyFinished =
-    persisted.lastPlayedDate === todayIso && persisted.lastResult?.outcome !== "playing";
+    persisted.lastPlayedDate === todayIso &&
+    persisted.lastResult?.puzzle.id === puzzle.id &&
+    persisted.lastResult?.outcome !== "playing";
   const [modalOpen, setModalOpen] = useState(
     state.outcome !== "playing" && !wasPreviouslyFinished,
   );
