@@ -7,6 +7,7 @@ const lepanto: Puzzle = {
   era: "modern",
   answer: { from: 1571, to: 1571 },
   hints: { es: ["a", "b", "c", "d", "e"], en: ["a", "b", "c", "d", "e"] },
+  description: { es: "desc", en: "desc" },
 };
 
 const moonLanding: Puzzle = {
@@ -14,6 +15,7 @@ const moonLanding: Puzzle = {
   era: "recent",
   answer: { from: 1969, to: 1969 },
   hints: { es: ["a", "b", "c", "d", "e"], en: ["a", "b", "c", "d", "e"] },
+  description: { es: "desc", en: "desc" },
 };
 
 describe("selectPuzzle", () => {

@@ -1,0 +1,21 @@
+.frame {
+  max-width: 520px;
+  margin: 16px auto;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+.title { font-weight: 600; font-size: 16px; }
+.answer { color: #888; font-size: 13px; font-variant-numeric: tabular-nums; }
+.body { margin: 0 0 16px; line-height: 1.55; font-size: 14px; }
+.actions { display: flex; justify-content: flex-end; }
+@media (max-width: 480px) {
+  .frame { margin: 12px; padding: 16px; border-radius: 8px; }
+}

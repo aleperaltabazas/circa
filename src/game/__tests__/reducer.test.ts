@@ -7,6 +7,7 @@ const lepanto: Puzzle = {
   era: "modern",
   answer: { from: 1571, to: 1571 },
   hints: { es: ["h1", "h2", "h3", "h4", "h5"], en: ["h1", "h2", "h3", "h4", "h5"] },
+  description: { es: "desc", en: "desc" },
 };
 
 describe("initialState", () => {

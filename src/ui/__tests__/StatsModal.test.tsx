@@ -12,6 +12,7 @@ const wonState: GameState = {
     era: "modern",
     answer: { from: 1571, to: 1571 },
     hints: { es: ["a", "b", "c", "d", "e"], en: ["a", "b", "c", "d", "e"] },
+    description: { es: "desc", en: "desc" },
   },
   guesses: [
     { year: 1500, distanceRatio: 0.21, bucket: "orange", direction: "later" },
