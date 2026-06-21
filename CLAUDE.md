@@ -35,7 +35,7 @@ src/
     color.ts             # Guess → CSS hsl() color (continuous gradient)
     Board.tsx            # composes Hints + GuessTiles + ColorLegend + EraPill + GuessInput
     Hints.tsx, GuessTiles.tsx, GuessInput.tsx, ColorLegend.tsx, EraPill.tsx
-    ShareButton.tsx, StatsModal.tsx
+    ShareButton.tsx, StatsModal.tsx, TriviaBox.tsx
     *.module.css         # per-component
   content/
     puzzles.json         # all puzzles, by id
@@ -64,10 +64,15 @@ Tests live in `__tests__/` folders next to their subject.
      "hints": {
       "es": ["pista vaga 1", "...", "...", "...", "ancla específica 5"],
       "en": ["vague hint 1", "...", "...", "...", "specific anchor hint 5"]
-    }
+     },
+     "description": {
+      "es": "Un párrafo de trivia sobre el evento, en español.",
+      "en": "A paragraph of trivia about the event, in English."
+     }
    }
    ```
    - Hints go vague → specific.
+   - `description` is one short paragraph (2-5 sentences) per locale, shown after the game ends. Required for every locale.
    - Must have exactly 5 hints for every locale in `src/i18n/types.ts` (`es` and `en`). A Vitest validation test (`src/content/__tests__/puzzles.test.ts`) enforces this.
    - `answer` is `{ from, to }` (inclusive both ends). Exact-year puzzles use `from === to`. Range puzzles (e.g. an event that spans multiple years) use distinct values.
    - Both `from` and `to` must fall within the era's range — `src/content/__tests__/puzzles.test.ts` enforces this.
