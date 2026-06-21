@@ -13,6 +13,42 @@ afterEach(() => {
   vi.useRealTimers();
 });
 
+describe("App – previously finished game (reload)", () => {
+  it("shows TriviaBox but not StatsModal when reloading a finished game", async () => {
+    // Seed localStorage as if the user already finished today's puzzle
+    const persisted = {
+      schemaVersion: 3,
+      lastPlayedDate: "2026-06-20",
+      lastResult: {
+        puzzle: {
+          id: "lepanto-1571",
+          era: "modern",
+          answer: { from: 1571, to: 1571 },
+          hints: {
+            es: ["pista 1", "pista 2", "pista 3", "pista 4", "pista 5"],
+            en: ["hint 1", "hint 2", "hint 3", "hint 4", "hint 5"],
+          },
+          description: { es: "desc es", en: "desc en" },
+        },
+        guesses: [{ year: 1571, bucket: "perfect", distanceRatio: 0, direction: "match" }],
+        outcome: "won",
+        hintsRevealed: 1,
+      },
+      stats: { currentStreak: 1, maxStreak: 1, lastWinDate: "2026-06-20" },
+      locale: "es",
+    };
+    window.localStorage.setItem("circa", JSON.stringify(persisted));
+
+    render(<App />);
+
+    // TriviaBox heading must appear
+    expect(await screen.findByText("Sobre este puzzle")).toBeInTheDocument();
+
+    // StatsModal must NOT be open (no "Ganaste en N/5" text)
+    expect(screen.queryByText(/Ganaste en/)).toBeNull();
+  });
+});
+
 describe("App", () => {
   it("renders the board for today's puzzle in Spanish by default", async () => {
     render(<App />);

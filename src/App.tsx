@@ -12,6 +12,7 @@ import { Locale } from "./i18n/types";
 import { STRINGS } from "./i18n/strings";
 import { Board } from "./ui/Board";
 import { StatsModal } from "./ui/StatsModal";
+import { TriviaBox } from "./ui/TriviaBox";
 import styles from "./App.module.css";
 
 const puzzles = puzzlesData as Puzzle[];
@@ -73,7 +74,11 @@ function Game({
         ? persisted.lastResult
         : initialState(puzzle),
   );
-  const [modalOpen, setModalOpen] = useState(state.outcome !== "playing");
+  const wasPreviouslyFinished =
+    persisted.lastPlayedDate === todayIso && persisted.lastResult?.outcome !== "playing";
+  const [modalOpen, setModalOpen] = useState(
+    state.outcome !== "playing" && !wasPreviouslyFinished,
+  );
 
   useEffect(() => {
     const finishedNow = state.outcome !== "playing";
@@ -111,6 +116,15 @@ function Game({
         onLocaleChange={onLocaleChange}
         onGuess={(year) => dispatch({ type: "submitGuess", year, currentYear })}
       />
+      {state.outcome !== "playing" && (
+        <TriviaBox
+          puzzle={puzzle}
+          gameState={state}
+          puzzleNumber={puzzleNumber}
+          url={url}
+          locale={persisted.locale}
+        />
+      )}
       {modalOpen && (
         <StatsModal
           stats={persisted.stats}
