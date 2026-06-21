@@ -1,8 +1,17 @@
-import { Guess } from "../game/types";
+import { Direction, Guess } from "../game/types";
+import { Locale } from "../i18n/types";
+import { STRINGS } from "../i18n/strings";
 import { colorFor } from "./color";
 import styles from "./GuessTiles.module.css";
 
-export function GuessTiles({ guesses }: { guesses: Guess[] }) {
+const ARROW: Record<Direction, string | null> = {
+  later: "▲",
+  earlier: "▼",
+  match: null,
+};
+
+export function GuessTiles({ guesses, locale }: { guesses: Guess[]; locale: Locale }) {
+  const s = STRINGS[locale];
   const tiles = [0, 1, 2, 3, 4].map((i) => guesses[i] ?? null);
   return (
     <div className={styles.row}>
@@ -13,8 +22,12 @@ export function GuessTiles({ guesses }: { guesses: Guess[] }) {
             data-filled="true"
             className={styles.tile}
             style={{ background: colorFor(g) }}
+            aria-label={s.guessAria(g.year, s.directionLabel[g.direction])}
           >
-            {g.year}
+            <span className={styles.year}>{g.year}</span>
+            {ARROW[g.direction] && (
+              <span className={styles.arrow} aria-hidden="true">{ARROW[g.direction]}</span>
+            )}
           </div>
         ) : (
           <div key={i} className={`${styles.tile} ${styles.empty}`}>—</div>
