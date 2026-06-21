@@ -2,6 +2,8 @@ import { describe, it, expect } from "vitest";
 import puzzlesData from "../puzzles.json";
 import { Puzzle } from "../../game/types";
 import { LOCALES } from "../../i18n/types";
+import { eraRange } from "../../game/eras";
+import { currentYearArt } from "../../game/today";
 
 const puzzles = puzzlesData as Puzzle[];
 
@@ -27,6 +29,23 @@ describe("puzzles.json", () => {
           expect(hints[i].length, `${p.id}[${loc}][${i}] is empty`).toBeGreaterThan(0);
         }
       }
+    }
+  });
+
+  it("every puzzle has answer.from <= answer.to", () => {
+    for (const p of puzzles) {
+      expect(p.answer.from, `${p.id} has from > to`).toBeLessThanOrEqual(p.answer.to);
+    }
+  });
+
+  it("every puzzle's answer falls within its era", () => {
+    const year = currentYearArt();
+    for (const p of puzzles) {
+      const { from, to } = eraRange(p.era, year);
+      expect(p.answer.from, `${p.id} answer.from ${p.answer.from} outside era ${p.era} [${from}, ${to})`).toBeGreaterThanOrEqual(from);
+      expect(p.answer.from, `${p.id} answer.from ${p.answer.from} outside era ${p.era} [${from}, ${to})`).toBeLessThan(to);
+      expect(p.answer.to, `${p.id} answer.to ${p.answer.to} outside era ${p.era} [${from}, ${to})`).toBeGreaterThanOrEqual(from);
+      expect(p.answer.to, `${p.id} answer.to ${p.answer.to} outside era ${p.era} [${from}, ${to})`).toBeLessThan(to);
     }
   });
 });
