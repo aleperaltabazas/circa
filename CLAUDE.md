@@ -12,6 +12,7 @@ React 18 + TypeScript + Vite + Vitest + @testing-library/react. No state library
 - `npm test` — run all tests once
 - `npm run test:watch` — watch mode
 - `npm run build` — typecheck + production build to `dist/`
+- `npm run author` — interactive wizard to create a new puzzle
 
 ## Project layout
 
@@ -54,6 +55,12 @@ Tests live in `__tests__/` folders next to their subject.
 - **localStorage is schema-versioned.** Bump `schemaVersion` in `src/storage/localStorage.ts` when the persisted shape changes. Add a migration when old data can be safely upgraded forward; return `EMPTY` when it cannot (acceptable for tiny user base / in-flight games).
 
 ## Authoring a new puzzle
+
+### Preferred path: the wizard
+
+Run `npm run author` and follow the prompts. The wizard validates each field as you go (era ↔ answer year, id uniqueness, locale completeness, date uniqueness), pops `$EDITOR` for the two description paragraphs, and writes both JSON files. It runs the content-validation test suite as a final sanity check and stages the files via `git add`. You then `git diff --staged` and commit when you're happy.
+
+### Manual path (fallback)
 
 1. Add an entry to `src/content/puzzles.json`:
    ```json
