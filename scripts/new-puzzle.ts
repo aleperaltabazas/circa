@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import { resolve } from "node:path";
 import { input, select, editor, confirm } from "@inquirer/prompts";
-import { Era, Locale, LOCALES } from "../src/i18n/types";
+import { Era, Locale } from "../src/i18n/types";
 import { eraRange } from "../src/game/eras";
 import { currentYearArt } from "../src/game/today";
 import { Puzzle, Schedule, YearRange } from "../src/game/types";
@@ -43,11 +43,10 @@ function nextDateAfter(latest: string | undefined): string {
 }
 
 async function promptHintArray(locale: Locale): Promise<[string, string, string, string, string]> {
-  const labels = locale === "es" ? "es" : "en";
   const hints: string[] = [];
   for (let i = 1; i <= 5; i++) {
     const hint = await input({
-      message: `Hint ${i}/5 (${labels})`,
+      message: `Hint ${i}/5 (${locale})`,
       validate: (v) => validateNonEmpty(v, `hint ${i}`) ?? true,
     });
     hints.push(hint.trim());
@@ -71,12 +70,10 @@ async function main() {
 
   const era = (await select({
     message: "Era",
-    choices: LOCALES.length
-      ? (["prehistory", "ancient", "medieval", "modern", "recent"] as const).map((e) => ({
-          name: eraLabel(e),
-          value: e,
-        }))
-      : [],
+    choices: (["prehistory", "ancient", "medieval", "modern", "recent"] as const).map((e) => ({
+      name: eraLabel(e),
+      value: e,
+    })),
   })) as Era;
 
   const answerFromStr = await input({
