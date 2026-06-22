@@ -1,9 +1,6 @@
 import { Era } from "../../src/i18n/types";
-import { LOCALES } from "../../src/i18n/types";
 import { eraRange } from "../../src/game/eras";
 import { currentYearArt } from "../../src/game/today";
-
-void LOCALES; // imported so consumers can also pull it via the same module if desired
 
 const ID_RE = /^[a-z0-9-]+$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
