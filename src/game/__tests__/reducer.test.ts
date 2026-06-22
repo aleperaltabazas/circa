@@ -39,6 +39,16 @@ describe("reducer", () => {
     expect(next.guesses[0].direction).toBe("match");
   });
 
+  it("reveals all hints when the player wins early", () => {
+    // Win on guess 2: one wrong guess (revealing hint 2), then the correct year.
+    let state = initialState(lepanto);
+    state = reducer(state, { type: "submitGuess", year: 1500, currentYear: 2026 });
+    expect(state.hintsRevealed).toBe(2);
+    state = reducer(state, { type: "submitGuess", year: 1571, currentYear: 2026 });
+    expect(state.outcome).toBe("won");
+    expect(state.hintsRevealed).toBe(5);
+  });
+
   it("sets outcome to lost after the 5th wrong guess", () => {
     let state = initialState(lepanto);
     for (const y of [1500, 1600, 1700, 1455, 1788]) {

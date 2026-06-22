@@ -20,7 +20,7 @@ export function reducer(state: GameState, action: Action): GameState {
   const guesses = [...state.guesses, { year: action.year, distanceRatio, bucket, direction }];
 
   if (bucket === "perfect") {
-    return { ...state, guesses, outcome: "won", hintsRevealed: state.hintsRevealed };
+    return { ...state, guesses, outcome: "won", hintsRevealed: 5 };
   }
   if (guesses.length >= 5) {
     return { ...state, guesses, outcome: "lost", hintsRevealed: 5 };
