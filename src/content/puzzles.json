@@ -48,5 +48,30 @@
       "es": "La Constitución argentina de 1853 fue sancionada por el Congreso Constituyente de Santa Fe el 1 de mayo de 1853, sentando las bases del estado federal argentino tras décadas de guerras civiles. Inspirada parcialmente en la constitución estadounidense y en el pensamiento de Juan Bautista Alberdi, organizó el régimen republicano que, con reformas, sigue vigente.",
       "en": "Argentina's 1853 Constitution was sanctioned by the Constituent Congress of Santa Fe on 1 May 1853, laying the foundation of the Argentine federal state after decades of civil war. Partly inspired by the US Constitution and the writings of Juan Bautista Alberdi, it organised the republican system that, with amendments, remains in force."
     }
+  },
+  {
+    "id": "goal-of-the-century-1986",
+    "era": "recent",
+    "answer": { "from": 1986, "to": 1986 },
+    "hints": {
+      "es": [
+        "El cometa Halley fue visible este año",
+        "Soda Stereo publica Signos, Los Redondos publican Oktubre, Metallica publica Master of Puppets",
+        "Se produce una falla en un reactor nuclear",
+        "10 años antes daba inicio una dictadura en Argentina",
+        "Se juega un mundial en México ese año"
+      ],
+      "en": [
+        "Halley's Comet was visible this year",
+        "Soda Stereo released Signos, Los Redondos released Oktubre, Metallica released Master of Puppets",
+        "A nuclear reactor suffered a meltdown",
+        "10 years earlier a dictatorship began in Argentina",
+        "A World Cup was held in Mexico that year"
+      ]
+    },
+    "description": {
+      "es": "El 22 de junio de 1986, en el cuarto de final del Mundial de México entre Argentina e Inglaterra, Diego Maradona marcó dos de los goles más recordados de la historia del fútbol. El primero, con la mano, sería conocido como 'la mano de Dios'. El segundo, una corrida de más de cincuenta metros eludiendo a media defensa inglesa antes de definir, fue elegido por la FIFA como el 'Gol del Siglo' del siglo XX.",
+      "en": "On 22 June 1986, in the quarter-final of the Mexico World Cup between Argentina and England, Diego Maradona scored two of football's most-remembered goals. The first, punched in with his hand, became known as the 'Hand of God'. The second — a fifty-metre solo run dribbling past half the English defence before finishing — was later voted FIFA's 'Goal of the Century' for the 20th century."
+    }
   }
 ]
