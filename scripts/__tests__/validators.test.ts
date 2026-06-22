@@ -5,6 +5,9 @@ import {
   validateAnswerRange,
   validateNonEmpty,
   validateDate,
+  eraOf,
+  validateYearHasEra,
+  validateSameEraRange,
 } from "../authoring/validators";
 
 describe("validateId", () => {
@@ -79,5 +82,67 @@ describe("validateDate", () => {
   });
   it("rejects a duplicate", () => {
     expect(validateDate("2026-06-20", ["2026-06-20"])).toMatch(/already/i);
+  });
+});
+
+describe("eraOf", () => {
+  it("returns prehistory for a BCE deep-past year", () => {
+    expect(eraOf(-2000)).toBe("prehistory");
+  });
+  it("returns ancient for a year in classical antiquity", () => {
+    expect(eraOf(-100)).toBe("ancient");
+  });
+  it("returns medieval for a year in the middle ages", () => {
+    expect(eraOf(1000)).toBe("medieval");
+  });
+  it("returns modern for a year in the early modern period", () => {
+    expect(eraOf(1571)).toBe("modern");
+  });
+  it("returns recent for a year after 1789", () => {
+    expect(eraOf(1986)).toBe("recent");
+  });
+  it("treats the lower boundary as inclusive", () => {
+    expect(eraOf(1453)).toBe("modern");
+    expect(eraOf(1789)).toBe("recent");
+    expect(eraOf(476)).toBe("medieval");
+  });
+  it("returns null for years before the earliest era", () => {
+    expect(eraOf(-3001)).toBeNull();
+  });
+  it("returns null for non-integers", () => {
+    expect(eraOf(1986.5)).toBeNull();
+  });
+});
+
+describe("validateYearHasEra", () => {
+  it("accepts a year in a known era", () => {
+    expect(validateYearHasEra(1986)).toBeNull();
+  });
+  it("rejects a year outside any era", () => {
+    expect(validateYearHasEra(-5000)).toMatch(/outside/i);
+  });
+  it("rejects a non-integer", () => {
+    expect(validateYearHasEra(1986.5)).toMatch(/integer/i);
+  });
+});
+
+describe("validateSameEraRange", () => {
+  it("accepts from === to in a known era", () => {
+    expect(validateSameEraRange(1571, 1571)).toBeNull();
+  });
+  it("accepts a range entirely within one era", () => {
+    expect(validateSameEraRange(1789, 1799)).toBeNull();
+  });
+  it("rejects from > to", () => {
+    expect(validateSameEraRange(1800, 1789)).toMatch(/from.*to/i);
+  });
+  it("rejects a range that spans two eras", () => {
+    const msg = validateSameEraRange(1750, 1850);
+    expect(msg).toMatch(/spans two eras/i);
+    expect(msg).toMatch(/modern/);
+    expect(msg).toMatch(/recent/);
+  });
+  it("rejects when either endpoint is outside any era", () => {
+    expect(validateSameEraRange(-5000, -4000)).toMatch(/outside/i);
   });
 });

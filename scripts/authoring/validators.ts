@@ -5,6 +5,37 @@ import { currentYearArt } from "../../src/game/today";
 const ID_RE = /^[a-z0-9-]+$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
+const ERAS: Era[] = ["prehistory", "ancient", "medieval", "modern", "recent"];
+
+export function eraOf(year: number): Era | null {
+  if (!Number.isInteger(year)) return null;
+  const cy = currentYearArt();
+  for (const era of ERAS) {
+    const { from, to } = eraRange(era, cy);
+    if (year >= from && year < to) return era;
+  }
+  return null;
+}
+
+export function validateYearHasEra(year: number): string | null {
+  if (!Number.isInteger(year)) return "year must be an integer";
+  if (eraOf(year) === null) return `year ${year} is outside any known era`;
+  return null;
+}
+
+export function validateSameEraRange(from: number, to: number): string | null {
+  if (!Number.isInteger(from) || !Number.isInteger(to)) return "from and to must be integers";
+  if (from > to) return "from must be ≤ to";
+  const eraFrom = eraOf(from);
+  if (eraFrom === null) return `year ${from} is outside any known era`;
+  const eraTo = eraOf(to);
+  if (eraTo === null) return `year ${to} is outside any known era`;
+  if (eraFrom !== eraTo) {
+    return `range spans two eras: ${from} is in ${eraFrom} but ${to} is in ${eraTo} — a puzzle must lie in a single era`;
+  }
+  return null;
+}
+
 export function validateId(id: string, existingIds: string[]): string | null {
   if (!id) return "id is required";
   if (!ID_RE.test(id)) return "id must be kebab-case (lowercase letters, digits, hyphens)";
