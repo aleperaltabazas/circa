@@ -5,7 +5,7 @@ import { resolve } from "node:path";
 import { input, select, editor, confirm } from "@inquirer/prompts";
 import { Era, Locale } from "../src/i18n/types";
 import { eraRange } from "../src/game/eras";
-import { currentYearArt } from "../src/game/today";
+import { today, currentYearArt } from "../src/game/today";
 import { Puzzle, Schedule, YearRange } from "../src/game/types";
 import {
   validateId,
@@ -33,10 +33,7 @@ function eraLabel(era: Era): string {
 }
 
 function nextDateAfter(latest: string | undefined): string {
-  if (!latest) {
-    const today = new Date();
-    return today.toISOString().slice(0, 10);
-  }
+  if (!latest) return today();
   const [y, m, d] = latest.split("-").map(Number);
   const next = new Date(Date.UTC(y, m - 1, d + 1));
   return next.toISOString().slice(0, 10);
@@ -148,6 +145,7 @@ async function main() {
     cwd: PROJECT_ROOT,
     stdio: "inherit",
   });
+  if (result.error) console.error("spawn error:", result.error.message);
   if (result.status !== 0) {
     console.error("\nFinal validation failed. Inspect the output above; the files have been written but are not staged.");
     process.exit(result.status ?? 1);
@@ -158,6 +156,7 @@ async function main() {
     ["add", "src/content/puzzles.json", "src/content/schedule.json"],
     { cwd: PROJECT_ROOT, stdio: "inherit" },
   );
+  if (gitResult.error) console.error("spawn error:", gitResult.error.message);
   if (gitResult.status !== 0) {
     console.warn("\nWarning: `git add` failed. The files are still written; you can stage manually.");
   }

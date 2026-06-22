@@ -50,6 +50,9 @@ describe("validateAnswerRange", () => {
   it("rejects when to is outside the era", () => {
     expect(validateAnswerRange(1571, 1800, "modern")).toMatch(/not in/i);
   });
+  it("accepts from === to (exact-year puzzle)", () => {
+    expect(validateAnswerRange(1571, 1571, "modern")).toBeNull();
+  });
 });
 
 describe("validateNonEmpty", () => {
