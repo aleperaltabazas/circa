@@ -2,7 +2,10 @@
   {
     "id": "lepanto-1571",
     "era": "modern",
-    "answer": { "from": 1571, "to": 1571 },
+    "answer": {
+      "from": 1571,
+      "to": 1571
+    },
     "hints": {
       "es": [
         "Una guerra de la edad moderna que involucró al imperio otomano ocurrió este año",
@@ -27,7 +30,10 @@
   {
     "id": "constitucion-1853",
     "era": "recent",
-    "answer": { "from": 1853, "to": 1853 },
+    "answer": {
+      "from": 1853,
+      "to": 1853
+    },
     "hints": {
       "es": [
         "Un centenario de la caída del imperio Romano de Oriente",
@@ -52,7 +58,10 @@
   {
     "id": "goal-of-the-century-1986",
     "era": "recent",
-    "answer": { "from": 1986, "to": 1986 },
+    "answer": {
+      "from": 1986,
+      "to": 1986
+    },
     "hints": {
       "es": [
         "El cometa Halley fue visible este año",
@@ -72,6 +81,62 @@
     "description": {
       "es": "El 22 de junio de 1986, en el cuarto de final del Mundial de México entre Argentina e Inglaterra, Diego Maradona marcó dos de los goles más recordados de la historia del fútbol. El primero, con la mano, sería conocido como 'la mano de Dios'. El segundo, una corrida de más de cincuenta metros eludiendo a media defensa inglesa antes de definir, fue elegido por la FIFA como el 'Gol del Siglo' del siglo XX.",
       "en": "On 22 June 1986, in the quarter-final of the Mexico World Cup between Argentina and England, Diego Maradona scored two of football's most-remembered goals. The first, punched in with his hand, became known as the 'Hand of God'. The second — a fifty-metre solo run dribbling past half the English defence before finishing — was later voted FIFA's 'Goal of the Century' for the 20th century."
+    }
+  },
+  {
+    "id": "bastille-1789",
+    "era": "recent",
+    "answer": {
+      "from": 1789,
+      "to": 1789
+    },
+    "hints": {
+      "es": [
+        "Da comienzo la revolución brabanzona",
+        "George Washington es designado como el primer presidente de los Estados Unidos",
+        "La banda autora de Pompeii es asociada a un evento ocurrido en este año",
+        "200 años más tarde se levanta la cortina de hierro en Europa",
+        "Considerado el año en el cual finaliza la edad moderna y comienza la edad contemporánea"
+      ],
+      "en": [
+        "The Bravant Revolution begins",
+        "George Washington is appointed as the first president of the United States",
+        "The band authoring 'Pompeii' is associated to a major event of the year",
+        "200 years later the iron courtain would be lifted in Europe",
+        "It's usually considered the end year for the modern age and the start of the contemporary age"
+      ]
+    },
+    "description": {
+      "es": "El 14 de julio de 1789 revolucionarios franceses asaltaron la Bastilla, una fortaleza de ParÃ­s, en busca de armas y pÃ³lvora para defenderse de las tropas del ejÃ©rcito realista.",
+      "en": "July the 14th of 1789, French revolutionaries stormed the Bastille, a parisian fortress, looking for weaponry and powder to defend themselves against the troops of the royal army."
+    }
+  },
+  {
+    "id": "socrates-trial-399bc",
+    "era": "ancient",
+    "answer": {
+      "from": -410,
+      "to": -390
+    },
+    "hints": {
+      "es": [
+        "La muerte de un importante filósofo, su historia contada por uno de sus estudiantes",
+        "Posterior a las primeras guerras médicas",
+        "En la misma década en el futuro se estrenaría por primera vez Matrix",
+        "El filósofo fue condenado a muerte por 280 miembros del jurado contra 221 que lo encontraron inocente",
+        "Casi 2400 años más adelante terminaría el siglo XX"
+      ],
+      "en": [
+        "A philosopher passes away, his history told by one of his students",
+        "After the first Persian invasions",
+        "In the future, during that same decade Matrix would premiere",
+        "The philosopher was sentenced to death by 280 votes in favour and 221 against",
+        "Almost 2400 years later the 20th century would come to an end"
+      ]
+    },
+    "description": {
+      "es": "Sócrates fue enjuiciado y condenado por el gobierno ateniense por de corromper a la juventud. Tras la condena, sus estudiantes le recomendaron huir; Sócrates rechazo sus pedidos y bebió la cicuta.",
+      "en": "Socrates was prosecuted and sentenced by the Athenian government for corrupting the youth. After the sentence, his students pleaded he escaped; he rejects their plea and drinks the hemlock."
     }
   }
 ]
