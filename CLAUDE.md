@@ -36,7 +36,7 @@ src/
     color.ts             # Guess → CSS hsl() color (continuous gradient)
     Board.tsx            # composes Hints + GuessTiles + ColorLegend + EraPill + GuessInput
     Hints.tsx, GuessTiles.tsx, GuessInput.tsx, ColorLegend.tsx, EraPill.tsx
-    ShareButton.tsx, StatsModal.tsx, TriviaBox.tsx
+    ShareButton.tsx, StatsModal.tsx, TriviaBox.tsx, DateChip.tsx
     *.module.css         # per-component
   content/
     puzzles.json         # all puzzles, by id
@@ -52,6 +52,7 @@ Tests live in `__tests__/` folders next to their subject.
 - **Era ranges are bounded.** Each puzzle's `era` enum (`prehistory|ancient|medieval|modern|recent`) defines the valid input range AND calibrates the color gradient width. See `eras.ts` for the table.
 - **Color = continuous + discrete.** Tiles use a continuous HSL hue lerp (green 120° → red 0°, ratio = distance/era-width). Discrete buckets exist only for the share-string emojis.
 - **Direction is shown per tile.** Each filled `GuessTile` renders a ▲ (answer is later) or ▼ (answer is earlier); a perfect/match guess shows no arrow. Direction is computed by `scoreGuess` and stored on each `Guess`. The arrow glyph is language-independent; the tile's `aria-label` is localized.
+- **Date-anchored puzzles.** A puzzle whose event happened on the same calendar date as its scheduled date gets `dateAnchored: true`. A `DateChip` then renders next to the era pill, showing the localized day+short-month. Without the flag, the chip is absent. The chip is metadata only — it does not change scoring or hints.
 - **localStorage is schema-versioned.** Bump `schemaVersion` in `src/storage/localStorage.ts` when the persisted shape changes. Add a migration when old data can be safely upgraded forward; return `EMPTY` when it cannot (acceptable for tiny user base / in-flight games).
 
 ## Authoring a new puzzle

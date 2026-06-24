@@ -49,6 +49,14 @@ describe("puzzles.json", () => {
     }
   });
 
+  it("dateAnchored, when present, is a boolean", () => {
+    for (const p of puzzles) {
+      if ("dateAnchored" in p && p.dateAnchored !== undefined) {
+        expect(typeof p.dateAnchored, `${p.id} dateAnchored is not a boolean`).toBe("boolean");
+      }
+    }
+  });
+
   it("every puzzle's answer falls within its era", () => {
     const year = currentYearArt();
     for (const p of puzzles) {

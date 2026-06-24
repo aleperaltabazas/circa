@@ -4,6 +4,7 @@ import { STRINGS } from "../i18n/strings";
 import { Hints } from "./Hints";
 import { GuessTiles } from "./GuessTiles";
 import { ColorLegend } from "./ColorLegend";
+import { DateChip } from "./DateChip";
 import { EraPill } from "./EraPill";
 import { GuessInput } from "./GuessInput";
 import { LocaleToggle } from "./LocaleToggle";
@@ -36,6 +37,7 @@ export function Board({
         </div>
         <div className={styles.headerRight}>
           <EraPill era={state.puzzle.era} locale={locale} />
+          {state.puzzle.dateAnchored && <DateChip todayIso={todayLabel} locale={locale} />}
           <LocaleToggle locale={locale} onChange={onLocaleChange} />
         </div>
       </div>

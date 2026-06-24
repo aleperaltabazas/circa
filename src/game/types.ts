@@ -14,6 +14,7 @@ export type Puzzle = {
   answer: YearRange;
   hints: Record<Locale, [string, string, string, string, string]>;
   description: Record<Locale, string>;
+  dateAnchored?: boolean;
 };
 
 export type Schedule = Record<string, string>;

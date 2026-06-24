@@ -101,6 +101,11 @@ async function main() {
     validate: (v) => validateDate(v.trim(), existingDates) ?? true,
   });
 
+  const dateAnchored = await confirm({
+    message: "Did the event happen on the same calendar date as the schedule date?",
+    default: false,
+  });
+
   const answer: YearRange = { from: answerFrom, to: answerTo };
   const newPuzzle: Puzzle = {
     id: id.trim(),
@@ -108,6 +113,7 @@ async function main() {
     answer,
     hints: { es: hintsEs, en: hintsEn },
     description: { es: descEs.trim(), en: descEn.trim() },
+    ...(dateAnchored ? { dateAnchored: true } : {}),
   };
 
   console.log("\nNew puzzle:\n" + JSON.stringify(newPuzzle, null, 2));
