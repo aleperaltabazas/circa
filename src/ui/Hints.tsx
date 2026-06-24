@@ -1,3 +1,4 @@
+import { Markdown } from "./Markdown";
 import styles from "./Hints.module.css";
 
 export function Hints({
@@ -16,7 +17,7 @@ export function Hints({
         return (
           <div key={i} className={`${styles.hint} ${locked ? styles.locked : ""}`}>
             <span className={`${styles.num} ${locked ? styles.numLocked : ""}`}>{i + 1}</span>
-            {locked ? lockedLabel : text}
+            {locked ? lockedLabel : <Markdown>{text}</Markdown>}
           </div>
         );
       })}
