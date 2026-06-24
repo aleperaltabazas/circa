@@ -13,8 +13,10 @@ describe("EraPill", () => {
     expect(screen.getByText("modern")).toBeInTheDocument();
   });
 
-  it("carries a localized tooltip via the title attribute", () => {
+  it("carries a localized tooltip via data-tooltip and aria-label", () => {
     render(<EraPill era="modern" locale="es" />);
-    expect(screen.getByText("moderna")).toHaveAttribute("title", "Era histórica de la respuesta");
+    const el = screen.getByText("moderna");
+    expect(el).toHaveAttribute("data-tooltip", "Era histórica de la respuesta");
+    expect(el).toHaveAttribute("aria-label", "Era histórica de la respuesta");
   });
 });

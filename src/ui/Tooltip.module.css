@@ -1,0 +1,44 @@
+.host {
+  position: relative;
+  cursor: help;
+}
+
+.host::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2c3e50;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 120ms ease-in;
+  z-index: 10;
+}
+
+.host::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #2c3e50;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 120ms ease-in;
+  z-index: 10;
+}
+
+.host:hover::after,
+.host:hover::before,
+.host:focus-visible::after,
+.host:focus-visible::before {
+  opacity: 1;
+}

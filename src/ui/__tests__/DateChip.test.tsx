@@ -22,10 +22,11 @@ describe("DateChip", () => {
     expect(screen.getByText(/5/)).toBeInTheDocument();
   });
 
-  it("carries a localized tooltip via the title attribute", () => {
+  it("carries a localized tooltip via data-tooltip and aria-label", () => {
     const { container } = render(<DateChip todayIso="2026-06-24" locale="en" />);
-    const chip = container.querySelector("span[title]") as HTMLElement;
+    const chip = container.querySelector("[data-tooltip]") as HTMLElement;
     expect(chip).toBeTruthy();
-    expect(chip.getAttribute("title")).toBe("The event happened on this date");
+    expect(chip.getAttribute("data-tooltip")).toBe("The event happened on this date");
+    expect(chip.getAttribute("aria-label")).toBe("The event happened on this date");
   });
 });
