@@ -166,7 +166,7 @@
     },
     "description": {
       "es": "Lionel Messi nació el 24 de junio de 1987 en la ciudad de Rosario, en la provincia de Santa Fe, Argentina. Se crio específicamente en el barrio La Bajada, ubicado en la zona sur de la ciudad, donde vivió gran parte de su infancia y dio sus primeros pasos en el fútbol jugando en clubes locales.",
-      "en": "Lionel Messi was born on June 27th in the city of Rosario, in the province of Santa Fe, Argentina. He grew up specifically in the La Bajada neighborhood, located in the southern part of the city, where he lived much of his childhood and took his first steps in football playing for local clubs."
+      "en": "Lionel Messi was born on June 24th in the city of Rosario, in the province of Santa Fe, Argentina. He grew up specifically in the La Bajada neighborhood, located in the southern part of the city, where he lived much of his childhood and took his first steps in football playing for local clubs."
     },
     "dateAnchored": true
   },
@@ -179,19 +179,23 @@
     },
     "hints": {
       "es": [
-        "Un conductor toma un camino indebido, un hombre es asesinado, más de 20 millones mueren como resultado",
+        "Un conductor toma un camino indebido, un monarca es asesinado, más de 20 millones mueren como resultado",
         "Este año Miguel Unamuno publica \"Niebla\"",
         "Una banda escocesa publica en 2003 el hit \"Take Me Out\", inspirado en los eventos transcurridos",
         "Los eventos sucedidos desencadenarían en la revolución rusa unos pocos en el futuro",
         "100 años más tarde se disputaría el mundial en Brasil"
       ],
       "en": [
-        "A driver takes a wrong turn, a man is assassinated, more than 20 million die as a result",
+        "A driver takes a wrong turn, a moarch is assassinated, more than 20 million die as a result",
         "Miguel Unamuno publishes \"Niebla\" on this year",
         "A Scottish band publishes \"Take Me Out\" in 2003, song inspired by the events transpired",
         "Years later the Russian Revolution would happen as a consequence",
         "100 years later the World Cup would be hosted by Brasil"
       ]
+    },
+    "description": {
+      "es": "El 28 de junio de 1914, el archiduque Francisco Fernando de Austria es atentado contra su vida pero el asesino falla en el intento pero varios salen lastimados. Más tarde el archiduque decide ir al hospital a visitar a los heridos, su conductor toma un giro por la calle incorrecta, encontrándose directamente con uno de los conspiradores. El archiduque es abatido en ese momento, lo que desencadenaría en la primera guerra mundial.",
+      "en": ""
     },
     "dateAnchored": true
   },

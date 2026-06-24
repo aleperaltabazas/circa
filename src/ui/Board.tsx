@@ -36,10 +36,12 @@ export function Board({
           <div className={styles.meta}>{s.puzzleMeta(puzzleNumber, todayLabel)}</div>
         </div>
         <div className={styles.headerRight}>
-          <EraPill era={state.puzzle.era} locale={locale} />
-          {state.puzzle.dateAnchored && <DateChip todayIso={todayLabel} locale={locale} />}
           <LocaleToggle locale={locale} onChange={onLocaleChange} />
         </div>
+      </div>
+      <div className={styles.contextRow}>
+        <EraPill era={state.puzzle.era} locale={locale} />
+        {state.puzzle.dateAnchored && <DateChip todayIso={todayLabel} locale={locale} />}
       </div>
       <Hints
         hints={state.puzzle.hints[locale]}

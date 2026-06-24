@@ -4,5 +4,10 @@ import { STRINGS } from "../i18n/strings";
 import styles from "./EraPill.module.css";
 
 export function EraPill({ era, locale }: { era: Era; locale: Locale }) {
-  return <span className={styles.pill}>{STRINGS[locale].eraLabel[era]}</span>;
+  const s = STRINGS[locale];
+  return (
+    <span className={styles.pill} title={s.eraTooltip}>
+      {s.eraLabel[era]}
+    </span>
+  );
 }

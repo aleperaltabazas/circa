@@ -26,6 +26,8 @@ export const STRINGS = {
       modern: "moderna",
       recent: "reciente",
     },
+    eraTooltip: "Era histórica de la respuesta",
+    dateTooltip: "El evento ocurrió en esta fecha del calendario",
     guessAria: (year: number, dirLabel: string) => `${year}, ${dirLabel}`,
   },
   en: {
@@ -55,6 +57,8 @@ export const STRINGS = {
       modern: "modern",
       recent: "recent",
     },
+    eraTooltip: "Historical era of the answer",
+    dateTooltip: "The event happened on this date",
     guessAria: (year: number, dirLabel: string) => `${year}, ${dirLabel}`,
   },
 } as const;

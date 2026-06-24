@@ -1,4 +1,5 @@
 import { Locale } from "../i18n/types";
+import { STRINGS } from "../i18n/strings";
 import styles from "./DateChip.module.css";
 
 const INTL_LOCALE: Record<Locale, string> = {
@@ -17,5 +18,9 @@ function formatDayMonth(todayIso: string, locale: Locale): string {
 }
 
 export function DateChip({ todayIso, locale }: { todayIso: string; locale: Locale }) {
-  return <span className={styles.chip}>📅 {formatDayMonth(todayIso, locale)}</span>;
+  return (
+    <span className={styles.chip} title={STRINGS[locale].dateTooltip}>
+      📅 {formatDayMonth(todayIso, locale)}
+    </span>
+  );
 }

@@ -21,4 +21,11 @@ describe("DateChip", () => {
     render(<DateChip todayIso="2026-01-05" locale="en" />);
     expect(screen.getByText(/5/)).toBeInTheDocument();
   });
+
+  it("carries a localized tooltip via the title attribute", () => {
+    const { container } = render(<DateChip todayIso="2026-06-24" locale="en" />);
+    const chip = container.querySelector("span[title]") as HTMLElement;
+    expect(chip).toBeTruthy();
+    expect(chip.getAttribute("title")).toBe("The event happened on this date");
+  });
 });

@@ -12,4 +12,9 @@ describe("EraPill", () => {
     render(<EraPill era="modern" locale="en" />);
     expect(screen.getByText("modern")).toBeInTheDocument();
   });
+
+  it("carries a localized tooltip via the title attribute", () => {
+    render(<EraPill era="modern" locale="es" />);
+    expect(screen.getByText("moderna")).toHaveAttribute("title", "Era histórica de la respuesta");
+  });
 });
