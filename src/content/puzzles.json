@@ -138,5 +138,33 @@
       "es": "Sócrates fue enjuiciado y condenado por el gobierno ateniense por de corromper a la juventud. Tras la condena, sus estudiantes le recomendaron huir; Sócrates rechazo sus pedidos y bebió la cicuta.",
       "en": "Socrates was prosecuted and sentenced by the Athenian government for corrupting the youth. After the sentence, his students pleaded he escaped; he rejects their plea and drinks the hemlock."
     }
+  },
+  {
+    "id": "messi-1987",
+    "era": "recent",
+    "answer": {
+      "from": 1987,
+      "to": 1987
+    },
+    "hints": {
+      "es": [
+        "Este año nace un reconocido jugador de fútbol en Rosario",
+        "Guns n' Roses publica \"Appetite for Destruction\", Charly García publica \"Parte de la religión\"",
+        "Este jugador debuta en la selección argentina en 2005",
+        "El año anterior se jugó un mundial",
+        "El jugador gana su primer mundial a sus 35 años"
+      ],
+      "en": [
+        "A renowned football player is born this year in Rosario",
+        "Guns n' Roses produce \"Appetite for Destruction\", Charly García produces \"Parte de la religión\"",
+        "The football player debuts for the Argentinian squad in 2005",
+        "The prior year a FIFA world cup was played",
+        "The football player wins his first world cup at 35 years old"
+      ]
+    },
+    "description": {
+      "es": "Lionel Messi nació el 24 de junio de 1987 en la ciudad de Rosario, en la provincia de Santa Fe, Argentina. Se crio específicamente en el barrio La Bajada, ubicado en la zona sur de la ciudad, donde vivió gran parte de su infancia y dio sus primeros pasos en el fútbol jugando en clubes locales.",
+      "en": "Lionel Messi was born on June 27th in the city of Rosario, in the province of Santa Fe, Argentina. He grew up specifically in the La Bajada neighborhood, located in the southern part of the city, where he lived much of his childhood and took his first steps in football playing for local clubs."
+    }
   }
 ]
