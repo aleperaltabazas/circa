@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import confetti from "canvas-confetti";
 import { GameState, Stats } from "../game/types";
 import { Locale } from "../i18n/types";
 import { STRINGS } from "../i18n/strings";
@@ -21,15 +23,25 @@ export function StatsModal({
   onClose: () => void;
 }) {
   const s = STRINGS[locale];
-  const outcomeMsg =
-    gameState.outcome === "won"
-      ? s.outcomeWin(gameState.guesses.length)
-      : s.outcomeLoss(formatAnswer(gameState.puzzle.answer));
+
+  const won = gameState.outcome === "won";
+  const headline = won ? s.outcomeWinHeadline : s.outcomeLossHeadline;
+  const sub = won
+    ? s.outcomeWinSub(gameState.guesses.length)
+    : s.outcomeLossSub(formatAnswer(gameState.puzzle.answer));
+
+  useEffect(() => {
+    if (won) {
+      confetti({ particleCount: 120, spread: 80, origin: { y: 0.3 } });
+    }
+  }, [won]);
+
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <h2 className={styles.title}>{s.appTitle} #{puzzleNumber}</h2>
-        <p className={styles.outcome}>{outcomeMsg}</p>
+        <p className={styles.outcomeHeadline}>{headline}</p>
+        <p className={styles.outcomeSub}>{sub}</p>
         <div className={styles.statsRow}>
           <div className={styles.stat}>
             <div className={styles.statValue}>{stats.currentStreak}</div>

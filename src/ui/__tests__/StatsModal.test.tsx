@@ -4,6 +4,8 @@ import userEvent from "@testing-library/user-event";
 import { StatsModal } from "../StatsModal";
 import { GameState, Stats } from "../../game/types";
 
+vi.mock("canvas-confetti", () => ({ default: vi.fn() }));
+
 const stats: Stats = { currentStreak: 3, maxStreak: 7, lastWinDate: "2026-06-20" };
 
 const wonState: GameState = {
@@ -36,7 +38,8 @@ describe("StatsModal", () => {
         onClose={() => {}}
       />,
     );
-    expect(screen.getByText("Ganaste en 2/5")).toBeInTheDocument();
+    expect(screen.getByText("¡Lo lograste!")).toBeInTheDocument();
+    expect(screen.getByText("en 2/5")).toBeInTheDocument();
     expect(screen.getByText("Actual")).toBeInTheDocument();
     expect(screen.getByText("Máxima")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /cerrar/i })).toBeInTheDocument();
@@ -54,7 +57,8 @@ describe("StatsModal", () => {
         onClose={() => {}}
       />,
     );
-    expect(screen.getByText(/Game over — the answer was 1571/)).toBeInTheDocument();
+    expect(screen.getByText("You ran out of attempts")).toBeInTheDocument();
+    expect(screen.getByText(/The answer was 1571/)).toBeInTheDocument();
     expect(screen.getByText("Current")).toBeInTheDocument();
     expect(screen.getByText("Max")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /close/i })).toBeInTheDocument();
@@ -76,7 +80,7 @@ describe("StatsModal", () => {
         onClose={() => {}}
       />,
     );
-    expect(screen.getByText(/the answer was 1789–1799/)).toBeInTheDocument();
+    expect(screen.getByText(/the answer was 1789–1799/i)).toBeInTheDocument();
   });
 
   it("calls onClose when overlay is clicked", async () => {

@@ -3,6 +3,8 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { App } from "../App";
 
+vi.mock("canvas-confetti", () => ({ default: vi.fn() }));
+
 beforeEach(() => {
   window.localStorage.clear();
   vi.useFakeTimers({ toFake: ["Date"] });
@@ -15,7 +17,6 @@ afterEach(() => {
 
 describe("App – previously finished game (reload)", () => {
   it("shows TriviaBox but not StatsModal when reloading a finished game", async () => {
-    // Seed localStorage as if the user already finished today's puzzle
     const persisted = {
       schemaVersion: 3,
       lastPlayedDate: "2026-06-20",
@@ -41,11 +42,9 @@ describe("App – previously finished game (reload)", () => {
 
     render(<App />);
 
-    // TriviaBox heading must appear
     expect(await screen.findByText("Sobre este puzzle")).toBeInTheDocument();
-
-    // StatsModal must NOT be open (no "Ganaste en N/5" text)
-    expect(screen.queryByText(/Ganaste en/)).toBeNull();
+    // StatsModal must NOT be open (no win headline)
+    expect(screen.queryByText("¡Lo lograste!")).toBeNull();
   });
 });
 
@@ -69,14 +68,11 @@ describe("App", () => {
 
   it("shows both StatsModal and TriviaBox after finishing a fresh game", async () => {
     render(<App />);
-    // Wait for board to load (Spanish hints)
     await screen.findByText(/imperio otomano/i);
-    // Submit the correct year: 1571
     await userEvent.type(screen.getByRole("spinbutton"), "1571");
     await userEvent.click(screen.getByRole("button", { name: /adivinar/i }));
-    // StatsModal auto-opens on fresh finish
-    expect(await screen.findByText(/Ganaste en/)).toBeInTheDocument();
-    // TriviaBox also visible
+    // StatsModal auto-opens on fresh finish — check for new win headline
+    expect(await screen.findByText("¡Lo lograste!")).toBeInTheDocument();
     expect(screen.getByText("Sobre este puzzle")).toBeInTheDocument();
   });
 });
