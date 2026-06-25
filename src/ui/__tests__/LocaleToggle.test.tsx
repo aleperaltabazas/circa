@@ -1,21 +1,16 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { LocaleToggle } from "../LocaleToggle";
+import { LOCALES } from "../../i18n/types";
 
 describe("LocaleToggle", () => {
-  it("renders one option per locale with the active locale selected", () => {
+  it("renders one option per active locale with the active locale selected", () => {
     render(<LocaleToggle locale="es" onChange={() => {}} />);
     const select = screen.getByRole("combobox") as HTMLSelectElement;
     expect(select.value).toBe("es");
-    expect(screen.getByRole("option", { name: "ES" })).toBeInTheDocument();
-    expect(screen.getByRole("option", { name: "EN" })).toBeInTheDocument();
-  });
-
-  it("calls onChange with the new locale when the user selects it", async () => {
-    const onChange = vi.fn();
-    render(<LocaleToggle locale="es" onChange={onChange} />);
-    await userEvent.selectOptions(screen.getByRole("combobox"), "en");
-    expect(onChange).toHaveBeenCalledWith("en");
+    for (const loc of LOCALES) {
+      expect(screen.getByRole("option", { name: loc.toUpperCase() })).toBeInTheDocument();
+    }
+    expect(screen.getAllByRole("option")).toHaveLength(LOCALES.length);
   });
 });

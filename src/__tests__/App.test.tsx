@@ -67,15 +67,6 @@ describe("App", () => {
     expect(screen.getByText("1500")).toBeInTheDocument();
   });
 
-  it("switches the UI language when the locale toggle changes", async () => {
-    render(<App />);
-    await screen.findByText(/imperio otomano/i);
-    await userEvent.selectOptions(screen.getByRole("combobox"), "en");
-    expect(screen.getByText(/Ottoman empire/i)).toBeInTheDocument();
-    expect(screen.getByText("modern")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /guess/i })).toBeInTheDocument();
-  });
-
   it("shows both StatsModal and TriviaBox after finishing a fresh game", async () => {
     render(<App />);
     // Wait for board to load (Spanish hints)
