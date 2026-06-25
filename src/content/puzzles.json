@@ -195,7 +195,7 @@
     },
     "description": {
       "es": "El 28 de junio de 1914, el archiduque Francisco Fernando de Austria es atentado contra su vida pero el asesino falla en el intento pero varios salen lastimados. Más tarde el archiduque decide ir al hospital a visitar a los heridos, su conductor toma un giro por la calle incorrecta, encontrándose directamente con uno de los conspiradores. El archiduque es abatido en ese momento, lo que desencadenaría en la primera guerra mundial.",
-      "en": ""
+      "en": "ph"
     },
     "dateAnchored": true
   },
@@ -224,7 +224,7 @@
     },
     "description": {
       "es": "El 7 de agosto de 1990 Soda Stereo publica \"Canción Animal\", uno de los álbumes emblemáticos no solo del rock argentino, sino del rock en español en general, entre ellas destacada \"De Música Ligera\" como uno de los himnos del rock hispanoamericano.",
-      "en": ""
+      "en": "ph"
     },
     "dateAnchored": true
   },
@@ -242,11 +242,12 @@
         "J.R.R. Tolkien publica \"La comunidad del anillo\" el primer volumen de \"El Señor de los anillos\"",
         "Alemania obtiene su primer copa del mundo ante Hungría",
         "Frida Kahlo y Alan Turing fallecen este año"
-      ]
+      ],
+      "en": ["ph", "ph", "ph", "ph", "ph"]
     },
     "description": {
-      "es": "",
-      "en": ""
+      "es": "ph",
+      "en": "ph"
     }
   },
   {
@@ -265,11 +266,11 @@
         "El gobierno militar argentino inicia la Operación Soberanía para invadir Chile",
         "Argentina se consagra campeona en el mundial de fútbol venciendo 3-1 a Países Bajos"
       ],
-      "en": []
+      "en": ["ph", "ph", "ph", "ph", "ph"]
     },
     "description": {
       "es": "Un 25 de junio de 1978 Argentina se consagraría campeona del múndial de fútbol por primera vez en la historia, un hecho controversial en el marco de la última dictadura militar y el terrorismo de Estado en el país.",
-      "en": ""
+      "en": "ph"
     }
   }
 ]
