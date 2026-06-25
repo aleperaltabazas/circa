@@ -1,7 +1,12 @@
-import { Guess } from "../game/types";
+import { Bucket, Guess } from "../game/types";
+
+const COLORS: Record<Bucket, string> = {
+  perfect: "#15803d",
+  close: "#22c55e",
+  mid: "#eab308",
+  far: "#ef4444",
+};
 
 export function colorFor(guess: Guess): string {
-  if (guess.bucket === "perfect") return "hsl(45, 90%, 55%)";
-  const hue = 120 * (1 - guess.distanceRatio);
-  return `hsl(${hue}, 65%, 50%)`;
+  return COLORS[guess.bucket];
 }

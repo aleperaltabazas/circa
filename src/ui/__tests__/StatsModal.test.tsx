@@ -15,7 +15,7 @@ const wonState: GameState = {
     description: { es: "desc", en: "desc" },
   },
   guesses: [
-    { year: 1500, distanceRatio: 0.21, bucket: "orange", direction: "later" },
+    { year: 1500, distanceRatio: 0.21, bucket: "mid", direction: "later" },
     { year: 1571, distanceRatio: 0, bucket: "perfect", direction: "match" },
   ],
   outcome: "won",

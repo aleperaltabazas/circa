@@ -4,11 +4,9 @@ import { STRINGS } from "../i18n/strings";
 
 const EMOJI: Record<Bucket, string> = {
   perfect: "✅",
-  green: "🟢",
-  lime: "🟩",
-  yellow: "🟨",
-  orange: "🟧",
-  red: "🟥",
+  close: "🟩",
+  mid: "🟨",
+  far: "🟥",
 };
 
 export function formatShare(

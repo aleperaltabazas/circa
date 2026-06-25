@@ -1,12 +1,11 @@
 import { Bucket, Direction, Era, YearRange } from "./types";
 import { eraRange } from "./eras";
 
-const THRESHOLDS: { bucket: Bucket; max: number }[] = [
-  { bucket: "perfect", max: 0 },
-  { bucket: "green", max: 0.01 },
-  { bucket: "lime", max: 0.05 },
-  { bucket: "yellow", max: 0.15 },
-  { bucket: "orange", max: 0.40 },
+// Non-perfect bucket thresholds, evaluated in order: first ratio <= max wins.
+// Anything beyond the last threshold falls through to "far".
+const THRESHOLDS: { bucket: Exclude<Bucket, "perfect">; max: number }[] = [
+  { bucket: "close", max: 0.05 },
+  { bucket: "mid", max: 0.25 },
 ];
 
 function distanceToRange(guess: number, answer: YearRange): number {
@@ -32,7 +31,7 @@ export function scoreGuess(
 
   if (d === 0) return { distanceRatio: 0, bucket: "perfect", direction };
   for (const { bucket, max } of THRESHOLDS) {
-    if (bucket !== "perfect" && distanceRatio <= max) return { distanceRatio, bucket, direction };
+    if (distanceRatio <= max) return { distanceRatio, bucket, direction };
   }
-  return { distanceRatio, bucket: "red", direction };
+  return { distanceRatio, bucket: "far", direction };
 }

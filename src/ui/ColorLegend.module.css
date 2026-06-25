@@ -1,10 +1,12 @@
 .bar {
   display: flex;
   margin: 16px 0 6px;
+  gap: 4px;
+}
+.swatch {
+  flex: 1;
   height: 12px;
-  border-radius: 6px;
-  overflow: hidden;
-  background: linear-gradient(to right, hsl(0, 65%, 50%), hsl(60, 65%, 50%), hsl(120, 65%, 50%));
+  border-radius: 4px;
 }
 .labels {
   display: flex;

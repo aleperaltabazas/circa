@@ -11,8 +11,8 @@ const baseWin: GameState = {
     description: { es: "desc", en: "desc" },
   },
   guesses: [
-    { year: 1500, distanceRatio: 0.21, bucket: "orange", direction: "later" },
-    { year: 1600, distanceRatio: 0.08, bucket: "yellow", direction: "earlier" },
+    { year: 1500, distanceRatio: 0.21, bucket: "mid", direction: "later" },
+    { year: 1600, distanceRatio: 0.08, bucket: "mid", direction: "earlier" },
     { year: 1571, distanceRatio: 0, bucket: "perfect", direction: "match" },
   ],
   outcome: "won",
@@ -22,11 +22,11 @@ const baseWin: GameState = {
 const baseLoss: GameState = {
   ...baseWin,
   guesses: [
-    { year: 1500, distanceRatio: 0.21, bucket: "orange", direction: "later" },
-    { year: 1600, distanceRatio: 0.08, bucket: "yellow", direction: "earlier" },
-    { year: 1700, distanceRatio: 0.38, bucket: "orange", direction: "earlier" },
-    { year: 1455, distanceRatio: 0.34, bucket: "orange", direction: "later" },
-    { year: 1755, distanceRatio: 0.54, bucket: "red", direction: "earlier" },
+    { year: 1500, distanceRatio: 0.21, bucket: "mid", direction: "later" },
+    { year: 1600, distanceRatio: 0.08, bucket: "mid", direction: "earlier" },
+    { year: 1700, distanceRatio: 0.38, bucket: "far", direction: "earlier" },
+    { year: 1455, distanceRatio: 0.34, bucket: "far", direction: "later" },
+    { year: 1755, distanceRatio: 0.54, bucket: "far", direction: "earlier" },
   ],
   outcome: "lost",
 };
@@ -34,25 +34,25 @@ const baseLoss: GameState = {
 describe("formatShare", () => {
   it("formats a win in Spanish", () => {
     expect(formatShare(baseWin, 42, "https://example.com/circa/", "es")).toBe(
-      "Circa #42 — 3/5 🟧🟨✅\njugá en https://example.com/circa/",
+      "Circa #42 — 3/5 🟨🟨✅\njugá en https://example.com/circa/",
     );
   });
 
   it("formats a loss in Spanish", () => {
     expect(formatShare(baseLoss, 42, "https://example.com/circa/", "es")).toBe(
-      "Circa #42 — X/5 🟧🟨🟧🟧🟥\njugá en https://example.com/circa/",
+      "Circa #42 — X/5 🟨🟨🟥🟥🟥\njugá en https://example.com/circa/",
     );
   });
 
   it("formats a win in English", () => {
     expect(formatShare(baseWin, 42, "https://example.com/circa/", "en")).toBe(
-      "Circa #42 — 3/5 🟧🟨✅\nplay at https://example.com/circa/",
+      "Circa #42 — 3/5 🟨🟨✅\nplay at https://example.com/circa/",
     );
   });
 
   it("formats a loss in English", () => {
     expect(formatShare(baseLoss, 42, "https://example.com/circa/", "en")).toBe(
-      "Circa #42 — X/5 🟧🟨🟧🟧🟥\nplay at https://example.com/circa/",
+      "Circa #42 — X/5 🟨🟨🟥🟥🟥\nplay at https://example.com/circa/",
     );
   });
 });

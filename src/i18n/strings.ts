@@ -28,6 +28,14 @@ export const STRINGS = {
     },
     eraTooltip: "Era histórica de la respuesta",
     dateTooltip: "El evento ocurrió en esta fecha del calendario",
+    closenessHints: {
+      tooFar: "muy lejos",
+      close: "cerca",
+      veryClose: "muy cerca",
+      soClose: "¡por poco!",
+      closer: "más cerca",
+      wentTooFar: "te alejaste",
+    },
     guessAria: (year: number, dirLabel: string) => `${year}, ${dirLabel}`,
   },
   en: {
@@ -59,6 +67,14 @@ export const STRINGS = {
     },
     eraTooltip: "Historical era of the answer",
     dateTooltip: "The event happened on this date",
+    closenessHints: {
+      tooFar: "too far",
+      close: "close",
+      veryClose: "very close",
+      soClose: "so close!",
+      closer: "closer",
+      wentTooFar: "went too far",
+    },
     guessAria: (year: number, dirLabel: string) => `${year}, ${dirLabel}`,
   },
 } as const;

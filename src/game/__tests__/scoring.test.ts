@@ -17,21 +17,29 @@ describe("scoreGuess (exact-year puzzles, from === to)", () => {
     expect(result.distanceRatio).toBeCloseTo(71 / 336, 5);
   });
 
-  it("caps distanceRatio at 1", () => {
+  it("caps distanceRatio at 1 and uses 'far' bucket", () => {
     const result = scoreGuess(1453, exact(2026), "recent", 2026);
     expect(result.distanceRatio).toBe(1);
-    expect(result.bucket).toBe("red");
+    expect(result.bucket).toBe("far");
   });
 
-  it("returns green for d <= 0.01 * W", () => {
-    expect(scoreGuess(1574, exact(1571), "modern", 2026).bucket).toBe("green");
+  it("returns 'close' when within 5% of era width", () => {
+    // d=3, W=336 → 0.009 ≤ 0.05
+    expect(scoreGuess(1574, exact(1571), "modern", 2026).bucket).toBe("close");
+    // d=16, W=336 → 0.0476 ≤ 0.05
+    expect(scoreGuess(1587, exact(1571), "modern", 2026).bucket).toBe("close");
   });
 
-  it("returns lime / yellow / orange / red at their thresholds", () => {
-    expect(scoreGuess(1582, exact(1571), "modern", 2026).bucket).toBe("lime");
-    expect(scoreGuess(1600, exact(1571), "modern", 2026).bucket).toBe("yellow");
-    expect(scoreGuess(1700, exact(1571), "modern", 2026).bucket).toBe("orange");
-    expect(scoreGuess(1500, exact(1700), "modern", 2026).bucket).toBe("red");
+  it("returns 'mid' when within 25% of era width but beyond close", () => {
+    // d=29, W=336 → 0.086 — > 0.05, ≤ 0.25
+    expect(scoreGuess(1600, exact(1571), "modern", 2026).bucket).toBe("mid");
+    // d=80, W=336 → 0.238 ≤ 0.25
+    expect(scoreGuess(1651, exact(1571), "modern", 2026).bucket).toBe("mid");
+  });
+
+  it("returns 'far' beyond 25% of era width", () => {
+    // d=200, W=336 → 0.595 > 0.25
+    expect(scoreGuess(1500, exact(1700), "modern", 2026).bucket).toBe("far");
   });
 
   it("handles BCE answers", () => {

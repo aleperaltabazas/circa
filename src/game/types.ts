@@ -2,7 +2,7 @@ import { Locale } from "../i18n/types";
 
 export type Era = "prehistory" | "ancient" | "medieval" | "modern" | "recent";
 
-export type Bucket = "perfect" | "green" | "lime" | "yellow" | "orange" | "red";
+export type Bucket = "perfect" | "close" | "mid" | "far";
 
 export type Direction = "earlier" | "later" | "match";
 
