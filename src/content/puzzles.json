@@ -179,16 +179,16 @@
     },
     "hints": {
       "es": [
+        "_I say, 'Don't you know?'; You say 'You don't know'; I say 'Take me out!'",
         "Un conductor toma un camino indebido, un monarca es asesinado, más de 20 millones mueren como resultado",
-        "Este año Miguel Unamuno publica \"Niebla\"",
-        "Una banda escocesa publica en 2003 el hit \"Take Me Out\", inspirado en los eventos transcurridos",
+        "Este año Miguel Unamuno publica _Niebla_",
         "Los eventos sucedidos desencadenarían en la revolución rusa unos pocos en el futuro",
         "100 años más tarde se disputaría el mundial en Brasil"
       ],
       "en": [
+        "_I say, 'Don't you know?'; You say 'You don't know'; I say 'Take me out!'",
         "A driver takes a wrong turn, a moarch is assassinated, more than 20 million die as a result",
-        "Miguel Unamuno publishes \"Niebla\" on this year",
-        "A Scottish band publishes \"Take Me Out\" in 2003, song inspired by the events transpired",
+        "Miguel Unamuno publishes _Niebla_ on this year",
         "Years later the Russian Revolution would happen as a consequence",
         "100 years later the World Cup would be hosted by Brasil"
       ]
@@ -244,6 +244,32 @@
         "Frida Kahlo y Alan Turing fallecen este año"
       ]
     },
-    "description": {}
+    "description": {
+      "es": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "argentina-wc-1978",
+    "era": "recent",
+    "answer": {
+      "from": 1978,
+      "to": 1978
+    },
+    "dateAnchored": true,
+    "hints": {
+      "es": [
+        "Una película argentina de 2024 dirigida por Luciano y Nicolás Onetti es titulada con el año",
+        "Van Halen publica su primer disco",
+        "Juan Pablo II es elegido papa",
+        "El gobierno militar argentino inicia la Operación Soberanía para invadir Chile",
+        "Argentina se consagra campeona en el mundial de fútbol venciendo 3-1 a Países Bajos"
+      ],
+      "en": []
+    },
+    "description": {
+      "es": "Un 25 de junio de 1978 Argentina se consagraría campeona del múndial de fútbol por primera vez en la historia, un hecho controversial en el marco de la última dictadura militar y el terrorismo de Estado en el país.",
+      "en": ""
+    }
   }
 ]
