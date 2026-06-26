@@ -272,5 +272,26 @@
       "es": "Un 25 de junio de 1978 Argentina se consagraría campeona del múndial de fútbol por primera vez en la historia, un hecho controversial en el marco de la última dictadura militar y el terrorismo de Estado en el país.",
       "en": "ph"
     }
+  },
+  {
+    "id": "harry-potter-1997",
+    "era": "recent",
+    "answer": {
+      "from": 1997,
+      "to": 1997
+    },
+    "dateAnchored": true,
+    "hints": {
+      "es": [
+        "Este año comienza una nueva historia de magia y hechicería sobre un niño con anteojos y un rayo en su frente",
+        "Gustavo Cerati cierra el último concierto de Soda Stereo anunciando: *\"Gracias totales\"*",
+        "Lady D muere en un accidente automovilístico en París",
+        "Se estrenan *Titanic*, *Hombres de Negro*, y *La vida es bella*",
+        "Nuestro hechicero nace en 1980 y su historia termina junto a su vida escolar"
+      ]
+    },
+    "description": {
+      "es": "El 26 de junio de 1997 se publicó por primera vez en Reino Unido *Harry Potter y la piedra filosofal*. La historia del niño que sobrevivió se ha convertido en uno de los universos de ficción más populares de la época contemporánea con 8 películas adaptando su historia y diversos *spin-offs*."
+    }
   }
 ]
