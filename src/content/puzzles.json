@@ -223,7 +223,7 @@
       ]
     },
     "description": {
-      "es": "El 7 de agosto de 1990 Soda Stereo publica \"Canción Animal\", uno de los álbumes emblemáticos no solo del rock argentino, sino del rock en español en general, entre ellas destacada \"De Música Ligera\" como uno de los himnos del rock hispanoamericano.",
+      "es": "El 7 de agosto de 1990 Soda Stereo publica *Canción Animal*, uno de los álbumes emblemáticos no solo del rock argentino, sino del rock en español en general. Entre ellas destacada *De Música Ligera* como uno de los himnos del rock hispanoamericano.",
       "en": "ph"
     },
     "dateAnchored": true
@@ -292,6 +292,26 @@
     },
     "description": {
       "es": "El 26 de junio de 1997 se publicó por primera vez en Reino Unido *Harry Potter y la piedra filosofal*. La historia del niño que sobrevivió se ha convertido en uno de los universos de ficción más populares de la época contemporánea con 8 películas adaptando su historia y diversos *spin-offs*."
+    }
+  },
+  {
+    "id": "ransacking-of-rome-410",
+    "era": "ancient",
+    "answer": {
+      "from": 400,
+      "to": 420
+    },
+    "hints": {
+      "es": [
+        "La campaña de los godos en el vídeojuego *Age of Empires II* cubre el evento transcurrido",
+        "Se considera que este evento marca el comienzo de la caída del imperio romano",
+        "Aproximadamente 450 años antes habría sido la muerte de Julio César",
+        "No más de un siglo más tarde el Imperio Romano finalmente caería con la deposición de Rómulo Augústulo, marcando así el fin de la edad antigua",
+        "Un poco más de un milenio más adelante caería también el Imperio Romano de Oriente"
+      ]
+    },
+    "description": {
+      "es": "El saqueo de Roma ocurrió en agosto del año 410. Alarico I, un caudillo visigodo, lideró la invasión y robo de bienes durante aproximadamente tres días, aunque él moriría en el segundo día de la invasión."
     }
   }
 ]
