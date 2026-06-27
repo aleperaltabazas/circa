@@ -3,14 +3,9 @@ import { render, screen } from "@testing-library/react";
 import { EraPill } from "../EraPill";
 
 describe("EraPill", () => {
-  it("renders the Spanish era label by default-ish locale", () => {
+  it("renders the Spanish era label", () => {
     render(<EraPill era="modern" locale="es" />);
     expect(screen.getByText("moderna")).toBeInTheDocument();
-  });
-
-  it("renders the English era label", () => {
-    render(<EraPill era="modern" locale="en" />);
-    expect(screen.getByText("modern")).toBeInTheDocument();
   });
 
   it("carries a localized tooltip via data-tooltip and aria-label", () => {

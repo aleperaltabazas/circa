@@ -7,10 +7,9 @@ const puzzle: Puzzle = {
   id: "lepanto-1571",
   era: "modern",
   answer: { from: 1571, to: 1571 },
-  hints: { es: ["a","b","c","d","e"], en: ["a","b","c","d","e"] },
+  hints: { es: ["a","b","c","d","e"] },
   description: {
     es: "Descripción en español sobre Lepanto.",
-    en: "English description about Lepanto.",
   },
 };
 
@@ -38,21 +37,6 @@ describe("TriviaBox", () => {
     expect(screen.getByRole("button", { name: /compartir/i })).toBeInTheDocument();
   });
 
-  it("renders the English title and description when locale is en", () => {
-    render(
-      <TriviaBox
-        puzzle={puzzle}
-        gameState={gameState}
-        puzzleNumber={1}
-        url="https://example.com/circa/"
-        locale="en"
-      />,
-    );
-    expect(screen.getByText("About this puzzle")).toBeInTheDocument();
-    expect(screen.getByText("English description about Lepanto.")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /share/i })).toBeInTheDocument();
-  });
-
   it("renders a range answer with the en-dash", () => {
     const rangePuzzle: Puzzle = { ...puzzle, answer: { from: 1789, to: 1799 } };
     render(
@@ -61,7 +45,7 @@ describe("TriviaBox", () => {
         gameState={{ ...gameState, puzzle: rangePuzzle }}
         puzzleNumber={1}
         url="https://example.com/circa/"
-        locale="en"
+        locale="es"
       />,
     );
     expect(screen.getByText("1789–1799")).toBeInTheDocument();

@@ -7,8 +7,8 @@ const baseWin: GameState = {
     id: "lepanto-1571",
     era: "modern",
     answer: { from: 1571, to: 1571 },
-    hints: { es: ["a","b","c","d","e"], en: ["a","b","c","d","e"] },
-    description: { es: "desc", en: "desc" },
+    hints: { es: ["a","b","c","d","e"] },
+    description: { es: "desc" },
   },
   guesses: [
     { year: 1500, distanceRatio: 0.21, bucket: "mid", direction: "later" },
@@ -41,18 +41,6 @@ describe("formatShare", () => {
   it("formats a loss in Spanish", () => {
     expect(formatShare(baseLoss, 42, "https://example.com/circa/", "es")).toBe(
       "Circa #42 — X/5 🟨🟨🟥🟥🟥\njugá en https://example.com/circa/",
-    );
-  });
-
-  it("formats a win in English", () => {
-    expect(formatShare(baseWin, 42, "https://example.com/circa/", "en")).toBe(
-      "Circa #42 — 3/5 🟨🟨✅\nplay at https://example.com/circa/",
-    );
-  });
-
-  it("formats a loss in English", () => {
-    expect(formatShare(baseLoss, 42, "https://example.com/circa/", "en")).toBe(
-      "Circa #42 — X/5 🟨🟨🟥🟥🟥\nplay at https://example.com/circa/",
     );
   });
 });

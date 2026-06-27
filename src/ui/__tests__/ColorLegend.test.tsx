@@ -9,11 +9,4 @@ describe("ColorLegend", () => {
     expect(screen.getByText("más cerca")).toBeInTheDocument();
     expect(screen.getByText("exacto")).toBeInTheDocument();
   });
-
-  it("renders English labels", () => {
-    render(<ColorLegend locale="en" />);
-    expect(screen.getByText("far off")).toBeInTheDocument();
-    expect(screen.getByText("closer")).toBeInTheDocument();
-    expect(screen.getByText("exact")).toBeInTheDocument();
-  });
 });

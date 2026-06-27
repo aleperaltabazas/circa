@@ -13,8 +13,8 @@ const wonState: GameState = {
     id: "lepanto-1571",
     era: "modern",
     answer: { from: 1571, to: 1571 },
-    hints: { es: ["a", "b", "c", "d", "e"], en: ["a", "b", "c", "d", "e"] },
-    description: { es: "desc", en: "desc" },
+    hints: { es: ["a", "b", "c", "d", "e"] },
+    description: { es: "desc" },
   },
   guesses: [
     { year: 1500, distanceRatio: 0.21, bucket: "mid", direction: "later" },
@@ -46,23 +46,23 @@ describe("StatsModal", () => {
     expect(screen.getByRole("button", { name: /compartir/i })).toBeInTheDocument();
   });
 
-  it("renders English localized strings for a loss", () => {
+  it("renders Spanish localized strings for a loss", () => {
     render(
       <StatsModal
         stats={stats}
         gameState={lostState}
         puzzleNumber={42}
         url="https://example.com/circa/"
-        locale="en"
+        locale="es"
         onClose={() => {}}
       />,
     );
-    expect(screen.getByText("You ran out of attempts")).toBeInTheDocument();
-    expect(screen.getByText(/The answer was 1571/)).toBeInTheDocument();
-    expect(screen.getByText("Current")).toBeInTheDocument();
-    expect(screen.getByText("Max")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /close/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /share/i })).toBeInTheDocument();
+    expect(screen.getByText("Te quedaste sin intentos")).toBeInTheDocument();
+    expect(screen.getByText(/La respuesta era 1571/)).toBeInTheDocument();
+    expect(screen.getByText("Actual")).toBeInTheDocument();
+    expect(screen.getByText("Máxima")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /cerrar/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /compartir/i })).toBeInTheDocument();
   });
 
   it("renders the en-dash for a range answer on loss", () => {
@@ -76,11 +76,11 @@ describe("StatsModal", () => {
         gameState={rangeState}
         puzzleNumber={42}
         url="https://example.com/circa/"
-        locale="en"
+        locale="es"
         onClose={() => {}}
       />,
     );
-    expect(screen.getByText(/the answer was 1789–1799/i)).toBeInTheDocument();
+    expect(screen.getByText(/La respuesta era 1789–1799/)).toBeInTheDocument();
   });
 
   it("calls onClose when overlay is clicked", async () => {

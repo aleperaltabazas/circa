@@ -17,12 +17,6 @@ describe("GuessInput", () => {
     expect(screen.getByText(/Ingresá un año entre 1453 y 1788/)).toBeInTheDocument();
   });
 
-  it("displays the English range hint and button label when locale is en", () => {
-    render(<GuessInput era="modern" currentYear={2026} disabled={false} locale="en" onSubmit={() => {}} />);
-    expect(screen.getByText(/Enter a year between 1453 and 1788/)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /guess/i })).toBeInTheDocument();
-  });
-
   it("disables the form when disabled", () => {
     render(<GuessInput era="modern" currentYear={2026} disabled={true} locale="es" onSubmit={() => {}} />);
     expect(screen.getByRole("button", { name: /adivinar/i })).toBeDisabled();

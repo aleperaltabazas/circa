@@ -45,7 +45,7 @@ describe("localStorage boundary", () => {
   });
 
   it("returns EMPTY when stored schemaVersion is 2", () => {
-    storage.setItem("circa", JSON.stringify({ schemaVersion: 2, locale: "en" }));
+    storage.setItem("circa", JSON.stringify({ schemaVersion: 2, locale: "es" }));
     expect(load(storage)).toEqual(EMPTY);
   });
 

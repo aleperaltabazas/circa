@@ -32,7 +32,7 @@ describe("GuessTiles", () => {
   it("renders an up arrow when direction is later", () => {
     render(
       <GuessTiles
-        locale="en"
+        locale="es"
         guesses={[{ year: 1500, distanceRatio: 0.21, bucket: "mid", direction: "later" }]}
       />,
     );
@@ -42,7 +42,7 @@ describe("GuessTiles", () => {
   it("renders a down arrow when direction is earlier", () => {
     render(
       <GuessTiles
-        locale="en"
+        locale="es"
         guesses={[{ year: 1700, distanceRatio: 0.38, bucket: "far", direction: "earlier" }]}
       />,
     );
@@ -52,7 +52,7 @@ describe("GuessTiles", () => {
   it("renders no arrow when direction is match", () => {
     render(
       <GuessTiles
-        locale="en"
+        locale="es"
         guesses={[{ year: 1571, distanceRatio: 0, bucket: "perfect", direction: "match" }]}
       />,
     );
@@ -68,16 +68,6 @@ describe("GuessTiles", () => {
       />,
     );
     expect(screen.getByLabelText("1500, muy temprano")).toBeInTheDocument();
-  });
-
-  it("sets a localized aria-label per filled tile (English)", () => {
-    render(
-      <GuessTiles
-        locale="en"
-        guesses={[{ year: 1700, distanceRatio: 0.38, bucket: "far", direction: "earlier" }]}
-      />,
-    );
-    expect(screen.getByLabelText("1700, too late")).toBeInTheDocument();
   });
 
   it("renders an absolute closeness hint pill on the first guess", () => {
