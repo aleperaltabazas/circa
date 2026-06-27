@@ -193,15 +193,15 @@
     },
     "hints": {
       "es": [
-        "Da comienzo la revolución brabanzona",
-        "George Washington es designado como el primer presidente de los Estados Unidos",
-        "La banda autora de Pompeii es asociada a un evento ocurrido en este año",
+        "Una importante fortaleza parisina es asediada y su pólvora saqueada",
+        "Ese mismo año, George Washington es designado como el primer presidente de los Estados Unidos",
+        "Una banda inglesa de pop cuyo nombre comparte con la fortaleza debutó en 2013 con el álbum *Bad Blood*",
         "200 años más tarde se levanta la cortina de hierro en Europa",
         "Considerado el año en el cual finaliza la edad moderna y comienza la edad contemporánea"
       ]
     },
     "description": {
-      "es": "El 14 de julio de 1789 revolucionarios franceses asaltaron la Bastilla, una fortaleza de ParÃ­s, en busca de armas y pÃ³lvora para defenderse de las tropas del ejÃ©rcito realista."
+      "es": "El 14 de julio de 1789 revolucionarios franceses asaltaron la Bastilla, una fortaleza de París, en busca de armas y pólvora para defenderse de las tropas del ejÃ©rcito realista."
     },
     "dateAnchored": true
   },
@@ -216,13 +216,13 @@
       "es": [
         "Una banda argentina publica un álbum conteniendo la posiblemente canción más popular del rock latinoamericano",
         "Se disuelve la Alemania del Este, unificando ambas repúblicas",
-        "El álbum contiene una canción cuyo nombre coincide con el año",
+        "*Anclado en ... los Dioses no saldaron cuentas*",
         "Alemania gana su tercer mundial ante Argentina en Italia",
         "Cuatro años antes Argentina se habría consagrado campeona ante Alemania"
       ]
     },
     "description": {
-      "es": "El 7 de agosto de 1990 Soda Stereo publica *Canción Animal*, uno de los álbumes emblemáticos no solo del rock argentino, sino del rock en español en general. Entre ellas destacada *De Música Ligera* como uno de los himnos del rock hispanoamericano."
+      "es": "El 7 de agosto de 1990 Soda Stereo publica *Canción Animal*, uno de los álbumes más emblemáticos no solo del rock argentino, sino del rock en español en general. Entre ellas destacada *De Música Ligera* como uno de los himnos del rock hispanoamericano."
     },
     "dateAnchored": true
   },
