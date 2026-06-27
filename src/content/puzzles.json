@@ -13,18 +13,10 @@
         "La Liga Santa recuperó el control cristiano del Mediterráneo",
         "Un español se inspiró para escribir una sátira de las novelas de caballerías de la época",
         "400 años después Led Zeppelin lanzó 'Stairway to Heaven'"
-      ],
-      "en": [
-        "A modern age war involving the Ottoman empire occurred this year",
-        "More than a century after the Byzantine empire fell",
-        "The Holy League regained Christian control in the Mediterranean",
-        "A Spaniard was inspired to write a satire of chivalric romances of the time",
-        "400 years later Led Zeppelin released 'Stairway to Heaven'"
       ]
     },
     "description": {
-      "es": "La batalla de Lepanto (7 de octubre de 1571) fue una victoria naval decisiva de la Liga Santa — una coalición de potencias católicas liderada por España, Venecia y los Estados Pontificios — sobre el Imperio otomano en el golfo de Patras. Frenó la expansión otomana en el Mediterráneo y resonó en la cultura europea durante siglos; el propio Miguel de Cervantes combatió allí y perdió el uso de su mano izquierda.",
-      "en": "The Battle of Lepanto (7 October 1571) was a decisive naval victory of the Holy League — a coalition of Catholic powers led by Spain, Venice, and the Papal States — over the Ottoman Empire in the Gulf of Patras. It halted Ottoman expansion in the Mediterranean and echoed through European culture for centuries; Miguel de Cervantes himself fought there and lost the use of his left hand."
+      "es": "La batalla de Lepanto (7 de octubre de 1571) fue una victoria naval decisiva de la Liga Santa — una coalición de potencias católicas liderada por España, Venecia y los Estados Pontificios — sobre el Imperio otomano en el golfo de Patras. Frenó la expansión otomana en el Mediterráneo y resonó en la cultura europea durante siglos; el propio Miguel de Cervantes combatió allí y perdió el uso de su mano izquierda."
     }
   },
   {
@@ -41,18 +33,10 @@
         "100 años más tarde Eisenhower asume la presidencia en Estados Unidos",
         "Hay un barrio en la Ciudad de Buenos Aires cuyo nombre refiere a lo que ocurrió este año",
         "Se considera que a partir de este año empieza a existir oficialmente la República Argentina"
-      ],
-      "en": [
-        "A centennial of the fall of the Eastern Roman Empire",
-        "A presidential armchair is associated with this event",
-        "100 years later, Eisenhower takes office as US president",
-        "A neighborhood in the City of Buenos Aires is named after what happened this year",
-        "Considered the year the Argentine Republic officially comes into being"
       ]
     },
     "description": {
-      "es": "La Constitución argentina de 1853 fue sancionada por el Congreso Constituyente de Santa Fe el 1 de mayo de 1853, sentando las bases del estado federal argentino tras décadas de guerras civiles. Inspirada parcialmente en la constitución estadounidense y en el pensamiento de Juan Bautista Alberdi, organizó el régimen republicano que, con reformas, sigue vigente.",
-      "en": "Argentina's 1853 Constitution was sanctioned by the Constituent Congress of Santa Fe on 1 May 1853, laying the foundation of the Argentine federal state after decades of civil war. Partly inspired by the US Constitution and the writings of Juan Bautista Alberdi, it organised the republican system that, with amendments, remains in force."
+      "es": "La Constitución argentina de 1853 fue sancionada por el Congreso Constituyente de Santa Fe el 1 de mayo de 1853, sentando las bases del estado federal argentino tras décadas de guerras civiles. Inspirada parcialmente en la constitución estadounidense y en el pensamiento de Juan Bautista Alberdi, organizó el régimen republicano que, con reformas, sigue vigente."
     }
   },
   {
@@ -69,47 +53,10 @@
         "Se produce una falla en un reactor nuclear",
         "10 años antes daba inicio una dictadura en Argentina",
         "Se juega un mundial en México ese año"
-      ],
-      "en": [
-        "Halley's Comet was visible this year",
-        "Soda Stereo released Signos, Los Redondos released Oktubre, Metallica released Master of Puppets",
-        "A nuclear reactor suffered a meltdown",
-        "10 years earlier a dictatorship began in Argentina",
-        "A World Cup was held in Mexico that year"
       ]
     },
     "description": {
-      "es": "El 22 de junio de 1986, en el cuarto de final del Mundial de México entre Argentina e Inglaterra, Diego Maradona marcó dos de los goles más recordados de la historia del fútbol. El primero, con la mano, sería conocido como 'la mano de Dios'. El segundo, una corrida de más de cincuenta metros eludiendo a media defensa inglesa antes de definir, fue elegido por la FIFA como el 'Gol del Siglo' del siglo XX.",
-      "en": "On 22 June 1986, in the quarter-final of the Mexico World Cup between Argentina and England, Diego Maradona scored two of football's most-remembered goals. The first, punched in with his hand, became known as the 'Hand of God'. The second — a fifty-metre solo run dribbling past half the English defence before finishing — was later voted FIFA's 'Goal of the Century' for the 20th century."
-    },
-    "dateAnchored": true
-  },
-  {
-    "id": "bastille-1789",
-    "era": "recent",
-    "answer": {
-      "from": 1789,
-      "to": 1789
-    },
-    "hints": {
-      "es": [
-        "Da comienzo la revolución brabanzona",
-        "George Washington es designado como el primer presidente de los Estados Unidos",
-        "La banda autora de Pompeii es asociada a un evento ocurrido en este año",
-        "200 años más tarde se levanta la cortina de hierro en Europa",
-        "Considerado el año en el cual finaliza la edad moderna y comienza la edad contemporánea"
-      ],
-      "en": [
-        "The Bravant Revolution begins",
-        "George Washington is appointed as the first president of the United States",
-        "The band authoring 'Pompeii' is associated to a major event of the year",
-        "200 years later the iron courtain would be lifted in Europe",
-        "It's usually considered the end year for the modern age and the start of the contemporary age"
-      ]
-    },
-    "description": {
-      "es": "El 14 de julio de 1789 revolucionarios franceses asaltaron la Bastilla, una fortaleza de ParÃ­s, en busca de armas y pÃ³lvora para defenderse de las tropas del ejÃ©rcito realista.",
-      "en": "July the 14th of 1789, French revolutionaries stormed the Bastille, a parisian fortress, looking for weaponry and powder to defend themselves against the troops of the royal army."
+      "es": "El 22 de junio de 1986, en el cuarto de final del Mundial de México entre Argentina e Inglaterra, Diego Maradona marcó dos de los goles más recordados de la historia del fútbol. El primero, con la mano, sería conocido como 'la mano de Dios'. El segundo, una corrida de más de cincuenta metros eludiendo a media defensa inglesa antes de definir, fue elegido por la FIFA como el 'Gol del Siglo' del siglo XX."
     },
     "dateAnchored": true
   },
@@ -127,18 +74,10 @@
         "En la misma década en el futuro se estrenaría por primera vez Matrix",
         "El filósofo fue condenado a muerte por 280 miembros del jurado contra 221 que lo encontraron inocente",
         "Casi 2400 años más adelante terminaría el siglo XX"
-      ],
-      "en": [
-        "A philosopher passes away, his history told by one of his students",
-        "After the first Persian invasions",
-        "In the future, during that same decade Matrix would premiere",
-        "The philosopher was sentenced to death by 280 votes in favour and 221 against",
-        "Almost 2400 years later the 20th century would come to an end"
       ]
     },
     "description": {
-      "es": "Sócrates fue enjuiciado y condenado por el gobierno ateniense por de corromper a la juventud. Tras la condena, sus estudiantes le recomendaron huir; Sócrates rechazo sus pedidos y bebió la cicuta.",
-      "en": "Socrates was prosecuted and sentenced by the Athenian government for corrupting the youth. After the sentence, his students pleaded he escaped; he rejects their plea and drinks the hemlock."
+      "es": "Sócrates fue enjuiciado y condenado por el gobierno ateniense por de corromper a la juventud. Tras la condena, sus estudiantes le recomendaron huir; Sócrates rechazo sus pedidos y bebió la cicuta."
     }
   },
   {
@@ -155,100 +94,12 @@
         "Este jugador debuta en la selección argentina en 2005",
         "El año anterior se jugó un mundial",
         "El jugador gana su primer mundial a sus 35 años"
-      ],
-      "en": [
-        "A renowned football player is born this year in Rosario",
-        "Guns n' Roses produce \"Appetite for Destruction\", Charly García produces \"Parte de la religión\"",
-        "The football player debuts for the Argentinian squad in 2005",
-        "The prior year a FIFA world cup was played",
-        "The football player wins his first world cup at 35 years old"
       ]
     },
     "description": {
-      "es": "Lionel Messi nació el 24 de junio de 1987 en la ciudad de Rosario, en la provincia de Santa Fe, Argentina. Se crio específicamente en el barrio La Bajada, ubicado en la zona sur de la ciudad, donde vivió gran parte de su infancia y dio sus primeros pasos en el fútbol jugando en clubes locales.",
-      "en": "Lionel Messi was born on June 24th in the city of Rosario, in the province of Santa Fe, Argentina. He grew up specifically in the La Bajada neighborhood, located in the southern part of the city, where he lived much of his childhood and took his first steps in football playing for local clubs."
+      "es": "Lionel Messi nació el 24 de junio de 1987 en la ciudad de Rosario, en la provincia de Santa Fe, Argentina. Se crio específicamente en el barrio La Bajada, ubicado en la zona sur de la ciudad, donde vivió gran parte de su infancia y dio sus primeros pasos en el fútbol jugando en clubes locales."
     },
     "dateAnchored": true
-  },
-  {
-    "id": "franz-ferdinand-1914",
-    "era": "recent",
-    "answer": {
-      "from": 1914,
-      "to": 1914
-    },
-    "hints": {
-      "es": [
-        "_I say, 'Don't you know?'; You say 'You don't know'; I say 'Take me out!'",
-        "Un conductor toma un camino indebido, un monarca es asesinado, más de 20 millones mueren como resultado",
-        "Este año Miguel Unamuno publica _Niebla_",
-        "Los eventos sucedidos desencadenarían en la revolución rusa unos pocos en el futuro",
-        "100 años más tarde se disputaría el mundial en Brasil"
-      ],
-      "en": [
-        "_I say, 'Don't you know?'; You say 'You don't know'; I say 'Take me out!'",
-        "A driver takes a wrong turn, a moarch is assassinated, more than 20 million die as a result",
-        "Miguel Unamuno publishes _Niebla_ on this year",
-        "Years later the Russian Revolution would happen as a consequence",
-        "100 years later the World Cup would be hosted by Brasil"
-      ]
-    },
-    "description": {
-      "es": "El 28 de junio de 1914, el archiduque Francisco Fernando de Austria es atentado contra su vida pero el asesino falla en el intento pero varios salen lastimados. Más tarde el archiduque decide ir al hospital a visitar a los heridos, su conductor toma un giro por la calle incorrecta, encontrándose directamente con uno de los conspiradores. El archiduque es abatido en ese momento, lo que desencadenaría en la primera guerra mundial.",
-      "en": "ph"
-    },
-    "dateAnchored": true
-  },
-  {
-    "id": "cancion-animal-1990",
-    "era": "recent",
-    "answer": {
-      "from": 1990,
-      "to": 1990
-    },
-    "hints": {
-      "es": [
-        "Una banda argentina publica un álbum conteniendo la posiblemente canción más popular del rock latinoamericano",
-        "Se disuelve la Alemania del Este, unificando ambas repúblicas",
-        "El álbum contiene una canción cuyo nombre coincide con el año",
-        "Alemania gana su tercer mundial ante Argentina en Italia",
-        "Cuatro años antes Argentina se habría consagrado campeona ante Alemania"
-      ],
-      "en": [
-        "An Argentinian band produces an album carrying the arguably most well-known Latin American rock song",
-        "Eastern Germany disolves, unifying both republics",
-        "The album contains a song whose name matches the year",
-        "Germany wins their third world cup against Argentina in Italiy",
-        "Four years before Argentina would be crowned the champion against Germany"
-      ]
-    },
-    "description": {
-      "es": "El 7 de agosto de 1990 Soda Stereo publica *Canción Animal*, uno de los álbumes emblemáticos no solo del rock argentino, sino del rock en español en general. Entre ellas destacada *De Música Ligera* como uno de los himnos del rock hispanoamericano.",
-      "en": "ph"
-    },
-    "dateAnchored": true
-  },
-  {
-    "id": "random-1954",
-    "era": "recent",
-    "answer": {
-      "from": 1954,
-      "to": 1954
-    },
-    "hints": {
-      "es": [
-        "Bill Halley y sus cometas graban \"Rock Around the Clock\", consagrando así la primera canción de rock and roll en alcanzar el primer puesto en la lista de ventas",
-        "Ernest Hemingway y su esposa Mary Welsh sufren un accidente de avioneta. Al día siguiente sufren otro accidente de avioneta en busca de atención médica",
-        "J.R.R. Tolkien publica \"La comunidad del anillo\" el primer volumen de \"El Señor de los anillos\"",
-        "Alemania obtiene su primer copa del mundo ante Hungría",
-        "Frida Kahlo y Alan Turing fallecen este año"
-      ],
-      "en": ["ph", "ph", "ph", "ph", "ph"]
-    },
-    "description": {
-      "es": "ph",
-      "en": "ph"
-    }
   },
   {
     "id": "argentina-wc-1978",
@@ -265,12 +116,10 @@
         "Juan Pablo II es elegido papa",
         "El gobierno militar argentino inicia la Operación Soberanía para invadir Chile",
         "Argentina se consagra campeona en el mundial de fútbol venciendo 3-1 a Países Bajos"
-      ],
-      "en": ["ph", "ph", "ph", "ph", "ph"]
+      ]
     },
     "description": {
-      "es": "Un 25 de junio de 1978 Argentina se consagraría campeona del múndial de fútbol por primera vez en la historia, un hecho controversial en el marco de la última dictadura militar y el terrorismo de Estado en el país.",
-      "en": "ph"
+      "es": "Un 25 de junio de 1978 Argentina se consagraría campeona del múndial de fútbol por primera vez en la historia, un hecho controversial en el marco de la última dictadura militar y el terrorismo de Estado en el país."
     }
   },
   {
@@ -312,6 +161,89 @@
     },
     "description": {
       "es": "El saqueo de Roma ocurrió en agosto del año 410. Alarico I, un caudillo visigodo, lideró la invasión y robo de bienes durante aproximadamente tres días, aunque él moriría en el segundo día de la invasión."
+    }
+  },
+  {
+    "id": "franz-ferdinand-1914",
+    "era": "recent",
+    "answer": {
+      "from": 1914,
+      "to": 1914
+    },
+    "hints": {
+      "es": [
+        "*I say, 'Don't you know?'; You say 'You don't know'; I say 'Take me out!'*",
+        "Un conductor toma un camino indebido, un monarca es asesinado, más de 20 millones mueren como resultado",
+        "Este año Miguel Unamuno publica *Niebla*",
+        "Los eventos sucedidos desencadenarían en la revolución rusa unos pocos en el futuro",
+        "100 años más tarde se disputaría el mundial en Brasil"
+      ]
+    },
+    "description": {
+      "es": "El 28 de junio de 1914, el archiduque Francisco Fernando de Austria es atentado contra su vida pero el asesino falla en el intento pero varios salen lastimados. Más tarde el archiduque decide ir al hospital a visitar a los heridos, su conductor toma un giro por la calle incorrecta, encontrándose directamente con uno de los conspiradores. El archiduque es abatido en ese momento, lo que desencadenaría en la primera guerra mundial."
+    },
+    "dateAnchored": true
+  },
+  {
+    "id": "bastille-1789",
+    "era": "recent",
+    "answer": {
+      "from": 1789,
+      "to": 1789
+    },
+    "hints": {
+      "es": [
+        "Da comienzo la revolución brabanzona",
+        "George Washington es designado como el primer presidente de los Estados Unidos",
+        "La banda autora de Pompeii es asociada a un evento ocurrido en este año",
+        "200 años más tarde se levanta la cortina de hierro en Europa",
+        "Considerado el año en el cual finaliza la edad moderna y comienza la edad contemporánea"
+      ]
+    },
+    "description": {
+      "es": "El 14 de julio de 1789 revolucionarios franceses asaltaron la Bastilla, una fortaleza de ParÃ­s, en busca de armas y pÃ³lvora para defenderse de las tropas del ejÃ©rcito realista."
+    },
+    "dateAnchored": true
+  },
+  {
+    "id": "cancion-animal-1990",
+    "era": "recent",
+    "answer": {
+      "from": 1990,
+      "to": 1990
+    },
+    "hints": {
+      "es": [
+        "Una banda argentina publica un álbum conteniendo la posiblemente canción más popular del rock latinoamericano",
+        "Se disuelve la Alemania del Este, unificando ambas repúblicas",
+        "El álbum contiene una canción cuyo nombre coincide con el año",
+        "Alemania gana su tercer mundial ante Argentina en Italia",
+        "Cuatro años antes Argentina se habría consagrado campeona ante Alemania"
+      ]
+    },
+    "description": {
+      "es": "El 7 de agosto de 1990 Soda Stereo publica *Canción Animal*, uno de los álbumes emblemáticos no solo del rock argentino, sino del rock en español en general. Entre ellas destacada *De Música Ligera* como uno de los himnos del rock hispanoamericano."
+    },
+    "dateAnchored": true
+  },
+  {
+    "id": "random-1954",
+    "era": "recent",
+    "answer": {
+      "from": 1954,
+      "to": 1954
+    },
+    "hints": {
+      "es": [
+        "Bill Halley y sus cometas graban \"Rock Around the Clock\", consagrando así la primera canción de rock and roll en alcanzar el primer puesto en la lista de ventas",
+        "Ernest Hemingway y su esposa Mary Welsh sufren un accidente de avioneta. Al día siguiente sufren otro accidente de avioneta en busca de atención médica",
+        "J.R.R. Tolkien publica \"La comunidad del anillo\" el primer volumen de \"El Señor de los anillos\"",
+        "Alemania obtiene su primer copa del mundo ante Hungría",
+        "Frida Kahlo y Alan Turing fallecen este año"
+      ]
+    },
+    "description": {
+      "es": "ph"
     }
   }
 ]
