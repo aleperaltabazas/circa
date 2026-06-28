@@ -6,22 +6,27 @@ const lepanto: Puzzle = {
   id: "lepanto-1571",
   era: "modern",
   answer: { from: 1571, to: 1571 },
-  hints: { es: ["a", "b", "c", "d", "e"], en: ["a", "b", "c", "d", "e"] },
-  description: { es: "desc", en: "desc" },
+  hints: { es: ["a", "b", "c", "d", "e"] },
+  description: { es: "desc" },
 };
 
 const moonLanding: Puzzle = {
   id: "moon-landing-1969",
   era: "recent",
   answer: { from: 1969, to: 1969 },
-  hints: { es: ["a", "b", "c", "d", "e"], en: ["a", "b", "c", "d", "e"] },
-  description: { es: "desc", en: "desc" },
+  hints: { es: ["a", "b", "c", "d", "e"] },
+  description: { es: "desc" },
 };
 
 describe("selectPuzzle", () => {
   it("returns the puzzle scheduled for today", () => {
-    const schedule = { "2026-06-19": "lepanto-1571", "2026-06-20": "moon-landing-1969" };
-    expect(selectPuzzle("2026-06-19", schedule, [lepanto, moonLanding])).toBe(lepanto);
+    const schedule = {
+      "2026-06-19": "lepanto-1571",
+      "2026-06-20": "moon-landing-1969",
+    };
+    expect(selectPuzzle("2026-06-19", schedule, [lepanto, moonLanding])).toBe(
+      lepanto,
+    );
   });
 
   it("returns null when today is not in the schedule", () => {

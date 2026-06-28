@@ -5,7 +5,6 @@ import tooltip from "./Tooltip.module.css";
 
 const INTL_LOCALE: Record<Locale, string> = {
   es: "es-AR",
-  en: "en-US",
 };
 
 function formatDayMonth(todayIso: string, locale: Locale): string {
@@ -18,7 +17,13 @@ function formatDayMonth(todayIso: string, locale: Locale): string {
   }).format(date);
 }
 
-export function DateChip({ todayIso, locale }: { todayIso: string; locale: Locale }) {
+export function DateChip({
+  todayIso,
+  locale,
+}: {
+  todayIso: string;
+  locale: Locale;
+}) {
   const s = STRINGS[locale];
   return (
     <span

@@ -27,11 +27,17 @@ describe("App – previously finished game (reload)", () => {
           answer: { from: 1571, to: 1571 },
           hints: {
             es: ["pista 1", "pista 2", "pista 3", "pista 4", "pista 5"],
-            en: ["hint 1", "hint 2", "hint 3", "hint 4", "hint 5"],
           },
-          description: { es: "desc es", en: "desc en" },
+          description: { es: "desc es" },
         },
-        guesses: [{ year: 1571, bucket: "perfect", distanceRatio: 0, direction: "match" }],
+        guesses: [
+          {
+            year: 1571,
+            bucket: "perfect",
+            distanceRatio: 0,
+            direction: "match",
+          },
+        ],
         outcome: "won",
         hintsRevealed: 1,
       },
@@ -54,7 +60,9 @@ describe("App", () => {
     expect(await screen.findByText(/Circa/i)).toBeInTheDocument();
     expect(screen.getByText("moderna")).toBeInTheDocument();
     expect(screen.getByText(/imperio otomano/i)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /adivinar/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /adivinar/i }),
+    ).toBeInTheDocument();
   });
 
   it("reveals the next hint after a wrong guess (Spanish)", async () => {
