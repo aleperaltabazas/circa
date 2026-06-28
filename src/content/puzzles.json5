@@ -185,6 +185,47 @@
     "dateAnchored": true
   },
   {
+    "id": "isabelita-1974",
+    "era": "recent",
+    "answer": {
+      "from": 1974,
+      "to": 1974
+    },
+    "hints": {
+      "es": [
+        "Asume en Argentina por primera vez una mujer la presidencia",
+        "AC/DC publica *High Voltage*, Sui Generis pública *Pequeñas anécdotas sobre las Instituciones*",
+        "Se estrena *El padrino II*, galardonada con 3 óscares: mejor película, mejor director (Francis Ford Coppola) y mejor actor (Robert De Niro)",
+        "Este año Alemania obtiene su segundo mundial",
+        "2 años más tarde comienza el Proceso de Reorganización Nacional"
+      ]
+    },
+    "description": {
+      "es": "El 29 de junio de 1974 María Estela Martínez de Perón, primera dama y vicepresidenta de la nación, asume la presidencia de la nación por los problemas de salud de su esposo, quien moriría dos días más tarde. *Isabelita* fue la primera mujer en el mundo en asumir el cargo presidencial del sistema republicano moderno, habiendo gobernado durante 2 años hasta el último golpe de estado en 1976."
+    }
+  },
+  {
+    "id": "noche-triste-1520",
+    "era": "modern",
+    "answer": {
+      "from": 1515,
+      "to": 1525
+    },
+    "dateAnchored": true,
+    "hints": {
+      "es": [
+        "En esta fecha ocurriría la *Noche Triste*",
+        "Durante la *Noche Triste* Hernán Cortes y sus hombres son expulsados de Tecnochitlán",
+        "Unos años antes, Martín Lutero clavaría en las puertas de la Iglesia de Todos los Santos *las noventa y cinco tesis*",
+        "En la siguiente década Pedro de Mendoza funda la ciudad de *Santa María del Buen Ayre*",
+        "500 años más tarde el mundo entero sufre las repercusiones de una pandemia"
+      ]
+    },
+    "description": {
+      "es": "Durante la noche del 30 de junio de 1520, Hernán Cortes y sus fuerzas fueron obligados a dejar Tecnochitlán por una revuelta popular. Unos meses antes, Cortés toma como prisionero a Moctezuma II, emperador de los aztecas. Ausentado para atender otras responsabilidades durante el mes de mayo, su subordinado Pedro de Alvarado ordena la masacre de sacerdotes y nobles aztecas durante el festival de *Toxcatl*. Al retorno de Cortés a la capital azteca Moctezuma es asesinado. Intentado escapar de la ciudad los españoles son descubiertos por las fuerzas aztecas; miles de españoles e indígenas aliados mueren durante la retirada."
+    }
+  },
+  {
     "id": "bastille-1789",
     "era": "recent",
     "answer": {

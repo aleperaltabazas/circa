@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useReducer, useState } from "react";
-import puzzlesData from "./content/puzzles.json";
-import scheduleData from "./content/schedule.json";
+import puzzlesData from "./content/puzzles.json5";
+import scheduleData from "./content/schedule.json5";
 import { Puzzle, Schedule } from "./game/types";
 import { selectPuzzle } from "./game/selectPuzzle";
 import { puzzleNumberFor } from "./game/puzzleNumber";

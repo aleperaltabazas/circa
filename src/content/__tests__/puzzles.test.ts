@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import puzzlesData from "../puzzles.json";
+import puzzlesData from "../puzzles.json5";
 import { Puzzle } from "../../game/types";
 import { LOCALES } from "../../i18n/types";
 import { eraRange } from "../../game/eras";
