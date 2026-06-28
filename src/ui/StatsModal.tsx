@@ -1,15 +1,17 @@
 import { useEffect } from "react";
 import confetti from "canvas-confetti";
-import { GameState, Stats } from "../game/types";
+import { GameState, Puzzle, Stats } from "../game/types";
 import { Locale } from "../i18n/types";
 import { STRINGS } from "../i18n/strings";
 import { ShareButton } from "./ShareButton";
+import { Markdown } from "./Markdown";
 import { formatAnswer } from "./answer";
 import styles from "./StatsModal.module.css";
 
 export function StatsModal({
   stats,
   gameState,
+  puzzle,
   puzzleNumber,
   url,
   locale,
@@ -17,6 +19,7 @@ export function StatsModal({
 }: {
   stats: Stats;
   gameState: GameState;
+  puzzle: Puzzle;
   puzzleNumber: number;
   url: string;
   locale: Locale;
@@ -52,6 +55,7 @@ export function StatsModal({
             <div className={styles.statLabel}>{s.maxStreak}</div>
           </div>
         </div>
+        <p className={styles.description}><Markdown>{puzzle.description[locale]}</Markdown></p>
         <div className={styles.actions}>
           <button className={styles.close} type="button" onClick={onClose}>{s.close}</button>
           <ShareButton state={gameState} puzzleNumber={puzzleNumber} url={url} locale={locale} />

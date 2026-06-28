@@ -74,13 +74,16 @@ describe("App", () => {
     expect(screen.getByText("1500")).toBeInTheDocument();
   });
 
-  it("shows both StatsModal and TriviaBox after finishing a fresh game", async () => {
+  it("shows StatsModal on finish, then TriviaBox after closing it", async () => {
     render(<App />);
     await screen.findByText(/imperio otomano/i);
     await userEvent.type(screen.getByRole("spinbutton"), "1571");
     await userEvent.click(screen.getByRole("button", { name: /adivinar/i }));
-    // StatsModal auto-opens on fresh finish — check for new win headline
+    // StatsModal auto-opens on fresh finish — TriviaBox hidden while modal is open
     expect(await screen.findByText("¡Lo lograste!")).toBeInTheDocument();
+    expect(screen.queryByText("Sobre este puzzle")).not.toBeInTheDocument();
+    // Close the modal — TriviaBox should now appear
+    await userEvent.click(screen.getByRole("button", { name: /cerrar/i }));
     expect(screen.getByText("Sobre este puzzle")).toBeInTheDocument();
   });
 });

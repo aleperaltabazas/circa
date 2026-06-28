@@ -32,6 +32,7 @@ describe("StatsModal", () => {
       <StatsModal
         stats={stats}
         gameState={wonState}
+        puzzle={wonState.puzzle}
         puzzleNumber={42}
         url="https://example.com/circa/"
         locale="es"
@@ -51,6 +52,7 @@ describe("StatsModal", () => {
       <StatsModal
         stats={stats}
         gameState={lostState}
+        puzzle={lostState.puzzle}
         puzzleNumber={42}
         url="https://example.com/circa/"
         locale="es"
@@ -74,6 +76,7 @@ describe("StatsModal", () => {
       <StatsModal
         stats={stats}
         gameState={rangeState}
+        puzzle={rangeState.puzzle}
         puzzleNumber={42}
         url="https://example.com/circa/"
         locale="es"
@@ -89,6 +92,7 @@ describe("StatsModal", () => {
       <StatsModal
         stats={stats}
         gameState={wonState}
+        puzzle={wonState.puzzle}
         puzzleNumber={42}
         url="https://example.com/circa/"
         locale="es"

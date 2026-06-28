@@ -23,6 +23,7 @@
 .stat { flex: 1; text-align: center; }
 .statValue { font-size: 28px; font-weight: 700; }
 .statLabel { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+.description { font-size: 13px; color: #444; line-height: 1.5; margin: 0 0 16px; }
 .actions { display: flex; gap: 8px; justify-content: flex-end; }
 .close {
   padding: 10px 16px;

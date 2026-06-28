@@ -126,7 +126,7 @@ function Game({
         onLocaleChange={onLocaleChange}
         onGuess={(year) => dispatch({ type: "submitGuess", year, currentYear })}
       />
-      {state.outcome !== "playing" && (
+      {state.outcome !== "playing" && !modalOpen && (
         <TriviaBox
           puzzle={puzzle}
           gameState={state}
@@ -139,6 +139,7 @@ function Game({
         <StatsModal
           stats={persisted.stats}
           gameState={state}
+          puzzle={puzzle}
           puzzleNumber={puzzleNumber}
           url={url}
           locale={persisted.locale}
