@@ -101,7 +101,7 @@ function Game({
     }
     const next: PersistedShape = {
       ...persisted,
-      schemaVersion: 3,
+      schemaVersion: 4,
       lastPlayedDate: todayIso,
       lastResult: state,
       stats: nextStats,
@@ -141,6 +141,7 @@ function Game({
           gameState={state}
           puzzle={puzzle}
           puzzleNumber={puzzleNumber}
+          currentYear={currentYear}
           url={url}
           locale={persisted.locale}
           onClose={() => setModalOpen(false)}

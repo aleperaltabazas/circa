@@ -5,7 +5,7 @@ import { Puzzle } from "../types";
 const lepanto: Puzzle = {
   id: "lepanto-1571",
   era: "modern",
-  answer: { from: 1571, to: 1571 },
+  answer: { year: 1571 },
   hints: { es: ["a", "b", "c", "d", "e"] },
   description: { es: "desc" },
 };
@@ -13,7 +13,7 @@ const lepanto: Puzzle = {
 const moonLanding: Puzzle = {
   id: "moon-landing-1969",
   era: "recent",
-  answer: { from: 1969, to: 1969 },
+  answer: { year: 1969 },
   hints: { es: ["a", "b", "c", "d", "e"] },
   description: { es: "desc" },
 };

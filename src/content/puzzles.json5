@@ -2,10 +2,7 @@
   {
     "id": "lepanto-1571",
     "era": "modern",
-    "answer": {
-      "from": 1571,
-      "to": 1571
-    },
+    "answer": { "year": 1571 },
     "hints": {
       "es": [
         "Una guerra de la edad moderna que involucró al imperio otomano ocurrió este año",
@@ -22,10 +19,7 @@
   {
     "id": "constitucion-1853",
     "era": "recent",
-    "answer": {
-      "from": 1853,
-      "to": 1853
-    },
+    "answer": { "year": 1853 },
     "hints": {
       "es": [
         "Un centenario de la caída del imperio Romano de Oriente",
@@ -42,10 +36,7 @@
   {
     "id": "goal-of-the-century-1986",
     "era": "recent",
-    "answer": {
-      "from": 1986,
-      "to": 1986
-    },
+    "answer": { "year": 1986 },
     "hints": {
       "es": [
         "El cometa Halley fue visible este año",
@@ -83,10 +74,7 @@
   {
     "id": "messi-1987",
     "era": "recent",
-    "answer": {
-      "from": 1987,
-      "to": 1987
-    },
+    "answer": { "year": 1987 },
     "hints": {
       "es": [
         "Este año nace un reconocido jugador de fútbol en Rosario",
@@ -104,10 +92,7 @@
   {
     "id": "argentina-wc-1978",
     "era": "recent",
-    "answer": {
-      "from": 1978,
-      "to": 1978
-    },
+    "answer": { "year": 1978 },
     "dateAnchored": true,
     "hints": {
       "es": [
@@ -125,10 +110,7 @@
   {
     "id": "harry-potter-1997",
     "era": "recent",
-    "answer": {
-      "from": 1997,
-      "to": 1997
-    },
+    "answer": { "year": 1997 },
     "dateAnchored": true,
     "hints": {
       "es": [
@@ -166,10 +148,7 @@
   {
     "id": "franz-ferdinand-1914",
     "era": "recent",
-    "answer": {
-      "from": 1914,
-      "to": 1914
-    },
+    "answer": { "year": 1914 },
     "hints": {
       "es": [
         "*I say, 'Don't you know?'; You say 'You don't know'; I say 'Take me out!'*",
@@ -187,10 +166,7 @@
   {
     "id": "isabelita-1974",
     "era": "recent",
-    "answer": {
-      "from": 1974,
-      "to": 1974
-    },
+    "answer": { "year": 1974 },
     "dateAnchored": true,
     "hints": {
       "es": [
@@ -208,10 +184,7 @@
   {
     "id": "noche-triste-1520",
     "era": "modern",
-    "answer": {
-      "from": 1515,
-      "to": 1525
-    },
+    "answer": { "year": 1520, "margin": 2 },
     "dateAnchored": true,
     "hints": {
       "es": [
@@ -229,10 +202,7 @@
   {
     "id": "bastille-1789",
     "era": "recent",
-    "answer": {
-      "from": 1789,
-      "to": 1789
-    },
+    "answer": { "year": 1789 },
     "hints": {
       "es": [
         "Una importante fortaleza parisina es asediada y su pólvora saqueada",
@@ -250,10 +220,7 @@
   {
     "id": "cancion-animal-1990",
     "era": "recent",
-    "answer": {
-      "from": 1990,
-      "to": 1990
-    },
+    "answer": { "year": 1990 },
     "hints": {
       "es": [
         "Una banda argentina publica un álbum conteniendo la posiblemente canción más popular del rock latinoamericano",
@@ -271,10 +238,7 @@
   {
     "id": "random-1954",
     "era": "recent",
-    "answer": {
-      "from": 1954,
-      "to": 1954
-    },
+    "answer": { "year": 1954 },
     "hints": {
       "es": [
         "Bill Halley y sus cometas graban \"Rock Around the Clock\", consagrando así la primera canción de rock and roll en alcanzar el primer puesto en la lista de ventas",

@@ -36,6 +36,12 @@ export function validateSameEraRange(from: number, to: number): string | null {
   return null;
 }
 
+export function validateMargin(margin: number | undefined): string | null {
+  if (margin === undefined) return null;
+  if (!Number.isInteger(margin) || margin < 0 || margin > 20) return "margin must be an integer between 0 and 20";
+  return null;
+}
+
 export function validateId(id: string, existingIds: string[]): string | null {
   if (!id) return "id is required";
   if (!ID_RE.test(id)) return "id must be kebab-case (lowercase letters, digits, hyphens)";

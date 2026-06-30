@@ -5,19 +5,19 @@ import { resolve } from "node:path";
 import { input, editor, confirm } from "@inquirer/prompts";
 import { Locale } from "../src/i18n/types";
 import { today } from "../src/game/today";
-import { Puzzle, Schedule, YearRange } from "../src/game/types";
+import { Answer, Puzzle, Schedule } from "../src/game/types";
 import {
   validateId,
   validateNonEmpty,
   validateDate,
   validateYearHasEra,
-  validateSameEraRange,
+  validateMargin,
   eraOf,
 } from "./authoring/validators";
 
 const PROJECT_ROOT = resolve(import.meta.dirname ?? ".", "..");
-const PUZZLES_PATH = resolve(PROJECT_ROOT, "src/content/puzzles.json");
-const SCHEDULE_PATH = resolve(PROJECT_ROOT, "src/content/schedule.json");
+const PUZZLES_PATH = resolve(PROJECT_ROOT, "src/content/puzzles.json5");
+const SCHEDULE_PATH = resolve(PROJECT_ROOT, "src/content/schedule.json5");
 
 function loadPuzzles(): Puzzle[] {
   return JSON.parse(readFileSync(PUZZLES_PATH, "utf8")) as Puzzle[];
@@ -60,20 +60,20 @@ async function main() {
     validate: (v) => validateId(v.trim(), existingIds) ?? true,
   });
 
-  const answerFromStr = await input({
-    message: "Answer (from)",
+  const answerYearStr = await input({
+    message: "Answer year",
     validate: (v) => validateYearHasEra(Number(v)) ?? true,
   });
-  const answerFrom = Number(answerFromStr);
+  const answerYear = Number(answerYearStr);
 
-  const answerToStr = await input({
-    message: "Answer (to)",
-    default: String(answerFrom),
-    validate: (v) => validateSameEraRange(answerFrom, Number(v)) ?? true,
+  const marginStr = await input({
+    message: "Error margin (% of era width, 0 = exact)",
+    default: "0",
+    validate: (v) => validateMargin(Number(v)) ?? true,
   });
-  const answerTo = Number(answerToStr);
+  const margin = Number(marginStr);
 
-  const era = eraOf(answerFrom)!;
+  const era = eraOf(answerYear)!;
   console.log(`\nEra: ${era}`);
 
   console.log("\nHints in Spanish (5, vague → specific):");
@@ -106,7 +106,7 @@ async function main() {
     default: false,
   });
 
-  const answer: YearRange = { from: answerFrom, to: answerTo };
+  const answer: Answer = margin > 0 ? { year: answerYear, margin } : { year: answerYear };
   const newPuzzle: Puzzle = {
     id: id.trim(),
     era,
@@ -143,7 +143,7 @@ async function main() {
 
   const gitResult = spawnSync(
     "git",
-    ["add", "src/content/puzzles.json", "src/content/schedule.json"],
+    ["add", "src/content/puzzles.json5", "src/content/schedule.json5"],
     { cwd: PROJECT_ROOT, stdio: "inherit" },
   );
   if (gitResult.error) console.error("spawn error:", gitResult.error.message);

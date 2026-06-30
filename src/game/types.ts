@@ -6,12 +6,16 @@ export type Bucket = "perfect" | "close" | "mid" | "far";
 
 export type Direction = "earlier" | "later" | "match";
 
-export type YearRange = { from: number; to: number };
+export type PointAnswer = { year: number; margin?: number };
+export type SpanAnswer  = { from: number; to: number };
+export type Answer = PointAnswer | SpanAnswer;
+
+export function isPointAnswer(a: Answer): a is PointAnswer { return "year" in a; }
 
 export type Puzzle = {
   id: string;
   era: Era;
-  answer: YearRange;
+  answer: Answer;
   hints: Record<Locale, [string, string, string, string, string]>;
   description: Record<Locale, string>;
   dateAnchored?: boolean;

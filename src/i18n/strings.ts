@@ -20,6 +20,8 @@ export const STRINGS = {
     outcomeWinSub: (g: number) => `en ${g}/5`,
     outcomeLossHeadline: "Te quedaste sin intentos",
     outcomeLossSub: (a: string) => `La respuesta era ${a}`,
+    outcomeLossOffBy: (n: number) => n === 1 ? "Te fuiste por 1 año" : `Te fuiste por ${n} años`,
+    outcomeWinOffBy: (n: number) => n === 1 ? "a 1 año del exacto" : `a ${n} años del exacto`,
     shareTail: (url: string) => `jugá en ${url}`,
     directionLabel: { earlier: "muy tarde", later: "muy temprano", match: "exacto" },
     eraLabel: {
