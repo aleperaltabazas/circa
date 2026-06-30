@@ -9,6 +9,7 @@ export const STRINGS = {
     maxStreak: "Máxima",
     rangeHint: (min: number, max: number) => `Ingresá un año entre ${min} y ${max}`,
     locked: "Bloqueada — adiviná para revelar",
+    duplicateGuess: "Ya intentaste ese año",
     puzzleMeta: (n: number, date: string) => `Puzzle #${n} — ${date}`,
     legendFar: "muy lejos",
     legendCloser: "más cerca",

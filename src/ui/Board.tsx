@@ -54,6 +54,7 @@ export function Board({
         era={state.puzzle.era}
         currentYear={currentYear}
         disabled={state.outcome !== "playing"}
+        guessedYears={state.guesses.map((g) => g.year)}
         locale={locale}
         onSubmit={onGuess}
       />
