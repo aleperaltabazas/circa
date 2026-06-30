@@ -67,7 +67,7 @@ async function main() {
   const answerYear = Number(answerYearStr);
 
   const marginStr = await input({
-    message: "Error margin (% of era width, 0 = exact)",
+    message: "Error margin (fraction of era width, 0 = exact, max 0.2)",
     default: "0",
     validate: (v) => validateMargin(Number(v)) ?? true,
   });

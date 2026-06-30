@@ -38,7 +38,7 @@ export function validateSameEraRange(from: number, to: number): string | null {
 
 export function validateMargin(margin: number | undefined): string | null {
   if (margin === undefined) return null;
-  if (!Number.isInteger(margin) || margin < 0 || margin > 20) return "margin must be an integer between 0 and 20";
+  if (typeof margin !== "number" || isNaN(margin) || margin < 0 || margin > 0.2) return "margin must be a number between 0 and 0.2";
   return null;
 }
 

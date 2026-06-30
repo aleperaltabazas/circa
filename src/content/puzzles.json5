@@ -184,7 +184,7 @@
   {
     "id": "noche-triste-1520",
     "era": "modern",
-    "answer": { "year": 1520, "margin": 2 },
+    "answer": { "year": 1520, "margin": 0.02 },
     "dateAnchored": true,
     "hints": {
       "es": [

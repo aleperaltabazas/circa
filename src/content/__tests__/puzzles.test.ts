@@ -41,12 +41,12 @@ describe("puzzles.json", () => {
     }
   });
 
-  it("PointAnswer puzzles have a valid margin (0–20 integer if present)", () => {
+  it("PointAnswer puzzles have a valid margin (0–0.2 if present)", () => {
     for (const p of puzzles) {
       if (isPointAnswer(p.answer) && p.answer.margin !== undefined) {
-        expect(Number.isInteger(p.answer.margin), `${p.id} margin is not an integer`).toBe(true);
+        expect(typeof p.answer.margin, `${p.id} margin is not a number`).toBe("number");
         expect(p.answer.margin, `${p.id} margin out of range`).toBeGreaterThanOrEqual(0);
-        expect(p.answer.margin, `${p.id} margin out of range`).toBeLessThanOrEqual(20);
+        expect(p.answer.margin, `${p.id} margin out of range`).toBeLessThanOrEqual(0.2);
       }
     }
   });

@@ -54,9 +54,9 @@ describe("scoreGuess (PointAnswer, no margin)", () => {
 });
 
 describe("scoreGuess (PointAnswer, with margin)", () => {
-  // modern era width = 336; margin=2 → delta = floor(336*2/100) = 6 → range 1514–1526
+  // modern era width = 336; margin=0.02 → delta = floor(336*0.02) = 6 → range 1514–1526
   it("returns perfect for a guess at the canonical year", () => {
-    expect(scoreGuess(1520, margin(1520, 2), "modern", 2026)).toEqual({
+    expect(scoreGuess(1520, margin(1520, 0.02), "modern", 2026)).toEqual({
       distanceRatio: 0,
       bucket: "perfect",
       direction: "match",
@@ -64,7 +64,7 @@ describe("scoreGuess (PointAnswer, with margin)", () => {
   });
 
   it("returns perfect for a guess inside the margin range", () => {
-    expect(scoreGuess(1516, margin(1520, 2), "modern", 2026)).toEqual({
+    expect(scoreGuess(1516, margin(1520, 0.02), "modern", 2026)).toEqual({
       distanceRatio: 0,
       bucket: "perfect",
       direction: "match",
@@ -72,7 +72,7 @@ describe("scoreGuess (PointAnswer, with margin)", () => {
   });
 
   it("returns non-perfect for a guess just outside the margin range", () => {
-    const result = scoreGuess(1513, margin(1520, 2), "modern", 2026);
+    const result = scoreGuess(1513, margin(1520, 0.02), "modern", 2026);
     expect(result.bucket).not.toBe("perfect");
     expect(result.direction).toBe("later");
   });
@@ -83,8 +83,8 @@ describe("answerRange", () => {
     expect(answerRange(point(1571), "modern", 2026)).toEqual({ from: 1571, to: 1571 });
   });
 
-  it("PointAnswer with margin=2 in modern era (W=336) returns ±6 year range", () => {
-    expect(answerRange(margin(1520, 2), "modern", 2026)).toEqual({ from: 1514, to: 1526 });
+  it("PointAnswer with margin=0.02 in modern era (W=336) returns ±6 year range", () => {
+    expect(answerRange(margin(1520, 0.02), "modern", 2026)).toEqual({ from: 1514, to: 1526 });
   });
 
   it("SpanAnswer is returned as-is", () => {

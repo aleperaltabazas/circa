@@ -16,7 +16,7 @@ export function answerRange(
   if (!isPointAnswer(answer)) return answer;
   if (!answer.margin) return { from: answer.year, to: answer.year };
   const { width } = eraRange(era, currentYear);
-  const delta = Math.floor(width * answer.margin / 100);
+  const delta = Math.floor(width * answer.margin);
   return { from: answer.year - delta, to: answer.year + delta };
 }
 
