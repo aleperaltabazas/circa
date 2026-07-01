@@ -13,7 +13,7 @@ const wonState: GameState = {
     id: "lepanto-1571",
     era: "modern",
     par: 3,
-    answer: { from: 1571, to: 1571 },
+    answer: { year: 1571 },
     hints: { es: ["a", "b", "c", "d", "e"] },
     description: { es: "desc" },
   },
@@ -35,6 +35,7 @@ describe("StatsModal", () => {
         gameState={wonState}
         puzzle={wonState.puzzle}
         puzzleNumber={42}
+        currentYear={2026}
         url="https://example.com/circa/"
         locale="es"
         onClose={() => {}}
@@ -55,6 +56,7 @@ describe("StatsModal", () => {
         gameState={lostState}
         puzzle={lostState.puzzle}
         puzzleNumber={42}
+        currentYear={2026}
         url="https://example.com/circa/"
         locale="es"
         onClose={() => {}}
@@ -79,6 +81,7 @@ describe("StatsModal", () => {
         gameState={rangeState}
         puzzle={rangeState.puzzle}
         puzzleNumber={42}
+        currentYear={2026}
         url="https://example.com/circa/"
         locale="es"
         onClose={() => {}}
@@ -95,6 +98,7 @@ describe("StatsModal", () => {
         gameState={wonState}
         puzzle={wonState.puzzle}
         puzzleNumber={42}
+        currentYear={2026}
         url="https://example.com/circa/"
         locale="es"
         onClose={onClose}
