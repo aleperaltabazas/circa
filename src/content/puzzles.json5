@@ -230,6 +230,27 @@
     }
   },
   {
+    "id": "historian-day-1812",
+    "era": "recent",
+    "answer": {
+      "year": 1812
+    },
+    "par": 3,
+    "hints": {
+      "es": [
+        "El deán Gregorio Funes es encargado con escribir la historia de los hechos de la revolución de mayo",
+        "Se disuelve el Primer Triunvirato y entra en vigencia el Segundo Triunvirato",
+        "El mismo año Manuel Belgrano enarbola la bandera argentina por primera vez",
+        "Antes de la declaración de independencia",
+        "200 años más tarde se especula que terminaría el mundo",
+      ]
+    },
+    "description": {
+      "es": "El 1 de julio de 1812 el Primer Triunvirato de las Provincias Unidas del Río de la Plata encargó a Gregorio Funes con la redacción de \"historia filosófica de nuestra feliz revolución, para perpetuar la memoria de los héroes y las virtudes de los hijos de América del Sud, y a la época gloriosa de nuestra independencia civil\". Por eso se eligió esta fecha para celebrar cada año el día del historiador."
+    },
+    "dateAnchored": true,
+  },
+  {
     "id": "bastille-1789",
     "era": "recent",
     "answer": {
@@ -270,26 +291,6 @@
       "es": "El 7 de agosto de 1990 Soda Stereo publica *Canción Animal*, uno de los álbumes más emblemáticos no solo del rock argentino, sino del rock en español en general. Entre ellas destacada *De Música Ligera* como uno de los himnos del rock hispanoamericano."
     },
     "dateAnchored": true
-  },
-  {
-    "id": "historian-day-1812",
-    "era": "recent",
-    "answer": {
-      "year": 1812
-    },
-    "par": 3,
-    "hints": {
-      "es": [
-        "El deán Gregorio Funes es encargado con escribir la historia de los hechos de la revolución de mayo",
-        "Napoleón invade Rusia",
-        "El mismo año Manuel Belgrano enarbola la bandera argentina por primera vez",
-        "Antes de la declaración de independencia",
-        "200 años más tarde se especula que terminaría el mundo",
-      ]
-    },
-    "description": {
-      "es": "El 1 de julio de 1812 el Primer Triunvirato de las Provincias Unidas del Río de la Plata encargó a Gregorio Funes con la redacción de \"historia filosófica de nuestra feliz revolución, para perpetuar la memoria de los héroes y las virtudes de los hijos de América del Sud, y a la época gloriosa de nuestra independencia civil\". Por eso se eligió esta fecha para celebrar cada año el día del historiador."
-    }
   },
   {
     "id": "random-1954",
