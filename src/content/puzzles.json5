@@ -2,7 +2,9 @@
   {
     "id": "lepanto-1571",
     "era": "modern",
-    "answer": { "year": 1571 },
+    "answer": {
+      "year": 1571
+    },
     "hints": {
       "es": [
         "Una guerra de la edad moderna que involucró al imperio otomano ocurrió este año",
@@ -19,7 +21,9 @@
   {
     "id": "constitucion-1853",
     "era": "recent",
-    "answer": { "year": 1853 },
+    "answer": {
+      "year": 1853
+    },
     "hints": {
       "es": [
         "Un centenario de la caída del imperio Romano de Oriente",
@@ -36,7 +40,9 @@
   {
     "id": "goal-of-the-century-1986",
     "era": "recent",
-    "answer": { "year": 1986 },
+    "answer": {
+      "year": 1986
+    },
     "hints": {
       "es": [
         "El cometa Halley fue visible este año",
@@ -74,7 +80,9 @@
   {
     "id": "messi-1987",
     "era": "recent",
-    "answer": { "year": 1987 },
+    "answer": {
+      "year": 1987
+    },
     "hints": {
       "es": [
         "Este año nace un reconocido jugador de fútbol en Rosario",
@@ -92,7 +100,9 @@
   {
     "id": "argentina-wc-1978",
     "era": "recent",
-    "answer": { "year": 1978 },
+    "answer": {
+      "year": 1978
+    },
     "dateAnchored": true,
     "hints": {
       "es": [
@@ -110,7 +120,9 @@
   {
     "id": "harry-potter-1997",
     "era": "recent",
-    "answer": { "year": 1997 },
+    "answer": {
+      "year": 1997
+    },
     "dateAnchored": true,
     "hints": {
       "es": [
@@ -148,7 +160,9 @@
   {
     "id": "franz-ferdinand-1914",
     "era": "recent",
-    "answer": { "year": 1914 },
+    "answer": {
+      "year": 1914
+    },
     "hints": {
       "es": [
         "*I say, 'Don't you know?'; You say 'You don't know'; I say 'Take me out!'*",
@@ -166,7 +180,9 @@
   {
     "id": "isabelita-1974",
     "era": "recent",
-    "answer": { "year": 1974 },
+    "answer": {
+      "year": 1974
+    },
     "dateAnchored": true,
     "hints": {
       "es": [
@@ -184,7 +200,10 @@
   {
     "id": "noche-triste-1520",
     "era": "modern",
-    "answer": { "year": 1520, "margin": 0.02 },
+    "answer": {
+      "year": 1520,
+      "margin": 0.02
+    },
     "dateAnchored": true,
     "hints": {
       "es": [
@@ -202,7 +221,9 @@
   {
     "id": "bastille-1789",
     "era": "recent",
-    "answer": { "year": 1789 },
+    "answer": {
+      "year": 1789
+    },
     "hints": {
       "es": [
         "Una importante fortaleza parisina es asediada y su pólvora saqueada",
@@ -220,7 +241,9 @@
   {
     "id": "cancion-animal-1990",
     "era": "recent",
-    "answer": { "year": 1990 },
+    "answer": {
+      "year": 1990
+    },
     "hints": {
       "es": [
         "Una banda argentina publica un álbum conteniendo la posiblemente canción más popular del rock latinoamericano",
@@ -236,9 +259,30 @@
     "dateAnchored": true
   },
   {
+    "id": "historian-day-1812",
+    "era": "recent",
+    "answer": {
+      "year": 1812
+    },
+    "hints": {
+      "es": [
+        "El deán Gregorio Funes es encargado con escribir la historia de los hechos de la revolución de mayo",
+        "Napoleón invade Rusia",
+        "El mismo año Manuel Belgrano enarbola la bandera argentina por primera vez",
+        "Antes de la declaración de independencia",
+        "200 años más tarde se especula que terminaría el mundo",
+      ]
+    },
+    "description": {
+      "es": "El 1 de julio de 1812 el Primer Triunvirato de las Provincias Unidas del Río de la Plata encargó a Gregorio Funes con la redacción de \"historia filosófica de nuestra feliz revolución, para perpetuar la memoria de los héroes y las virtudes de los hijos de América del Sud, y a la época gloriosa de nuestra independencia civil\". Por eso se eligió esta fecha para celebrar cada año el día del historiador."
+    }
+  },
+  {
     "id": "random-1954",
     "era": "recent",
-    "answer": { "year": 1954 },
+    "answer": {
+      "year": 1954
+    },
     "hints": {
       "es": [
         "Bill Halley y sus cometas graban \"Rock Around the Clock\", consagrando así la primera canción de rock and roll en alcanzar el primer puesto en la lista de ventas",
