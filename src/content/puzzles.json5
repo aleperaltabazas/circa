@@ -3,8 +3,7 @@
     "id": "lepanto-1571",
     "era": "modern",
     "answer": {
-      "from": 1571,
-      "to": 1571
+      "year": 1571
     },
     "par": 3,
     "hints": {
@@ -24,8 +23,7 @@
     "id": "constitucion-1853",
     "era": "recent",
     "answer": {
-      "from": 1853,
-      "to": 1853
+      "year": 1853
     },
     "par": 3,
     "hints": {
@@ -45,8 +43,7 @@
     "id": "goal-of-the-century-1986",
     "era": "recent",
     "answer": {
-      "from": 1986,
-      "to": 1986
+      "year": 1986
     },
     "par": 3,
     "hints": {
@@ -88,8 +85,7 @@
     "id": "messi-1987",
     "era": "recent",
     "answer": {
-      "from": 1987,
-      "to": 1987
+      "year": 1987
     },
     "par": 3,
     "hints": {
@@ -110,8 +106,7 @@
     "id": "argentina-wc-1978",
     "era": "recent",
     "answer": {
-      "from": 1978,
-      "to": 1978
+      "year": 1978
     },
     "par": 3,
     "dateAnchored": true,
@@ -132,8 +127,7 @@
     "id": "harry-potter-1997",
     "era": "recent",
     "answer": {
-      "from": 1997,
-      "to": 1997
+      "year": 1997
     },
     "par": 3,
     "dateAnchored": true,
@@ -175,8 +169,7 @@
     "id": "franz-ferdinand-1914",
     "era": "recent",
     "answer": {
-      "from": 1914,
-      "to": 1914
+      "year": 1914
     },
     "par": 3,
     "hints": {
@@ -197,8 +190,7 @@
     "id": "isabelita-1974",
     "era": "recent",
     "answer": {
-      "from": 1974,
-      "to": 1974
+      "year": 1974
     },
     "par": 3,
     "dateAnchored": true,
@@ -219,8 +211,8 @@
     "id": "noche-triste-1520",
     "era": "modern",
     "answer": {
-      "from": 1515,
-      "to": 1525
+      "year": 1520,
+      "margin": 0.02
     },
     "par": 3,
     "dateAnchored": true,
@@ -241,8 +233,7 @@
     "id": "bastille-1789",
     "era": "recent",
     "answer": {
-      "from": 1789,
-      "to": 1789
+      "year": 1789
     },
     "par": 3,
     "hints": {
@@ -263,8 +254,7 @@
     "id": "cancion-animal-1990",
     "era": "recent",
     "answer": {
-      "from": 1990,
-      "to": 1990
+      "year": 1990
     },
     "par": 3,
     "hints": {
@@ -282,11 +272,30 @@
     "dateAnchored": true
   },
   {
+    "id": "historian-day-1812",
+    "era": "recent",
+    "answer": {
+      "year": 1812
+    },
+    "par": 3,
+    "hints": {
+      "es": [
+        "El deán Gregorio Funes es encargado con escribir la historia de los hechos de la revolución de mayo",
+        "Napoleón invade Rusia",
+        "El mismo año Manuel Belgrano enarbola la bandera argentina por primera vez",
+        "Antes de la declaración de independencia",
+        "200 años más tarde se especula que terminaría el mundo",
+      ]
+    },
+    "description": {
+      "es": "El 1 de julio de 1812 el Primer Triunvirato de las Provincias Unidas del Río de la Plata encargó a Gregorio Funes con la redacción de \"historia filosófica de nuestra feliz revolución, para perpetuar la memoria de los héroes y las virtudes de los hijos de América del Sud, y a la época gloriosa de nuestra independencia civil\". Por eso se eligió esta fecha para celebrar cada año el día del historiador."
+    }
+  },
+  {
     "id": "random-1954",
     "era": "recent",
     "answer": {
-      "from": 1954,
-      "to": 1954
+      "year": 1954
     },
     "par": 3,
     "hints": {
