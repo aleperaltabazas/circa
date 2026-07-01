@@ -8,6 +8,7 @@ import { DateChip } from "./DateChip";
 import { EraPill } from "./EraPill";
 import { GuessInput } from "./GuessInput";
 import { LocaleToggle } from "./LocaleToggle";
+import { ParBadge } from "./ParBadge";
 import styles from "./Board.module.css";
 
 export function Board({
@@ -36,6 +37,7 @@ export function Board({
           <div className={styles.meta}>{s.puzzleMeta(puzzleNumber, todayLabel)}</div>
         </div>
         <div className={styles.headerRight}>
+          <ParBadge par={state.puzzle.par} />
           <LocaleToggle locale={locale} onChange={onLocaleChange} />
         </div>
       </div>

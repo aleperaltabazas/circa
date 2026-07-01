@@ -36,12 +36,6 @@ export function validateSameEraRange(from: number, to: number): string | null {
   return null;
 }
 
-export function validateMargin(margin: number | undefined): string | null {
-  if (margin === undefined) return null;
-  if (typeof margin !== "number" || isNaN(margin) || margin < 0 || margin > 0.2) return "margin must be a number between 0 and 0.2";
-  return null;
-}
-
 export function validateId(id: string, existingIds: string[]): string | null {
   if (!id) return "id is required";
   if (!ID_RE.test(id)) return "id must be kebab-case (lowercase letters, digits, hyphens)";
@@ -70,6 +64,11 @@ export function validateAnswerRange(from: number, to: number, era: Era): string 
 
 export function validateNonEmpty(value: string, fieldName: string): string | null {
   if (!value || !value.trim()) return `${fieldName} must not be empty`;
+  return null;
+}
+
+export function validatePar(v: number): string | null {
+  if (!Number.isInteger(v) || v < 1 || v > 5) return "Par must be an integer between 1 and 5";
   return null;
 }
 

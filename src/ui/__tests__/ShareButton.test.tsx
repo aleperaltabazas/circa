@@ -8,6 +8,7 @@ const state: GameState = {
   puzzle: {
     id: "lepanto-1571",
     era: "modern",
+    par: 3,
     answer: { from: 1571, to: 1571 },
     hints: { es: ["a", "b", "c", "d", "e"] },
     description: { es: "desc" },
