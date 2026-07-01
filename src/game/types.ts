@@ -12,10 +12,13 @@ export type Answer = PointAnswer | SpanAnswer;
 
 export function isPointAnswer(a: Answer): a is PointAnswer { return "year" in a; }
 
+export type Par = 1 | 2 | 3 | 4 | 5;
+
 export type Puzzle = {
   id: string;
   era: Era;
   answer: Answer;
+  par: Par;
   hints: Record<Locale, [string, string, string, string, string]>;
   description: Record<Locale, string>;
   dateAnchored?: boolean;
