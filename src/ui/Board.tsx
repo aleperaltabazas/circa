@@ -37,13 +37,13 @@ export function Board({
           <div className={styles.meta}>{s.puzzleMeta(puzzleNumber, todayLabel)}</div>
         </div>
         <div className={styles.headerRight}>
-          <ParBadge par={state.puzzle.par} />
           <LocaleToggle locale={locale} onChange={onLocaleChange} />
         </div>
       </div>
       <div className={styles.contextRow}>
         <EraPill era={state.puzzle.era} locale={locale} />
         {state.puzzle.dateAnchored && <DateChip todayIso={todayLabel} locale={locale} />}
+        <ParBadge par={state.puzzle.par} />
       </div>
       <Hints
         hints={state.puzzle.hints[locale]}

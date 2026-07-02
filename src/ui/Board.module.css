@@ -30,3 +30,6 @@
   gap: 8px;
   margin-bottom: 12px;
 }
+.contextRow > :last-child {
+  margin-left: auto;
+}
