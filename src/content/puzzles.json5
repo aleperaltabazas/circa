@@ -250,7 +250,27 @@
     },
     "dateAnchored": true,
   },
-  // night-of-the-long-knives-1934 — WIP, hints/description pending
+  {
+    "id": "night-of-the-long-knives-1934",
+    "era": "recent",
+    "answer": {
+      "year": 1934,
+      "margin": "decade",
+    },
+    "par": 4,
+    "hints": {
+      "es": [
+        "Luego de 3 días finaliza la purga de Röhm, masacre que vio el asesinato de 85 personas (que se sepan)",
+        "El mismo año: fallece Marie Curie, nace Maggie Smith",
+        "Exactamente un mes más tarde Hitler se proclamaría *führer* del Tercer Reich.",
+        "El año anterior Hitler era nombrado canciller de Alemania",
+        "Al final de la década daría inicio la segunda guerra mundial"
+      ]
+    },
+    "description": {
+      "es": "Entre el 30 de junio y el 2 de julio de 1934 en Alemania se llevó a cabo la *Operación Colibri*, mejor conocida como **la noche de los cuchillos largos**. Durante esos 3 días la SS y la Gestapo asesinaron a al menos 85 rivales políticos y arrestó a más de 1000 con el fin de erradicar las corrientes de izquierda del régimen nazi."
+    }
+  },
   {
     "id": "bastille-1789",
     "era": "recent",
