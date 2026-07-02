@@ -1,5 +1,7 @@
-import { Answer, Bucket, Direction, Era, isPointAnswer } from "./types";
+import { Answer, Bucket, Direction, Era, NamedMargin, isPointAnswer } from "./types";
 import { eraRange } from "./eras";
+
+const PERIOD_SIZES: Record<NamedMargin, number> = { luster: 5, decade: 10, century: 100, millennium: 1000 };
 
 // Non-perfect bucket thresholds, evaluated in order: first ratio <= max wins.
 // Anything beyond the last threshold falls through to "far".
@@ -15,6 +17,11 @@ export function answerRange(
 ): { from: number; to: number } {
   if (!isPointAnswer(answer)) return answer;
   if (!answer.margin) return { from: answer.year, to: answer.year };
+  if (typeof answer.margin === "string") {
+    const size = PERIOD_SIZES[answer.margin];
+    const start = Math.floor(answer.year / size) * size;
+    return { from: start, to: start + size - 1 };
+  }
   const { width } = eraRange(era, currentYear);
   const delta = Math.floor(width * answer.margin);
   return { from: answer.year - delta, to: answer.year + delta };

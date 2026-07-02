@@ -36,9 +36,14 @@ export function validateSameEraRange(from: number, to: number): string | null {
   return null;
 }
 
-export function validateMargin(margin: number | undefined): string | null {
-  if (margin === undefined) return null;
-  if (typeof margin !== "number" || isNaN(margin) || margin < 0 || margin > 0.2) return "margin must be a number between 0 and 0.2";
+const NAMED_MARGINS = ["luster", "decade", "century", "millennium"] as const;
+
+export function validateMargin(margin: string | number | undefined): string | null {
+  if (margin === undefined || margin === "" || margin === "0" || margin === 0) return null;
+  if (typeof margin === "string" && (NAMED_MARGINS as readonly string[]).includes(margin)) return null;
+  const n = Number(margin);
+  if (isNaN(n) || n < 0 || n > 0.2)
+    return "margin must be 0, a fraction (0–0.2), or one of: luster, decade, century, millennium";
   return null;
 }
 

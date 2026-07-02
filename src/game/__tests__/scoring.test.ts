@@ -1,8 +1,10 @@
 import { describe, it, expect } from "vitest";
 import { scoreGuess, answerRange } from "../scoring";
+import { NamedMargin } from "../types";
 
 const point = (year: number) => ({ year });
 const margin = (year: number, m: number) => ({ year, margin: m });
+const named = (year: number, m: NamedMargin) => ({ year, margin: m });
 const span = (from: number, to: number) => ({ from, to });
 
 describe("scoreGuess (PointAnswer, no margin)", () => {
@@ -89,6 +91,44 @@ describe("answerRange", () => {
 
   it("SpanAnswer is returned as-is", () => {
     expect(answerRange(span(400, 420), "ancient", 2026)).toEqual({ from: 400, to: 420 });
+  });
+
+  it("luster: 1927 → 1925–1929", () => {
+    expect(answerRange(named(1927, "luster"), "recent", 2026)).toEqual({ from: 1925, to: 1929 });
+  });
+
+  it("decade: 1927 → 1920–1929", () => {
+    expect(answerRange(named(1927, "decade"), "recent", 2026)).toEqual({ from: 1920, to: 1929 });
+  });
+
+  it("century: 1927 → 1900–1999", () => {
+    expect(answerRange(named(1927, "century"), "recent", 2026)).toEqual({ from: 1900, to: 1999 });
+  });
+
+  it("millennium: 1927 → 1000–1999", () => {
+    expect(answerRange(named(1927, "millennium"), "recent", 2026)).toEqual({ from: 1000, to: 1999 });
+  });
+
+  it("decade BCE: -43 → -50 to -41", () => {
+    expect(answerRange(named(-43, "decade"), "ancient", 2026)).toEqual({ from: -50, to: -41 });
+  });
+});
+
+describe("scoreGuess (PointAnswer, named margin)", () => {
+  it("guess inside luster range scores perfect", () => {
+    expect(scoreGuess(1925, named(1927, "luster"), "recent", 2026)).toEqual({
+      distanceRatio: 0, bucket: "perfect", direction: "match",
+    });
+  });
+
+  it("guess at period boundary scores perfect", () => {
+    expect(scoreGuess(1929, named(1927, "luster"), "recent", 2026)).toEqual({
+      distanceRatio: 0, bucket: "perfect", direction: "match",
+    });
+  });
+
+  it("guess outside luster range scores non-perfect", () => {
+    expect(scoreGuess(1924, named(1927, "luster"), "recent", 2026).bucket).not.toBe("perfect");
   });
 });
 

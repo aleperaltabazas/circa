@@ -2,10 +2,10 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import { resolve } from "node:path";
-import { input, editor, confirm } from "@inquirer/prompts";
+import { input, editor, confirm, select } from "@inquirer/prompts";
 import { Locale } from "../src/i18n/types";
 import { today } from "../src/game/today";
-import { Answer, Par, Puzzle, Schedule } from "../src/game/types";
+import { Answer, Margin, NamedMargin, Par, Puzzle, Schedule } from "../src/game/types";
 import {
   validateId,
   validateNonEmpty,
@@ -67,12 +67,28 @@ async function main() {
   });
   const answerYear = Number(answerYearStr);
 
-  const marginStr = await input({
-    message: "Error margin (fraction of era width, 0 = exact, max 0.2)",
-    default: "0",
-    validate: (v) => validateMargin(Number(v)) ?? true,
+  const marginChoice = await select({
+    message: "Answer tolerance",
+    choices: [
+      { name: "exact (single year)", value: "" },
+      { name: "luster — 5-year period  (e.g. 1927 → 1925–1929)", value: "luster" },
+      { name: "decade                  (e.g. 1927 → 1920–1929)", value: "decade" },
+      { name: "century                 (e.g. 1927 → 1900–1999)", value: "century" },
+      { name: "millennium              (e.g. 1927 → 1000–1999)", value: "millennium" },
+      { name: "custom fraction (0–0.2 of era width)", value: "custom" },
+    ],
   });
-  const margin = Number(marginStr);
+
+  let margin: Margin | undefined;
+  if (marginChoice === "custom") {
+    const fracStr = await input({
+      message: "Fraction (0–0.2)",
+      validate: (v) => validateMargin(v) ?? true,
+    });
+    margin = Number(fracStr);
+  } else if (marginChoice !== "") {
+    margin = marginChoice as NamedMargin;
+  }
 
   const era = eraOf(answerYear)!;
   console.log(`\nEra: ${era}`);
@@ -114,7 +130,7 @@ async function main() {
   });
   const par = Number(parStr) as Par;
 
-  const answer: Answer = margin > 0 ? { year: answerYear, margin } : { year: answerYear };
+  const answer: Answer = margin != null ? { year: answerYear, margin } : { year: answerYear };
   const newPuzzle: Puzzle = {
     id: id.trim(),
     era,

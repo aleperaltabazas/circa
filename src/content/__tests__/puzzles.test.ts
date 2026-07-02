@@ -41,12 +41,18 @@ describe("puzzles.json", () => {
     }
   });
 
-  it("PointAnswer puzzles have a valid margin (0–0.2 if present)", () => {
+  it("PointAnswer puzzles have a valid margin (number 0–0.2 or named period)", () => {
+    const NAMED = new Set(["luster", "decade", "century", "millennium"]);
     for (const p of puzzles) {
       if (isPointAnswer(p.answer) && p.answer.margin !== undefined) {
-        expect(typeof p.answer.margin, `${p.id} margin is not a number`).toBe("number");
-        expect(p.answer.margin, `${p.id} margin out of range`).toBeGreaterThanOrEqual(0);
-        expect(p.answer.margin, `${p.id} margin out of range`).toBeLessThanOrEqual(0.2);
+        const m = p.answer.margin;
+        if (typeof m === "string") {
+          expect(NAMED.has(m), `${p.id} unrecognised named margin "${m}"`).toBe(true);
+        } else {
+          expect(typeof m, `${p.id} margin is not a number`).toBe("number");
+          expect(m, `${p.id} margin out of range`).toBeGreaterThanOrEqual(0);
+          expect(m, `${p.id} margin out of range`).toBeLessThanOrEqual(0.2);
+        }
       }
     }
   });

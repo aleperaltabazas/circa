@@ -6,7 +6,10 @@ export type Bucket = "perfect" | "close" | "mid" | "far";
 
 export type Direction = "earlier" | "later" | "match";
 
-export type PointAnswer = { year: number; margin?: number };
+export type NamedMargin = "luster" | "decade" | "century" | "millennium";
+export type Margin = number | NamedMargin;
+
+export type PointAnswer = { year: number; margin?: Margin };
 export type SpanAnswer  = { from: number; to: number };
 export type Answer = PointAnswer | SpanAnswer;
 
