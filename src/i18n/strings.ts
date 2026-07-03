@@ -38,6 +38,13 @@ export const STRINGS = {
       millennium: "Milenio",
       percent: (n: number) => `Margen ${n}%`,
     },
+    marginTooltip: {
+      luster: "Cualquier año dentro del lustro",
+      decade: "Cualquier año dentro de la década",
+      century: "Cualquier año dentro del siglo",
+      millennium: "Cualquier año dentro del milenio",
+      percent: (n: number) => `Cualquier año en el margen del ${n}%`,
+    },
     eraTooltip: "Era histórica de la respuesta",
     dateTooltip: "El evento ocurrió en esta fecha del calendario",
     closenessHints: {
