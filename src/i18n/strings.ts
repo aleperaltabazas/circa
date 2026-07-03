@@ -31,6 +31,13 @@ export const STRINGS = {
       modern: "moderna",
       recent: "reciente",
     },
+    marginLabel: {
+      luster: "Lustro",
+      decade: "Década",
+      century: "Siglo",
+      millennium: "Milenio",
+      percent: (n: number) => `Margen ${n}%`,
+    },
     eraTooltip: "Era histórica de la respuesta",
     dateTooltip: "El evento ocurrió en esta fecha del calendario",
     closenessHints: {

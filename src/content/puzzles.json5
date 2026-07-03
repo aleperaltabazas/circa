@@ -1,337 +1,359 @@
 [
   {
-    "id": "lepanto-1571",
-    "era": "modern",
-    "answer": {
-      "year": 1571
+    id: 'lepanto-1571',
+    era: 'modern',
+    answer: {
+      year: 1571,
     },
-    "par": 3,
-    "hints": {
-      "es": [
-        "Una guerra de la edad moderna que involucró al imperio otomano ocurrió este año",
-        "Más de un siglo después de que cayó el imperio bizantino",
-        "La Liga Santa recuperó el control cristiano del Mediterráneo",
-        "Un español se inspiró para escribir una sátira de las novelas de caballerías de la época",
-        "400 años después Led Zeppelin lanzó 'Stairway to Heaven'"
-      ]
+    par: 3,
+    hints: {
+      es: [
+        'Una guerra de la edad moderna que involucró al imperio otomano ocurrió este año',
+        'Más de un siglo después de que cayó el imperio bizantino',
+        'La Liga Santa recuperó el control cristiano del Mediterráneo',
+        'Un español se inspiró para escribir una sátira de las novelas de caballerías de la época',
+        "400 años después Led Zeppelin lanzó 'Stairway to Heaven'",
+      ],
     },
-    "description": {
-      "es": "La batalla de Lepanto (7 de octubre de 1571) fue una victoria naval decisiva de la Liga Santa — una coalición de potencias católicas liderada por España, Venecia y los Estados Pontificios — sobre el Imperio otomano en el golfo de Patras. Frenó la expansión otomana en el Mediterráneo y resonó en la cultura europea durante siglos; el propio Miguel de Cervantes combatió allí y perdió el uso de su mano izquierda."
-    }
+    description: {
+      es: 'La batalla de Lepanto (7 de octubre de 1571) fue una victoria naval decisiva de la Liga Santa — una coalición de potencias católicas liderada por España, Venecia y los Estados Pontificios — sobre el Imperio otomano en el golfo de Patras. Frenó la expansión otomana en el Mediterráneo y resonó en la cultura europea durante siglos; el propio Miguel de Cervantes combatió allí y perdió el uso de su mano izquierda.',
+    },
   },
   {
-    "id": "constitucion-1853",
-    "era": "recent",
-    "answer": {
-      "year": 1853
+    id: 'constitucion-1853',
+    era: 'recent',
+    answer: {
+      year: 1853,
     },
-    "par": 3,
-    "hints": {
-      "es": [
-        "Un centenario de la caída del imperio Romano de Oriente",
-        "Se asocia un sillón a una de las personas involucradas en este evento.",
-        "100 años más tarde Eisenhower asume la presidencia en Estados Unidos",
-        "Hay un barrio en la Ciudad de Buenos Aires cuyo nombre refiere a lo que ocurrió este año",
-        "Se considera que a partir de este año empieza a existir oficialmente la República Argentina"
-      ]
+    par: 3,
+    hints: {
+      es: [
+        'Un centenario de la caída del imperio Romano de Oriente',
+        'Se asocia un sillón a una de las personas involucradas en este evento.',
+        '100 años más tarde Eisenhower asume la presidencia en Estados Unidos',
+        'Hay un barrio en la Ciudad de Buenos Aires cuyo nombre refiere a lo que ocurrió este año',
+        'Se considera que a partir de este año empieza a existir oficialmente la República Argentina',
+      ],
     },
-    "description": {
-      "es": "La Constitución argentina de 1853 fue sancionada por el Congreso Constituyente de Santa Fe el 1 de mayo de 1853, sentando las bases del estado federal argentino tras décadas de guerras civiles. Inspirada parcialmente en la constitución estadounidense y en el pensamiento de Juan Bautista Alberdi, organizó el régimen republicano que, con reformas, sigue vigente."
-    }
+    description: {
+      es: 'La Constitución argentina de 1853 fue sancionada por el Congreso Constituyente de Santa Fe el 1 de mayo de 1853, sentando las bases del estado federal argentino tras décadas de guerras civiles. Inspirada parcialmente en la constitución estadounidense y en el pensamiento de Juan Bautista Alberdi, organizó el régimen republicano que, con reformas, sigue vigente.',
+    },
   },
   {
-    "id": "goal-of-the-century-1986",
-    "era": "recent",
-    "answer": {
-      "year": 1986
+    id: 'goal-of-the-century-1986',
+    era: 'recent',
+    answer: {
+      year: 1986,
     },
-    "par": 3,
-    "hints": {
-      "es": [
-        "El cometa Halley fue visible este año",
-        "Soda Stereo publica Signos, Los Redondos publican Oktubre, Metallica publica Master of Puppets",
-        "Se produce una falla en un reactor nuclear",
-        "10 años antes daba inicio una dictadura en Argentina",
-        "Se juega un mundial en México ese año"
-      ]
+    par: 3,
+    hints: {
+      es: [
+        'El cometa Halley fue visible este año',
+        'Soda Stereo publica Signos, Los Redondos publican Oktubre, Metallica publica Master of Puppets',
+        'Se produce una falla en un reactor nuclear',
+        '10 años antes daba inicio una dictadura en Argentina',
+        'Se juega un mundial en México ese año',
+      ],
     },
-    "description": {
-      "es": "El 22 de junio de 1986, en el cuarto de final del Mundial de México entre Argentina e Inglaterra, Diego Maradona marcó dos de los goles más recordados de la historia del fútbol. El primero, con la mano, sería conocido como 'la mano de Dios'. El segundo, una corrida de más de cincuenta metros eludiendo a media defensa inglesa antes de definir, fue elegido por la FIFA como el 'Gol del Siglo' del siglo XX."
+    description: {
+      es: "El 22 de junio de 1986, en el cuarto de final del Mundial de México entre Argentina e Inglaterra, Diego Maradona marcó dos de los goles más recordados de la historia del fútbol. El primero, con la mano, sería conocido como 'la mano de Dios'. El segundo, una corrida de más de cincuenta metros eludiendo a media defensa inglesa antes de definir, fue elegido por la FIFA como el 'Gol del Siglo' del siglo XX.",
     },
-    "dateAnchored": true
+    dateAnchored: true,
   },
   {
-    "id": "socrates-trial-399bc",
-    "era": "ancient",
-    "answer": {
-      "from": -410,
-      "to": -390
+    id: 'socrates-trial-399bc',
+    era: 'ancient',
+    answer: {
+      from: -410,
+      to: -390,
     },
-    "par": 3,
-    "hints": {
-      "es": [
-        "La muerte de un importante filósofo, su historia contada por uno de sus estudiantes",
-        "Posterior a las primeras guerras médicas",
-        "En la misma década en el futuro se estrenaría por primera vez Matrix",
-        "El filósofo fue condenado a muerte por 280 miembros del jurado contra 221 que lo encontraron inocente",
-        "Casi 2400 años más adelante terminaría el siglo XX"
-      ]
+    par: 3,
+    hints: {
+      es: [
+        'La muerte de un importante filósofo, su historia contada por uno de sus estudiantes',
+        'Posterior a las primeras guerras médicas',
+        'En la misma década en el futuro se estrenaría por primera vez Matrix',
+        'El filósofo fue condenado a muerte por 280 miembros del jurado contra 221 que lo encontraron inocente',
+        'Casi 2400 años más adelante terminaría el siglo XX',
+      ],
     },
-    "description": {
-      "es": "Sócrates fue enjuiciado y condenado por el gobierno ateniense por de corromper a la juventud. Tras la condena, sus estudiantes le recomendaron huir; Sócrates rechazo sus pedidos y bebió la cicuta."
-    }
+    description: {
+      es: 'Sócrates fue enjuiciado y condenado por el gobierno ateniense por de corromper a la juventud. Tras la condena, sus estudiantes le recomendaron huir; Sócrates rechazo sus pedidos y bebió la cicuta.',
+    },
   },
   {
-    "id": "messi-1987",
-    "era": "recent",
-    "answer": {
-      "year": 1987
+    id: 'messi-1987',
+    era: 'recent',
+    answer: {
+      year: 1987,
     },
-    "par": 3,
-    "hints": {
-      "es": [
-        "Este año nace un reconocido jugador de fútbol en Rosario",
-        "Guns n' Roses publica \"Appetite for Destruction\", Charly García publica \"Parte de la religión\"",
-        "Este jugador debuta en la selección argentina en 2005",
-        "El año anterior se jugó un mundial",
-        "El jugador gana su primer mundial a sus 35 años"
-      ]
+    par: 3,
+    hints: {
+      es: [
+        'Este año nace un reconocido jugador de fútbol en Rosario',
+        'Guns n\' Roses publica "Appetite for Destruction", Charly García publica "Parte de la religión"',
+        'Este jugador debuta en la selección argentina en 2005',
+        'El año anterior se jugó un mundial',
+        'El jugador gana su primer mundial a sus 35 años',
+      ],
     },
-    "description": {
-      "es": "Lionel Messi nació el 24 de junio de 1987 en la ciudad de Rosario, en la provincia de Santa Fe, Argentina. Se crio específicamente en el barrio La Bajada, ubicado en la zona sur de la ciudad, donde vivió gran parte de su infancia y dio sus primeros pasos en el fútbol jugando en clubes locales."
+    description: {
+      es: 'Lionel Messi nació el 24 de junio de 1987 en la ciudad de Rosario, en la provincia de Santa Fe, Argentina. Se crio específicamente en el barrio La Bajada, ubicado en la zona sur de la ciudad, donde vivió gran parte de su infancia y dio sus primeros pasos en el fútbol jugando en clubes locales.',
     },
-    "dateAnchored": true
+    dateAnchored: true,
   },
   {
-    "id": "argentina-wc-1978",
-    "era": "recent",
-    "answer": {
-      "year": 1978
+    id: 'argentina-wc-1978',
+    era: 'recent',
+    answer: {
+      year: 1978,
     },
-    "par": 3,
-    "dateAnchored": true,
-    "hints": {
-      "es": [
-        "Una película argentina de 2024 dirigida por Luciano y Nicolás Onetti es titulada con el año",
-        "Van Halen publica su primer disco",
-        "Juan Pablo II es elegido papa",
-        "El gobierno militar argentino inicia la Operación Soberanía para invadir Chile",
-        "Argentina se consagra campeona en el mundial de fútbol venciendo 3-1 a Países Bajos"
-      ]
+    par: 3,
+    dateAnchored: true,
+    hints: {
+      es: [
+        'Una película argentina de 2024 dirigida por Luciano y Nicolás Onetti es titulada con el año',
+        'Van Halen publica su primer disco',
+        'Juan Pablo II es elegido papa',
+        'El gobierno militar argentino inicia la Operación Soberanía para invadir Chile',
+        'Argentina se consagra campeona en el mundial de fútbol venciendo 3-1 a Países Bajos',
+      ],
     },
-    "description": {
-      "es": "Un 25 de junio de 1978 Argentina se consagraría campeona del múndial de fútbol por primera vez en la historia, un hecho controversial en el marco de la última dictadura militar y el terrorismo de Estado en el país."
-    }
+    description: {
+      es: 'Un 25 de junio de 1978 Argentina se consagraría campeona del múndial de fútbol por primera vez en la historia, un hecho controversial en el marco de la última dictadura militar y el terrorismo de Estado en el país.',
+    },
   },
   {
-    "id": "harry-potter-1997",
-    "era": "recent",
-    "answer": {
-      "year": 1997
+    id: 'harry-potter-1997',
+    era: 'recent',
+    answer: {
+      year: 1997,
     },
-    "par": 3,
-    "dateAnchored": true,
-    "hints": {
-      "es": [
-        "Este año comienza una nueva historia de magia y hechicería sobre un niño con anteojos y un rayo en su frente",
-        "Gustavo Cerati cierra el último concierto de Soda Stereo anunciando: *\"Gracias totales\"*",
-        "Lady D muere en un accidente automovilístico en París",
-        "Se estrenan *Titanic*, *Hombres de Negro*, y *La vida es bella*",
-        "Si nuestro hechicero hubiera nacido un año más tarde, habría visto a Francia consagrarse campeona de un mundial por primera vez"
-      ]
+    par: 3,
+    dateAnchored: true,
+    hints: {
+      es: [
+        'Este año comienza una nueva historia de magia y hechicería sobre un niño con anteojos y un rayo en su frente',
+        'Gustavo Cerati cierra el último concierto de Soda Stereo anunciando: *"Gracias totales"*',
+        'Lady D muere en un accidente automovilístico en París',
+        'Se estrenan *Titanic*, *Hombres de Negro*, y *La vida es bella*',
+        'Si nuestro hechicero hubiera nacido un año más tarde, habría visto a Francia consagrarse campeona de un mundial por primera vez',
+      ],
     },
-    "description": {
-      "es": "El 26 de junio de 1997 se publicó por primera vez en Reino Unido *Harry Potter y la piedra filosofal*. La historia del niño que sobrevivió se ha convertido en uno de los universos de ficción más populares de la época contemporánea con 8 películas adaptando su historia y diversos *spin-offs*."
-    }
+    description: {
+      es: 'El 26 de junio de 1997 se publicó por primera vez en Reino Unido *Harry Potter y la piedra filosofal*. La historia del niño que sobrevivió se ha convertido en uno de los universos de ficción más populares de la época contemporánea con 8 películas adaptando su historia y diversos *spin-offs*.',
+    },
   },
   {
-    "id": "ransacking-of-rome-410",
-    "era": "ancient",
-    "answer": {
-      "from": 400,
-      "to": 420
+    id: 'ransacking-of-rome-410',
+    era: 'ancient',
+    answer: {
+      from: 400,
+      to: 420,
     },
-    "par": 3,
-    "hints": {
-      "es": [
-        "La campaña de los godos en el vídeojuego *Age of Empires II* cubre el evento transcurrido",
-        "Se considera que este evento marca el comienzo de la caída del imperio romano",
-        "Aproximadamente 450 años antes habría sido la muerte de Julio César",
-        "No más de un siglo más tarde el Imperio Romano finalmente caería con la deposición de Rómulo Augústulo, marcando así el fin de la edad antigua",
-        "Un poco más de un milenio más adelante caería también el Imperio Romano de Oriente"
-      ]
+    par: 3,
+    hints: {
+      es: [
+        'La campaña de los godos en el vídeojuego *Age of Empires II* cubre el evento transcurrido',
+        'Se considera que este evento marca el comienzo de la caída del imperio romano',
+        'Aproximadamente 450 años antes habría sido la muerte de Julio César',
+        'No más de un siglo más tarde el Imperio Romano finalmente caería con la deposición de Rómulo Augústulo, marcando así el fin de la edad antigua',
+        'Un poco más de un milenio más adelante caería también el Imperio Romano de Oriente',
+      ],
     },
-    "description": {
-      "es": "El saqueo de Roma ocurrió en agosto del año 410. Alarico I, un caudillo visigodo, lideró la invasión y robo de bienes durante aproximadamente tres días, aunque él moriría en el segundo día de la invasión."
-    }
+    description: {
+      es: 'El saqueo de Roma ocurrió en agosto del año 410. Alarico I, un caudillo visigodo, lideró la invasión y robo de bienes durante aproximadamente tres días, aunque él moriría en el segundo día de la invasión.',
+    },
   },
   {
-    "id": "franz-ferdinand-1914",
-    "era": "recent",
-    "answer": {
-      "year": 1914
+    id: 'franz-ferdinand-1914',
+    era: 'recent',
+    answer: {
+      year: 1914,
     },
-    "par": 3,
-    "hints": {
-      "es": [
+    par: 3,
+    hints: {
+      es: [
         "*I say, 'Don't you know?'; You say 'You don't know'; I say 'Take me out!'*",
-        "Este año Miguel de Unamuno publica *Niebla*",
-        "Un conductor toma un camino indebido y un monarca europeo es asesinado. Más de 20 millones mueren como resultado a lo largo de los próximos 4 años",
-        "Los eventos sucedidos desencadenarían en la revolución rusa unos pocos en el futuro",
-        "100 años más tarde se disputaría el mundial en Brasil"
-      ]
+        'Este año Miguel de Unamuno publica *Niebla*',
+        'Un conductor toma un camino indebido y un monarca europeo es asesinado. Más de 20 millones mueren como resultado a lo largo de los próximos 4 años',
+        'Los eventos sucedidos desencadenarían en la revolución rusa unos pocos en el futuro',
+        '100 años más tarde se disputaría el mundial en Brasil',
+      ],
     },
-    "description": {
-      "es": "El 28 de junio de 1914, el archiduque Francisco Fernando de Austria es atentado contra su vida pero el asesino falla en el intento pero varios salen lastimados. No conforme con haber sobrevivido, más tarde el mismo día el archiduque decide ir al hospital a visitar a los heridos. Su conductor gira por la calle incorrecta, encontrándose directamente con uno de los conspiradores. El archiduque es abatido en ese momento junto a su esposa, el principal detonante de la primera guerra mundial."
+    description: {
+      es: 'El 28 de junio de 1914, el archiduque Francisco Fernando de Austria es atentado contra su vida pero el asesino falla en el intento pero varios salen lastimados. No conforme con haber sobrevivido, más tarde el mismo día el archiduque decide ir al hospital a visitar a los heridos. Su conductor gira por la calle incorrecta, encontrándose directamente con uno de los conspiradores. El archiduque es abatido en ese momento junto a su esposa, el principal detonante de la primera guerra mundial.',
     },
-    "dateAnchored": true
+    dateAnchored: true,
   },
   {
-    "id": "isabelita-1974",
-    "era": "recent",
-    "answer": {
-      "year": 1974
+    id: 'isabelita-1974',
+    era: 'recent',
+    answer: {
+      year: 1974,
     },
-    "par": 3,
-    "dateAnchored": true,
-    "hints": {
-      "es": [
-        "Asume por primera vez en la historia de las democracias modernas una mujer la presidencia",
-        "AC/DC publica *High Voltage*, Sui Generis pública *Pequeñas anécdotas sobre las Instituciones*",
-        "La primera presidenta del mundo es argentina",
-        "Se estrena *El padrino II*, galardonada con 3 óscares: mejor película, mejor director (Francis Ford Coppola) y mejor actor (Robert De Niro)",
-        "2 años más tarde comienza el Proceso de Reorganización Nacional",
-      ]
+    par: 3,
+    dateAnchored: true,
+    hints: {
+      es: [
+        'Asume por primera vez en la historia de las democracias modernas una mujer la presidencia',
+        'AC/DC publica *High Voltage*, Sui Generis pública *Pequeñas anécdotas sobre las Instituciones*',
+        'La primera presidenta del mundo es argentina',
+        'Se estrena *El padrino II*, galardonada con 3 óscares: mejor película, mejor director (Francis Ford Coppola) y mejor actor (Robert De Niro)',
+        '2 años más tarde comienza el Proceso de Reorganización Nacional',
+      ],
     },
-    "description": {
-      "es": "El 29 de junio de 1974 María Estela Martínez de Perón, primera dama y vicepresidenta de la nación, asume la presidencia de la nación por los problemas de salud de su esposo, quien moriría dos días más tarde. *Isabelita* fue la primera mujer en el mundo en asumir el cargo presidencial del sistema republicano moderno, habiendo gobernado durante 2 años hasta el último golpe de estado en 1976."
-    }
+    description: {
+      es: 'El 29 de junio de 1974 María Estela Martínez de Perón, primera dama y vicepresidenta de la nación, asume la presidencia de la nación por los problemas de salud de su esposo, quien moriría dos días más tarde. *Isabelita* fue la primera mujer en el mundo en asumir el cargo presidencial del sistema republicano moderno, habiendo gobernado durante 2 años hasta el último golpe de estado en 1976.',
+    },
   },
   {
-    "id": "noche-triste-1520",
-    "era": "modern",
-    "answer": {
-      "year": 1520,
-      "margin": 0.02
+    id: 'noche-triste-1520',
+    era: 'modern',
+    answer: {
+      year: 1520,
+      margin: 0.02,
     },
-    "par": 3,
-    "dateAnchored": true,
-    "hints": {
-      "es": [
-        "En esta fecha ocurriría la *Noche Triste*",
-        "Durante la *Noche Triste* Hernán Cortes y sus hombres son expulsados de Tecnochitlán",
-        "Unos años antes, Martín Lutero clavaría en las puertas de la Iglesia de Todos los Santos *las noventa y cinco tesis*",
-        "En la siguiente década Pedro de Mendoza funda la ciudad de *Santa María del Buen Ayre*",
-        "500 años más tarde el mundo entero sufre las repercusiones de una pandemia"
-      ]
+    par: 3,
+    dateAnchored: true,
+    hints: {
+      es: [
+        'En esta fecha ocurriría la *Noche Triste*',
+        'Durante la *Noche Triste* Hernán Cortes y sus hombres son expulsados de Tecnochitlán',
+        'Unos años antes, Martín Lutero clavaría en las puertas de la Iglesia de Todos los Santos *las noventa y cinco tesis*',
+        'En la siguiente década Pedro de Mendoza funda la ciudad de *Santa María del Buen Ayre*',
+        '500 años más tarde el mundo entero sufre las repercusiones de una pandemia',
+      ],
     },
-    "description": {
-      "es": "Durante la noche del 30 de junio de 1520, Hernán Cortes y sus fuerzas fueron obligados a dejar Tecnochitlán por una revuelta popular. Unos meses antes, Cortés toma como prisionero a Moctezuma II, emperador de los aztecas. Ausentado para atender otras responsabilidades durante el mes de mayo, su subordinado Pedro de Alvarado ordena la masacre de sacerdotes y nobles aztecas durante el festival de *Toxcatl*. Al retorno de Cortés a la capital azteca Moctezuma es asesinado. Intentado escapar de la ciudad los españoles son descubiertos por las fuerzas aztecas; miles de españoles e indígenas aliados mueren durante la retirada."
-    }
+    description: {
+      es: 'Durante la noche del 30 de junio de 1520, Hernán Cortes y sus fuerzas fueron obligados a dejar Tecnochitlán por una revuelta popular. Unos meses antes, Cortés toma como prisionero a Moctezuma II, emperador de los aztecas. Ausentado para atender otras responsabilidades durante el mes de mayo, su subordinado Pedro de Alvarado ordena la masacre de sacerdotes y nobles aztecas durante el festival de *Toxcatl*. Al retorno de Cortés a la capital azteca Moctezuma es asesinado. Intentado escapar de la ciudad los españoles son descubiertos por las fuerzas aztecas; miles de españoles e indígenas aliados mueren durante la retirada.',
+    },
   },
   {
-    "id": "historian-day-1812",
-    "era": "recent",
-    "answer": {
-      "year": 1812
+    id: 'historian-day-1812',
+    era: 'recent',
+    answer: {
+      year: 1812,
     },
-    "par": 3,
-    "hints": {
-      "es": [
-        "El deán Gregorio Funes es encargado con escribir la historia de los hechos de la revolución de mayo",
-        "Se disuelve el Primer Triunvirato y entra en vigencia el Segundo Triunvirato",
-        "El mismo año Manuel Belgrano enarbola la bandera argentina por primera vez",
-        "Antes de la declaración de independencia",
-        "200 años más tarde se especula que terminaría el mundo",
-      ]
+    par: 3,
+    hints: {
+      es: [
+        'El deán Gregorio Funes es encargado con escribir la historia de los hechos de la revolución de mayo',
+        'Se disuelve el Primer Triunvirato y entra en vigencia el Segundo Triunvirato',
+        'El mismo año Manuel Belgrano enarbola la bandera argentina por primera vez',
+        'Antes de la declaración de independencia',
+        '200 años más tarde se especula que terminaría el mundo',
+      ],
     },
-    "description": {
-      "es": "El 1 de julio de 1812 el Primer Triunvirato de las Provincias Unidas del Río de la Plata encargó a Gregorio Funes con la redacción de \"historia filosófica de nuestra feliz revolución, para perpetuar la memoria de los héroes y las virtudes de los hijos de América del Sud, y a la época gloriosa de nuestra independencia civil\". Por eso se eligió esta fecha para celebrar cada año el día del historiador."
+    description: {
+      es: 'El 1 de julio de 1812 el Primer Triunvirato de las Provincias Unidas del Río de la Plata encargó a Gregorio Funes con la redacción de "historia filosófica de nuestra feliz revolución, para perpetuar la memoria de los héroes y las virtudes de los hijos de América del Sud, y a la época gloriosa de nuestra independencia civil". Por eso se eligió esta fecha para celebrar cada año el día del historiador.',
     },
-    "dateAnchored": true,
+    dateAnchored: true,
   },
   {
-    "id": "night-of-the-long-knives-1934",
-    "era": "recent",
-    "answer": {
-      "year": 1934,
-      "margin": "decade",
+    id: 'night-of-the-long-knives-1934',
+    era: 'recent',
+    answer: {
+      year: 1934,
+      margin: 'decade',
     },
-    "par": 4,
-    "hints": {
-      "es": [
-        "Luego de 3 días finaliza la purga de Röhm, masacre que vio el asesinato de 85 personas (que se sepan)",
-        "El mismo año: fallece Marie Curie, nace Maggie Smith",
-        "Exactamente un mes más tarde Hitler se proclamaría *führer* del Tercer Reich.",
-        "El año anterior Hitler era nombrado canciller de Alemania",
-        "Al final de la década daría inicio la segunda guerra mundial"
-      ]
+    par: 4,
+    hints: {
+      es: [
+        'Luego de 3 días finaliza la purga de Röhm, masacre que vio el asesinato de 85 personas (que se sepan)',
+        'El mismo año: fallece Marie Curie, nace Maggie Smith',
+        'Exactamente un mes más tarde Hitler se proclamaría *führer* del Tercer Reich.',
+        'El año anterior Hitler era nombrado canciller de Alemania',
+        'Al final de la década daría inicio la segunda guerra mundial',
+      ],
     },
-    "dateAnchored": true,
-    "description": {
-      "es": "Entre el 30 de junio y el 2 de julio de 1934 en Alemania se llevó a cabo la *Operación Colibri*, mejor conocida como **la noche de los cuchillos largos**. Durante esos 3 días la SS y la Gestapo asesinaron a al menos 85 rivales políticos y arrestó a más de 1000 con el fin de erradicar las corrientes de izquierda del régimen nazi."
-    }
+    dateAnchored: true,
+    description: {
+      es: 'Entre el 30 de junio y el 2 de julio de 1934 en Alemania se llevó a cabo la *Operación Colibri*, mejor conocida como **la noche de los cuchillos largos**. Durante esos 3 días la SS y la Gestapo asesinaron a al menos 85 rivales políticos y arrestó a más de 1000 con el fin de erradicar las corrientes de izquierda del régimen nazi.',
+    },
   },
   {
-    "id": "bastille-1789",
-    "era": "recent",
-    "answer": {
-      "year": 1789
+    id: 'bastille-1789',
+    era: 'recent',
+    answer: {
+      year: 1789,
     },
-    "par": 3,
-    "hints": {
-      "es": [
-        "Una importante fortaleza parisina es asediada y su pólvora saqueada",
-        "Ese mismo año, George Washington es designado como el primer presidente de los Estados Unidos",
-        "Una banda inglesa de pop cuyo nombre comparte con la fortaleza debutó en 2013 con el álbum *Bad Blood*",
-        "200 años más tarde se levanta la cortina de hierro en Europa",
-        "Considerado el año en el cual finaliza la edad moderna y comienza la edad contemporánea"
-      ]
+    par: 3,
+    hints: {
+      es: [
+        'Una importante fortaleza parisina es asediada y su pólvora saqueada',
+        'Ese mismo año, George Washington es designado como el primer presidente de los Estados Unidos',
+        'Una banda inglesa de pop cuyo nombre comparte con la fortaleza debutó en 2013 con el álbum *Bad Blood*',
+        '200 años más tarde se levanta la cortina de hierro en Europa',
+        'Considerado el año en el cual finaliza la edad moderna y comienza la edad contemporánea',
+      ],
     },
-    "description": {
-      "es": "El 14 de julio de 1789 revolucionarios franceses asaltaron la Bastilla, una fortaleza de París, en busca de armas y pólvora para defenderse de las tropas del ejÃ©rcito realista."
+    description: {
+      es: 'El 14 de julio de 1789 revolucionarios franceses asaltaron la Bastilla, una fortaleza de París, en busca de armas y pólvora para defenderse de las tropas del ejÃ©rcito realista.',
     },
-    "dateAnchored": true
+    dateAnchored: true,
   },
   {
-    "id": "cancion-animal-1990",
-    "era": "recent",
-    "answer": {
-      "year": 1990
+    id: 'cancion-animal-1990',
+    era: 'recent',
+    answer: {
+      year: 1990,
     },
-    "par": 3,
-    "hints": {
-      "es": [
-        "Una banda argentina publica un álbum conteniendo la posiblemente canción más popular del rock latinoamericano",
-        "Se disuelve la Alemania del Este, unificando ambas repúblicas",
-        "*Anclado en ... los Dioses no saldaron cuentas*",
-        "Alemania gana su tercer mundial ante Argentina en Italia",
-        "Cuatro años antes Argentina se habría consagrado campeona ante Alemania"
-      ]
+    par: 3,
+    hints: {
+      es: [
+        'Una banda argentina publica un álbum conteniendo la posiblemente canción más popular del rock latinoamericano',
+        'Se disuelve la Alemania del Este, unificando ambas repúblicas',
+        '*Anclado en ... los Dioses no saldaron cuentas*',
+        'Alemania gana su tercer mundial ante Argentina en Italia',
+        'Cuatro años antes Argentina se habría consagrado campeona ante Alemania',
+      ],
     },
-    "description": {
-      "es": "El 7 de agosto de 1990 Soda Stereo publica *Canción Animal*, uno de los álbumes más emblemáticos no solo del rock argentino, sino del rock en español en general. Entre ellas destacada *De Música Ligera* como uno de los himnos del rock hispanoamericano."
+    description: {
+      es: 'El 7 de agosto de 1990 Soda Stereo publica *Canción Animal*, uno de los álbumes más emblemáticos no solo del rock argentino, sino del rock en español en general. Entre ellas destacada *De Música Ligera* como uno de los himnos del rock hispanoamericano.',
     },
-    "dateAnchored": true
+    dateAnchored: true,
   },
   {
-    "id": "random-1954",
-    "era": "recent",
-    "answer": {
-      "year": 1954
+    id: 'random-1954',
+    era: 'recent',
+    answer: {
+      year: 1954,
     },
-    "par": 3,
-    "hints": {
-      "es": [
-        "Bill Halley y sus cometas graban \"Rock Around the Clock\", consagrando así la primera canción de rock and roll en alcanzar el primer puesto en la lista de ventas",
-        "Ernest Hemingway y su esposa Mary Welsh sufren un accidente de avioneta. Al día siguiente sufren otro accidente de avioneta en busca de atención médica",
-        "J.R.R. Tolkien publica \"La comunidad del anillo\" el primer volumen de \"El Señor de los anillos\"",
-        "Alemania obtiene su primer copa del mundo ante Hungría",
-        "Frida Kahlo y Alan Turing fallecen este año"
-      ]
+    par: 3,
+    hints: {
+      es: [
+        'Bill Halley y sus cometas graban "Rock Around the Clock", consagrando así la primera canción de rock and roll en alcanzar el primer puesto en la lista de ventas',
+        'Ernest Hemingway y su esposa Mary Welsh sufren un accidente de avioneta. Al día siguiente sufren otro accidente de avioneta en busca de atención médica',
+        'J.R.R. Tolkien publica "La comunidad del anillo" el primer volumen de "El Señor de los anillos"',
+        'Alemania obtiene su primer copa del mundo ante Hungría',
+        'Frida Kahlo y Alan Turing fallecen este año',
+      ],
     },
-    "description": {
-      "es": "ph"
-    }
-  }
+    description: {
+      es: 'ph',
+    },
+  },
+  {
+    id: 'kafka-1883',
+    era: 'recent',
+    answer: {
+      year: 1883,
+      margin: 'decade',
+    },
+    par: 3,
+    hints: {
+      es: [
+        'Este día se celebra el nacimiento de uno de los autores más conocidos de República Checa',
+        'El mismo año Stevenson publicaría *La isla del tesoro*',
+        'En 1915, nuestro cumpleañero publica *La Metamorfosis*',
+        'En la misma década se promoulgó en Argentina la ley 1420 que establece que la educación primaria debe ser gratuita, obligatoria y laica para todos los argentinos',
+        'Nació en la década anterior al fin del siglo de la modernización, siglo en el cual se inventó la locomotora a vapor y el motor de combustión interna',
+      ],
+    },
+    description: {
+      es: 'El 3 de julio de 1883 nació Franz Kafka en un gueto de Praga, parte del Imperio Austrohúngaro y actual República Checa. Autor de *La Metamorfosis*, Kafka es considerado uno de los autores más influyentes del siglo 20, siendo uno de los primeroes en fusionar la realidad con lo fantástico con personajes normales en situaciones bizzaras e inexplicables. Murió el 3 de junio de 1924 sin pena ni gloria. Gran parte de su obra, en especial sus correspondencias, fueron publicadas de forma póstuma por su amigo Max Brod, quien no pudo cumplir con sus últimos deseos de destruir su obra: "debería haber designado a otro albacea si estaba total y completamente decidido a que se cumplieran sus instrucciones".',
+    },
+    dateAnchored: true,
+  },
 ]

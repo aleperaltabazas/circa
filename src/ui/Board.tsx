@@ -9,6 +9,7 @@ import { EraPill } from "./EraPill";
 import { GuessInput } from "./GuessInput";
 import { LocaleToggle } from "./LocaleToggle";
 import { ParBadge } from "./ParBadge";
+import { MarginBadge } from "./MarginBadge";
 import styles from "./Board.module.css";
 
 export function Board({
@@ -43,6 +44,7 @@ export function Board({
       <div className={styles.contextRow}>
         <EraPill era={state.puzzle.era} locale={locale} />
         {state.puzzle.dateAnchored && <DateChip todayIso={todayLabel} locale={locale} />}
+        <MarginBadge answer={state.puzzle.answer} locale={locale} />
         <ParBadge par={state.puzzle.par} />
       </div>
       <Hints

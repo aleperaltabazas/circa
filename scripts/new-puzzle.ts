@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import { resolve } from "node:path";
 import { input, editor, confirm, select } from "@inquirer/prompts";
-import { Locale } from "../src/i18n/types";
+import JSON5 from "json5";
 import { today } from "../src/game/today";
 import { Answer, Margin, NamedMargin, Par, Puzzle, Schedule } from "../src/game/types";
 import {
@@ -21,11 +21,11 @@ const PUZZLES_PATH = resolve(PROJECT_ROOT, "src/content/puzzles.json5");
 const SCHEDULE_PATH = resolve(PROJECT_ROOT, "src/content/schedule.json5");
 
 function loadPuzzles(): Puzzle[] {
-  return JSON.parse(readFileSync(PUZZLES_PATH, "utf8")) as Puzzle[];
+  return JSON5.parse(readFileSync(PUZZLES_PATH, "utf8")) as Puzzle[];
 }
 
 function loadSchedule(): Schedule {
-  return JSON.parse(readFileSync(SCHEDULE_PATH, "utf8")) as Schedule;
+  return JSON5.parse(readFileSync(SCHEDULE_PATH, "utf8")) as Schedule;
 }
 
 function nextDateAfter(latest: string | undefined): string {
@@ -35,11 +35,11 @@ function nextDateAfter(latest: string | undefined): string {
   return next.toISOString().slice(0, 10);
 }
 
-async function promptHintArray(locale: Locale): Promise<[string, string, string, string, string]> {
+async function promptHintArray(): Promise<[string, string, string, string, string]> {
   const hints: string[] = [];
   for (let i = 1; i <= 5; i++) {
     const hint = await input({
-      message: `Hint ${i}/5 (${locale})`,
+      message: `Hint ${i}/5`,
       validate: (v) => validateNonEmpty(v, `hint ${i}`) ?? true,
     });
     hints.push(hint.trim());
@@ -93,23 +93,14 @@ async function main() {
   const era = eraOf(answerYear)!;
   console.log(`\nEra: ${era}`);
 
-  console.log("\nHints in Spanish (5, vague → specific):");
-  const hintsEs = await promptHintArray("es");
-  console.log("\nHints in English (5, vague → specific):");
-  const hintsEn = await promptHintArray("en");
+  console.log("\nHints (5, vague → specific):");
+  const hintsEs = await promptHintArray();
 
-  console.log("\nDescription in Spanish — your $EDITOR will open.");
+  console.log("\nDescription — your $EDITOR will open.");
   const descEs = await editor({
-    message: "Description (es)",
+    message: "Description",
     postfix: ".md",
-    validate: (v) => validateNonEmpty(v, "description (es)") ?? true,
-  });
-
-  console.log("\nDescription in English — your $EDITOR will open.");
-  const descEn = await editor({
-    message: "Description (en)",
-    postfix: ".md",
-    validate: (v) => validateNonEmpty(v, "description (en)") ?? true,
+    validate: (v) => validateNonEmpty(v, "description") ?? true,
   });
 
   const date = await input({
@@ -136,8 +127,8 @@ async function main() {
     era,
     answer,
     par,
-    hints: { es: hintsEs, en: hintsEn },
-    description: { es: descEs.trim(), en: descEn.trim() },
+    hints: { es: hintsEs },
+    description: { es: descEs.trim() },
     ...(dateAnchored ? { dateAnchored: true } : {}),
   };
 
@@ -152,8 +143,8 @@ async function main() {
 
   puzzles.push(newPuzzle);
   schedule[date] = newPuzzle.id;
-  writeFileSync(PUZZLES_PATH, JSON.stringify(puzzles, null, 2) + "\n", "utf8");
-  writeFileSync(SCHEDULE_PATH, JSON.stringify(schedule, null, 2) + "\n", "utf8");
+  writeFileSync(PUZZLES_PATH, JSON5.stringify(puzzles, null, 2) + "\n", "utf8");
+  writeFileSync(SCHEDULE_PATH, JSON5.stringify(schedule, null, 2) + "\n", "utf8");
 
   console.log("Files written. Running final validation…");
   const result = spawnSync("npx", ["vitest", "run", "src/content"], {
