@@ -367,7 +367,7 @@
     hints: {
       es: [
         'Termina la ocupación europea de Jerusalén tras una batalla que lleva el nombre de un volcán extinto cercano',
-        'La primera entrega de la saga de vídeojuegos *Assassin\'s Creed* está ambientada en este período',
+        "La primera entrega de la saga de vídeojuegos *Assassin's Creed* está ambientada en este período",
         'El siglo es llamado "siglo del feudalismo"',
         'La campaña de Saladino en el vídeojuego *Age of Empires II* se desarrolla en este siglo',
         'Durante este siglo se llevaron a cabo la segunda y la tercera Cruzada',
@@ -375,6 +375,27 @@
     },
     description: {
       es: 'Entre el 3 y el 4 de julio de 1187 se disputó la batalla de los Cuernos de Hattin entre los ejércitos cruzados del Levante y el sultán egipcio Saladino. El ejército musulmán capturó o mató a la mayoría de las fuerzas cristianas comandadas por Guido de Jerusalén, poniendo nuevamente Jerusalén y el resto de la Tierra Santa bajo control islámico. Esta derrota impulsó a las fuerzas cristianas dos años más tarde a la tercera Cruzada.',
+    },
+    dateAnchored: true,
+  },
+  {
+    id: 'cabo-verde-1975',
+    era: 'recent',
+    answer: {
+      year: 1975,
+    },
+    par: 3,
+    hints: {
+      es: [
+        'Este día se celebra la independencia de Cabo Verde',
+        'El mismo año: Pink Floyd publica *Wish You Were Here*, Queen publica *A Night at the Opera*, Invisible publica *Durazno Sangrando*',
+        'Ocurre el mismo año que el Rodrigazo',
+        'En la misma década: termina la guerra de Vietnam',
+        'Apenas un poco más de medio siglo más tarde el país daría uno de los mejores débuts en la historia de los mundiales',
+      ],
+    },
+    description: {
+      es: 'El 5 de julio de 1975 Cabo Verde obvtuvo su independencia de Portugal reconocida por el resto del mundo. Desde 1951 Cabo Verde fue incorporado como departamento de la RepÃºblica Portuguesa, pero sus habitantes se mantuvieron firmes en sus reclamos de independencia total.',
     },
     dateAnchored: true,
   },
