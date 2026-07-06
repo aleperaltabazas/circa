@@ -8,7 +8,7 @@ export function EraPill({ era, locale }: { era: Era; locale: Locale }) {
   const s = STRINGS[locale];
   return (
     <span
-      className={`${styles.pill} ${tooltip.host}`}
+      className={`${styles.pill} ${styles[era]} ${tooltip.host}`}
       data-tooltip={s.eraTooltip}
       tabIndex={0}
       aria-label={s.eraTooltip}

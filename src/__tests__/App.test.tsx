@@ -57,7 +57,7 @@ describe("App – previously finished game (reload)", () => {
 describe("App", () => {
   it("renders the board for today's puzzle in Spanish by default", async () => {
     render(<App />);
-    expect(await screen.findByText(/Circa/i)).toBeInTheDocument();
+    expect(await screen.findByText("Circa")).toBeInTheDocument();
     expect(screen.getByText("moderna")).toBeInTheDocument();
     expect(screen.getByText(/imperio otomano/i)).toBeInTheDocument();
     expect(

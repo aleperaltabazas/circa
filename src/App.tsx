@@ -12,8 +12,12 @@ import { Locale } from "./i18n/types";
 import { STRINGS } from "./i18n/strings";
 import { Board } from "./ui/Board";
 import { StatsModal } from "./ui/StatsModal";
+import { WelcomeModal } from "./ui/WelcomeModal";
 import { TriviaBox } from "./ui/TriviaBox";
+import { getCookie, setCookie } from "./storage/cookies";
 import styles from "./App.module.css";
+
+const CHANGELOG_VERSION = "1";
 
 const puzzles = puzzlesData as Puzzle[];
 const schedule = scheduleData as Schedule;
@@ -37,6 +41,15 @@ export function App() {
   const puzzleNumber = useMemo(() => puzzleNumberFor(todayIso, schedule), [todayIso]);
   const [persisted, setPersisted] = useState<PersistedShape>(() => load(window.localStorage));
   const locale = persisted.locale;
+  const isNewPlayer = persisted.lastPlayedDate === null;
+  const [welcomeOpen, setWelcomeOpen] = useState(
+    () => getCookie("circa_changelog") !== CHANGELOG_VERSION,
+  );
+
+  function handleWelcomeClose() {
+    setCookie("circa_changelog", CHANGELOG_VERSION, 365);
+    setWelcomeOpen(false);
+  }
 
   function handleLocaleChange(next: Locale) {
     const updated = { ...persisted, locale: next };
@@ -49,7 +62,15 @@ export function App() {
   }
 
   return (
-    <Game
+    <>
+      {welcomeOpen && (
+        <WelcomeModal
+          isNewPlayer={isNewPlayer}
+          locale={locale}
+          onClose={handleWelcomeClose}
+        />
+      )}
+      <Game
       puzzle={puzzle}
       puzzleNumber={puzzleNumber}
       todayIso={todayIso}
@@ -58,6 +79,7 @@ export function App() {
       setPersisted={setPersisted}
       onLocaleChange={handleLocaleChange}
     />
+    </>
   );
 }
 

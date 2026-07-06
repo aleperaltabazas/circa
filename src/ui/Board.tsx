@@ -44,7 +44,7 @@ export function Board({
       <div className={styles.contextRow}>
         <EraPill era={state.puzzle.era} locale={locale} />
         {state.puzzle.dateAnchored && <DateChip todayIso={todayLabel} locale={locale} />}
-        <MarginBadge answer={state.puzzle.answer} locale={locale} />
+        <MarginBadge answer={state.puzzle.answer} locale={locale} era={state.puzzle.era} currentYear={currentYear} />
         <ParBadge par={state.puzzle.par} />
       </div>
       <Hints
