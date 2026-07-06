@@ -71,12 +71,12 @@ export function WelcomeModal({
   locale: Locale;
   onClose: () => void;
 }) {
-  const s = STRINGS[locale].welcome;
+  const s = STRINGS[locale];
 
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <h2 className={styles.title}>{s.title}</h2>
+        <h2 className={styles.title}>{isNewPlayer ? s.appTitle : s.welcome.title}</h2>
 
         {isNewPlayer ? (
           <div className={styles.section}>
@@ -109,7 +109,7 @@ export function WelcomeModal({
 
         <div className={styles.actions}>
           <button className={styles.close} onClick={onClose}>
-            {s.close}
+            {s.welcome.close}
           </button>
         </div>
       </div>

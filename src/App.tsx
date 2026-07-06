@@ -42,7 +42,6 @@ export function App() {
   const [persisted, setPersisted] = useState<PersistedShape>(() => load(window.localStorage));
   const locale = persisted.locale;
   const isNewPlayer = persisted.lastPlayedDate === null;
-  console.log(persisted);
   const [welcomeOpen, setWelcomeOpen] = useState(
     () => getCookie("circa_changelog") !== CHANGELOG_VERSION,
   );
@@ -130,7 +129,7 @@ function Game({
     const next: PersistedShape = {
       ...persisted,
       schemaVersion: 4,
-      lastPlayedDate: todayIso,
+      lastPlayedDate: state.guesses.length > 0 ? todayIso : persisted.lastPlayedDate,
       lastResult: state,
       stats: nextStats,
     };
