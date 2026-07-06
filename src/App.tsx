@@ -42,13 +42,16 @@ export function App() {
   const [persisted, setPersisted] = useState<PersistedShape>(() => load(window.localStorage));
   const locale = persisted.locale;
   const isNewPlayer = persisted.lastPlayedDate === null;
+  console.log(persisted);
   const [welcomeOpen, setWelcomeOpen] = useState(
     () => getCookie("circa_changelog") !== CHANGELOG_VERSION,
   );
+  const [helpOpen, setHelpOpen] = useState(false);
 
   function handleWelcomeClose() {
     setCookie("circa_changelog", CHANGELOG_VERSION, 365);
     setWelcomeOpen(false);
+    setHelpOpen(false);
   }
 
   function handleLocaleChange(next: Locale) {
@@ -63,22 +66,23 @@ export function App() {
 
   return (
     <>
-      {welcomeOpen && (
+      {(welcomeOpen || helpOpen) && (
         <WelcomeModal
-          isNewPlayer={isNewPlayer}
+          isNewPlayer={isNewPlayer || helpOpen}
           locale={locale}
           onClose={handleWelcomeClose}
         />
       )}
       <Game
-      puzzle={puzzle}
-      puzzleNumber={puzzleNumber}
-      todayIso={todayIso}
-      currentYear={currentYear}
-      persisted={persisted}
-      setPersisted={setPersisted}
-      onLocaleChange={handleLocaleChange}
-    />
+        puzzle={puzzle}
+        puzzleNumber={puzzleNumber}
+        todayIso={todayIso}
+        currentYear={currentYear}
+        persisted={persisted}
+        setPersisted={setPersisted}
+        onLocaleChange={handleLocaleChange}
+        onHelpClick={() => setHelpOpen(true)}
+      />
     </>
   );
 }
@@ -91,6 +95,7 @@ function Game({
   persisted,
   setPersisted,
   onLocaleChange,
+  onHelpClick,
 }: {
   puzzle: Puzzle;
   puzzleNumber: number;
@@ -99,6 +104,7 @@ function Game({
   persisted: PersistedShape;
   setPersisted: (p: PersistedShape) => void;
   onLocaleChange: (loc: Locale) => void;
+  onHelpClick: () => void;
 }) {
   const [state, dispatch] = useReducer(
     reducer,
@@ -146,6 +152,7 @@ function Game({
         currentYear={currentYear}
         locale={persisted.locale}
         onLocaleChange={onLocaleChange}
+        onHelpClick={onHelpClick}
         onGuess={(year) => dispatch({ type: "submitGuess", year, currentYear })}
       />
       {state.outcome !== "playing" && !modalOpen && (

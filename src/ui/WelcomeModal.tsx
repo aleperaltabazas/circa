@@ -23,7 +23,7 @@ const MARGIN_ROWS = [
   },
   {
     margin: 0.02 as number,
-    desc: "Cualquier año dentro del 2% del ancho de la era histórica. Por ejemplo, si la era es medieval y el margen de error es del 2%, entonces, cualquier año dentro del rango de +-20 años de la respuesta es válido. Podés tocar el emblema para saber cuánto representa en cada puzzle",
+    desc: "Por ejemplo, si la era es medieval y el margen de error es del 2%, entonces, cualquier año dentro del rango de +-20 años de la respuesta es válido, porque la era abarca 977 años. Podés tocar el emblema para saber cuánto representa en cada puzzle",
   },
 ];
 
@@ -32,9 +32,8 @@ function MarginSection({ locale }: { locale: Locale }) {
     <div className={styles.section}>
       <p className={styles.sectionHeading}>Márgenes de error</p>
       <p className={styles.sectionDesc}>
-        Si ves alguno de estos emblemas significa que tenés significa que el
-        puzzle tiene un margen de error para el cual la respuesta ingresada es
-        considerada válida:
+        Si ves alguno de estos emblemas significa que tenés un margen de error
+        para el cual la respuesta ingresada es considerada válida:
       </p>
       {MARGIN_ROWS.map(({ margin, desc }, i) => (
         <div key={i} className={styles.marginRow}>

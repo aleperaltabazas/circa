@@ -24,6 +24,24 @@
   align-items: center;
   gap: 8px;
 }
+.helpBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  font-family: inherit;
+}
+.helpBtn:hover { background: #f0f0f0; }
 .contextRow {
   display: flex;
   align-items: center;

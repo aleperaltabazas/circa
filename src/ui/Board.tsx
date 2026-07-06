@@ -19,6 +19,7 @@ export function Board({
   currentYear,
   locale,
   onLocaleChange,
+  onHelpClick,
   onGuess,
 }: {
   state: GameState;
@@ -27,6 +28,7 @@ export function Board({
   currentYear: number;
   locale: Locale;
   onLocaleChange: (loc: Locale) => void;
+  onHelpClick: () => void;
   onGuess: (year: number) => void;
 }) {
   const s = STRINGS[locale];
@@ -38,6 +40,9 @@ export function Board({
           <div className={styles.meta}>{s.puzzleMeta(puzzleNumber, todayLabel)}</div>
         </div>
         <div className={styles.headerRight}>
+          <button className={styles.helpBtn} onClick={onHelpClick} aria-label="Cómo se juega">
+            ?
+          </button>
           <LocaleToggle locale={locale} onChange={onLocaleChange} />
         </div>
       </div>
