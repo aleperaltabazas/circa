@@ -3,6 +3,8 @@ import confetti from "canvas-confetti";
 import { GameState, Puzzle, Stats } from "../game/types";
 import { Locale } from "../i18n/types";
 import { STRINGS } from "../i18n/strings";
+import { answerRange, distanceToRange } from "../game/scoring";
+import { isPointAnswer } from "../game/types";
 import { ShareButton } from "./ShareButton";
 import { Markdown } from "./Markdown";
 import { formatAnswer } from "./answer";
@@ -13,6 +15,7 @@ export function StatsModal({
   gameState,
   puzzle,
   puzzleNumber,
+  currentYear,
   url,
   locale,
   onClose,
@@ -21,6 +24,7 @@ export function StatsModal({
   gameState: GameState;
   puzzle: Puzzle;
   puzzleNumber: number;
+  currentYear: number;
   url: string;
   locale: Locale;
   onClose: () => void;
@@ -32,6 +36,16 @@ export function StatsModal({
   const sub = won
     ? s.outcomeWinSub(gameState.guesses.length)
     : s.outcomeLossSub(formatAnswer(gameState.puzzle.answer));
+  const lastGuess = gameState.guesses.at(-1);
+  const answer = gameState.puzzle.answer;
+  const range = answerRange(answer, gameState.puzzle.era, currentYear);
+  const offBy = lastGuess
+    ? won
+      ? isPointAnswer(answer) && lastGuess.year !== answer.year
+        ? Math.abs(lastGuess.year - answer.year)
+        : null
+      : distanceToRange(lastGuess.year, range)
+    : null;
 
   useEffect(() => {
     if (won) {
@@ -45,6 +59,9 @@ export function StatsModal({
         <h2 className={styles.title}>{s.appTitle} #{puzzleNumber}</h2>
         <p className={styles.outcomeHeadline}>{headline}</p>
         <p className={styles.outcomeSub}>{sub}</p>
+        {offBy !== null && offBy > 0 && (
+          <p className={styles.offBy}>{won ? s.outcomeWinOffBy(offBy) : s.outcomeLossOffBy(offBy)}</p>
+        )}
         <div className={styles.statsRow}>
           <div className={styles.stat}>
             <div className={styles.statValue}>{stats.currentStreak}</div>

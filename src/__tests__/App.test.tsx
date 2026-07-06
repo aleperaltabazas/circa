@@ -18,13 +18,13 @@ afterEach(() => {
 describe("App – previously finished game (reload)", () => {
   it("shows TriviaBox but not StatsModal when reloading a finished game", async () => {
     const persisted = {
-      schemaVersion: 3,
+      schemaVersion: 4,
       lastPlayedDate: "2026-06-20",
       lastResult: {
         puzzle: {
           id: "lepanto-1571",
           era: "modern",
-          answer: { from: 1571, to: 1571 },
+          answer: { year: 1571 },
           hints: {
             es: ["pista 1", "pista 2", "pista 3", "pista 4", "pista 5"],
           },
@@ -57,7 +57,7 @@ describe("App – previously finished game (reload)", () => {
 describe("App", () => {
   it("renders the board for today's puzzle in Spanish by default", async () => {
     render(<App />);
-    expect(await screen.findByText(/Circa/i)).toBeInTheDocument();
+    expect((await screen.findAllByText("Circa")).length).toBeGreaterThan(0);
     expect(screen.getByText("moderna")).toBeInTheDocument();
     expect(screen.getByText(/imperio otomano/i)).toBeInTheDocument();
     expect(

@@ -4,7 +4,7 @@ import { Locale, DEFAULT_LOCALE } from "../i18n/types";
 const KEY = "circa";
 
 export type PersistedShape = {
-  schemaVersion: 3;
+  schemaVersion: 4;
   lastPlayedDate: string | null;
   lastResult: GameState | null;
   stats: Stats;
@@ -12,7 +12,7 @@ export type PersistedShape = {
 };
 
 export const EMPTY: PersistedShape = {
-  schemaVersion: 3,
+  schemaVersion: 4,
   lastPlayedDate: null,
   lastResult: null,
   stats: { currentStreak: 0, maxStreak: 0, lastWinDate: null },
@@ -24,7 +24,7 @@ export function load(storage: Storage): PersistedShape {
   if (!raw) return EMPTY;
   try {
     const parsed = JSON.parse(raw);
-    if (parsed?.schemaVersion !== 3) return EMPTY;
+    if (parsed?.schemaVersion !== 4) return EMPTY;
     return parsed as PersistedShape;
   } catch {
     return EMPTY;

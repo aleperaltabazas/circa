@@ -18,7 +18,8 @@
 }
 .title { font-size: 20px; font-weight: 600; margin: 0 0 12px; }
 .outcomeHeadline { font-size: 22px; font-weight: 700; margin: 0 0 4px; }
-.outcomeSub      { font-size: 14px; color: #555; margin: 0 0 16px; }
+.outcomeSub      { font-size: 14px; color: #555; margin: 0 0 4px; }
+.offBy           { font-size: 13px; color: #888; margin: 0 0 16px; }
 .statsRow { display: flex; gap: 24px; margin-bottom: 20px; }
 .stat { flex: 1; text-align: center; }
 .statValue { font-size: 28px; font-weight: 700; }

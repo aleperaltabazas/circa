@@ -8,6 +8,8 @@ import { DateChip } from "./DateChip";
 import { EraPill } from "./EraPill";
 import { GuessInput } from "./GuessInput";
 import { LocaleToggle } from "./LocaleToggle";
+import { ParBadge } from "./ParBadge";
+import { MarginBadge } from "./MarginBadge";
 import styles from "./Board.module.css";
 
 export function Board({
@@ -17,6 +19,7 @@ export function Board({
   currentYear,
   locale,
   onLocaleChange,
+  onHelpClick,
   onGuess,
 }: {
   state: GameState;
@@ -25,6 +28,7 @@ export function Board({
   currentYear: number;
   locale: Locale;
   onLocaleChange: (loc: Locale) => void;
+  onHelpClick: () => void;
   onGuess: (year: number) => void;
 }) {
   const s = STRINGS[locale];
@@ -36,12 +40,17 @@ export function Board({
           <div className={styles.meta}>{s.puzzleMeta(puzzleNumber, todayLabel)}</div>
         </div>
         <div className={styles.headerRight}>
+          <button className={styles.helpBtn} onClick={onHelpClick} aria-label="Cómo se juega">
+            ?
+          </button>
           <LocaleToggle locale={locale} onChange={onLocaleChange} />
         </div>
       </div>
       <div className={styles.contextRow}>
         <EraPill era={state.puzzle.era} locale={locale} />
         {state.puzzle.dateAnchored && <DateChip todayIso={todayLabel} locale={locale} />}
+        <MarginBadge answer={state.puzzle.answer} locale={locale} era={state.puzzle.era} currentYear={currentYear} />
+        <ParBadge par={state.puzzle.par} />
       </div>
       <Hints
         hints={state.puzzle.hints[locale]}

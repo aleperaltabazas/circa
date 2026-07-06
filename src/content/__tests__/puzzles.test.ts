@@ -1,8 +1,9 @@
 import { describe, it, expect } from "vitest";
 import puzzlesData from "../puzzles.json5";
-import { Puzzle } from "../../game/types";
+import { Puzzle, isPointAnswer } from "../../game/types";
 import { LOCALES } from "../../i18n/types";
 import { eraRange } from "../../game/eras";
+import { answerRange } from "../../game/scoring";
 import { currentYearArt } from "../../game/today";
 
 const puzzles = puzzlesData as Puzzle[];
@@ -32,9 +33,27 @@ describe("puzzles.json", () => {
     }
   });
 
-  it("every puzzle has answer.from <= answer.to", () => {
+  it("SpanAnswer puzzles have from <= to", () => {
     for (const p of puzzles) {
-      expect(p.answer.from, `${p.id} has from > to`).toBeLessThanOrEqual(p.answer.to);
+      if (!isPointAnswer(p.answer)) {
+        expect(p.answer.from, `${p.id} has from > to`).toBeLessThanOrEqual(p.answer.to);
+      }
+    }
+  });
+
+  it("PointAnswer puzzles have a valid margin (number 0–0.2 or named period)", () => {
+    const NAMED = new Set(["luster", "decade", "century", "millennium"]);
+    for (const p of puzzles) {
+      if (isPointAnswer(p.answer) && p.answer.margin !== undefined) {
+        const m = p.answer.margin;
+        if (typeof m === "string") {
+          expect(NAMED.has(m), `${p.id} unrecognised named margin "${m}"`).toBe(true);
+        } else {
+          expect(typeof m, `${p.id} margin is not a number`).toBe("number");
+          expect(m, `${p.id} margin out of range`).toBeGreaterThanOrEqual(0);
+          expect(m, `${p.id} margin out of range`).toBeLessThanOrEqual(0.2);
+        }
+      }
     }
   });
 
@@ -57,14 +76,24 @@ describe("puzzles.json", () => {
     }
   });
 
-  it("every puzzle's answer falls within its era", () => {
-    const year = currentYearArt();
+  it("every puzzle has a valid par", () => {
     for (const p of puzzles) {
-      const { from, to } = eraRange(p.era, year);
-      expect(p.answer.from, `${p.id} answer.from ${p.answer.from} outside era ${p.era} [${from}, ${to})`).toBeGreaterThanOrEqual(from);
-      expect(p.answer.from, `${p.id} answer.from ${p.answer.from} outside era ${p.era} [${from}, ${to})`).toBeLessThan(to);
-      expect(p.answer.to, `${p.id} answer.to ${p.answer.to} outside era ${p.era} [${from}, ${to})`).toBeGreaterThanOrEqual(from);
-      expect(p.answer.to, `${p.id} answer.to ${p.answer.to} outside era ${p.era} [${from}, ${to})`).toBeLessThan(to);
+      expect(typeof p.par, `${p.id} par is not a number`).toBe("number");
+      expect(Number.isInteger(p.par), `${p.id} par is not an integer`).toBe(true);
+      expect(p.par, `${p.id} par out of range`).toBeGreaterThanOrEqual(1);
+      expect(p.par, `${p.id} par out of range`).toBeLessThanOrEqual(5);
+    }
+  });
+
+  it("every puzzle's answer falls within its era", () => {
+    const currentYear = currentYearArt();
+    for (const p of puzzles) {
+      const { from: eraFrom, to: eraTo } = eraRange(p.era, currentYear);
+      const range = answerRange(p.answer, p.era, currentYear);
+      expect(range.from, `${p.id} range.from ${range.from} outside era ${p.era} [${eraFrom}, ${eraTo})`).toBeGreaterThanOrEqual(eraFrom);
+      expect(range.from, `${p.id} range.from ${range.from} outside era ${p.era} [${eraFrom}, ${eraTo})`).toBeLessThan(eraTo);
+      expect(range.to, `${p.id} range.to ${range.to} outside era ${p.era} [${eraFrom}, ${eraTo})`).toBeGreaterThanOrEqual(eraFrom);
+      expect(range.to, `${p.id} range.to ${range.to} outside era ${p.era} [${eraFrom}, ${eraTo})`).toBeLessThan(eraTo);
     }
   });
 });

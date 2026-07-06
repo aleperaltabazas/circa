@@ -6,8 +6,9 @@ const baseWin: GameState = {
   puzzle: {
     id: "lepanto-1571",
     era: "modern",
+    par: 3,
     answer: { from: 1571, to: 1571 },
-    hints: { es: ["a","b","c","d","e"] },
+    hints: { es: ["a", "b", "c", "d", "e"] },
     description: { es: "desc" },
   },
   guesses: [
@@ -34,13 +35,13 @@ const baseLoss: GameState = {
 describe("formatShare", () => {
   it("formats a win in Spanish", () => {
     expect(formatShare(baseWin, 42, "https://example.com/circa/", "es")).toBe(
-      "Circa #42 — 3/5 🟨🟨✅\njugá en https://example.com/circa/",
+      "Circa #42 — 3/5 🟨🟨✅\nhttps://example.com/circa/",
     );
   });
 
   it("formats a loss in Spanish", () => {
     expect(formatShare(baseLoss, 42, "https://example.com/circa/", "es")).toBe(
-      "Circa #42 — X/5 🟨🟨🟥🟥🟥\njugá en https://example.com/circa/",
+      "Circa #42 — X/5 🟨🟨🟥🟥🟥\nhttps://example.com/circa/",
     );
   });
 });

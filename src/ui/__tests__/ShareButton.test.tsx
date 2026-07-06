@@ -8,8 +8,9 @@ const state: GameState = {
   puzzle: {
     id: "lepanto-1571",
     era: "modern",
+    par: 3,
     answer: { from: 1571, to: 1571 },
-    hints: { es: ["a","b","c","d","e"] },
+    hints: { es: ["a", "b", "c", "d", "e"] },
     description: { es: "desc" },
   },
   guesses: [
@@ -24,10 +25,17 @@ describe("ShareButton", () => {
   it("copies the localized share string (Spanish)", async () => {
     const writeText = vi.fn().mockResolvedValue(undefined);
     Object.assign(navigator, { clipboard: { writeText } });
-    render(<ShareButton state={state} puzzleNumber={42} url="https://example.com/circa/" locale="es" />);
+    render(
+      <ShareButton
+        state={state}
+        puzzleNumber={42}
+        url="https://example.com/circa/"
+        locale="es"
+      />,
+    );
     await userEvent.click(screen.getByRole("button", { name: /compartir/i }));
     expect(writeText).toHaveBeenCalledWith(
-      "Circa #42 — 2/5 🟨✅\njugá en https://example.com/circa/",
+      "Circa #42 — 2/5 🟨✅\nhttps://example.com/circa/",
     );
   });
 });

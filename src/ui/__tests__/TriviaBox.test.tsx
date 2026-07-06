@@ -6,7 +6,8 @@ import { GameState, Puzzle } from "../../game/types";
 const puzzle: Puzzle = {
   id: "lepanto-1571",
   era: "modern",
-  answer: { from: 1571, to: 1571 },
+  par: 3,
+  answer: { year: 1571 },
   hints: { es: ["a","b","c","d","e"] },
   description: {
     es: "Descripción en español sobre Lepanto.",

@@ -20,7 +20,9 @@ export const STRINGS = {
     outcomeWinSub: (g: number) => `en ${g}/5`,
     outcomeLossHeadline: "Te quedaste sin intentos",
     outcomeLossSub: (a: string) => `La respuesta era ${a}`,
-    shareTail: (url: string) => `jugá en ${url}`,
+    outcomeLossOffBy: (n: number) => n === 1 ? "Te fuiste por 1 año" : `Te fuiste por ${n} años`,
+    outcomeWinOffBy: (n: number) => n === 1 ? "a 1 año del exacto" : `a ${n} años del exacto`,
+    shareTail: (url: string) => `${url}`,
     directionLabel: { earlier: "muy tarde", later: "muy temprano", match: "exacto" },
     eraLabel: {
       prehistory: "prehistoria",
@@ -29,7 +31,28 @@ export const STRINGS = {
       modern: "moderna",
       recent: "reciente",
     },
+    marginLabel: {
+      luster: "Lustro",
+      decade: "Década",
+      century: "Siglo",
+      millennium: "Milenio",
+      percent: (n: number) => `${n}%`,
+    },
+    marginTooltip: {
+      luster: "Cualquier año dentro del lustro",
+      decade: "Cualquier año dentro de la década",
+      century: "Cualquier año dentro del siglo",
+      millennium: "Cualquier año dentro del milenio",
+      percent: (n: number, years?: number) =>
+        years !== undefined
+          ? `Cualquier año en el margen del ${n}% (±${years} años)`
+          : `Cualquier año en el margen del ${n}%`,
+    },
     eraTooltip: "Era histórica de la respuesta",
+    welcome: {
+      title: "Novedades en Circa",
+      close: "¡Entendido!",
+    },
     dateTooltip: "El evento ocurrió en esta fecha del calendario",
     closenessHints: {
       tooFar: "muy lejos",

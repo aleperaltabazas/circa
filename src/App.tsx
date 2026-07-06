@@ -12,8 +12,12 @@ import { Locale } from "./i18n/types";
 import { STRINGS } from "./i18n/strings";
 import { Board } from "./ui/Board";
 import { StatsModal } from "./ui/StatsModal";
+import { WelcomeModal } from "./ui/WelcomeModal";
 import { TriviaBox } from "./ui/TriviaBox";
+import { getCookie, setCookie } from "./storage/cookies";
 import styles from "./App.module.css";
+
+const CHANGELOG_VERSION = "1";
 
 const puzzles = puzzlesData as Puzzle[];
 const schedule = scheduleData as Schedule;
@@ -37,6 +41,17 @@ export function App() {
   const puzzleNumber = useMemo(() => puzzleNumberFor(todayIso, schedule), [todayIso]);
   const [persisted, setPersisted] = useState<PersistedShape>(() => load(window.localStorage));
   const locale = persisted.locale;
+  const isNewPlayer = persisted.lastPlayedDate === null;
+  const [welcomeOpen, setWelcomeOpen] = useState(
+    () => getCookie("circa_changelog") !== CHANGELOG_VERSION,
+  );
+  const [helpOpen, setHelpOpen] = useState(false);
+
+  function handleWelcomeClose() {
+    setCookie("circa_changelog", CHANGELOG_VERSION, 365);
+    setWelcomeOpen(false);
+    setHelpOpen(false);
+  }
 
   function handleLocaleChange(next: Locale) {
     const updated = { ...persisted, locale: next };
@@ -49,15 +64,25 @@ export function App() {
   }
 
   return (
-    <Game
-      puzzle={puzzle}
-      puzzleNumber={puzzleNumber}
-      todayIso={todayIso}
-      currentYear={currentYear}
-      persisted={persisted}
-      setPersisted={setPersisted}
-      onLocaleChange={handleLocaleChange}
-    />
+    <>
+      {(welcomeOpen || helpOpen) && (
+        <WelcomeModal
+          isNewPlayer={isNewPlayer || helpOpen}
+          locale={locale}
+          onClose={handleWelcomeClose}
+        />
+      )}
+      <Game
+        puzzle={puzzle}
+        puzzleNumber={puzzleNumber}
+        todayIso={todayIso}
+        currentYear={currentYear}
+        persisted={persisted}
+        setPersisted={setPersisted}
+        onLocaleChange={handleLocaleChange}
+        onHelpClick={() => setHelpOpen(true)}
+      />
+    </>
   );
 }
 
@@ -69,6 +94,7 @@ function Game({
   persisted,
   setPersisted,
   onLocaleChange,
+  onHelpClick,
 }: {
   puzzle: Puzzle;
   puzzleNumber: number;
@@ -77,6 +103,7 @@ function Game({
   persisted: PersistedShape;
   setPersisted: (p: PersistedShape) => void;
   onLocaleChange: (loc: Locale) => void;
+  onHelpClick: () => void;
 }) {
   const [state, dispatch] = useReducer(
     reducer,
@@ -101,8 +128,8 @@ function Game({
     }
     const next: PersistedShape = {
       ...persisted,
-      schemaVersion: 3,
-      lastPlayedDate: todayIso,
+      schemaVersion: 4,
+      lastPlayedDate: state.guesses.length > 0 ? todayIso : persisted.lastPlayedDate,
       lastResult: state,
       stats: nextStats,
     };
@@ -124,6 +151,7 @@ function Game({
         currentYear={currentYear}
         locale={persisted.locale}
         onLocaleChange={onLocaleChange}
+        onHelpClick={onHelpClick}
         onGuess={(year) => dispatch({ type: "submitGuess", year, currentYear })}
       />
       {state.outcome !== "playing" && !modalOpen && (
@@ -141,6 +169,7 @@ function Game({
           gameState={state}
           puzzle={puzzle}
           puzzleNumber={puzzleNumber}
+          currentYear={currentYear}
           url={url}
           locale={persisted.locale}
           onClose={() => setModalOpen(false)}

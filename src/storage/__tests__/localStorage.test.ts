@@ -39,13 +39,13 @@ describe("localStorage boundary", () => {
     expect(load(storage)).toEqual(data);
   });
 
-  it("EMPTY has DEFAULT_LOCALE and schemaVersion 3", () => {
+  it("EMPTY has DEFAULT_LOCALE and schemaVersion 4", () => {
     expect(EMPTY.locale).toBe("es");
-    expect(EMPTY.schemaVersion).toBe(3);
+    expect(EMPTY.schemaVersion).toBe(4);
   });
 
-  it("returns EMPTY when stored schemaVersion is 2", () => {
-    storage.setItem("circa", JSON.stringify({ schemaVersion: 2, locale: "es" }));
+  it("returns EMPTY when stored schemaVersion is 3 (old schema)", () => {
+    storage.setItem("circa", JSON.stringify({ schemaVersion: 3, locale: "es" }));
     expect(load(storage)).toEqual(EMPTY);
   });
 

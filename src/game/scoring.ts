@@ -1,5 +1,7 @@
-import { Bucket, Direction, Era, YearRange } from "./types";
+import { Answer, Bucket, Direction, Era, NamedMargin, isPointAnswer } from "./types";
 import { eraRange } from "./eras";
+
+const PERIOD_SIZES: Record<NamedMargin, number> = { luster: 5, decade: 10, century: 100, millennium: 1000 };
 
 // Non-perfect bucket thresholds, evaluated in order: first ratio <= max wins.
 // Anything beyond the last threshold falls through to "far".
@@ -8,26 +10,44 @@ const THRESHOLDS: { bucket: Exclude<Bucket, "perfect">; max: number }[] = [
   { bucket: "mid", max: 0.25 },
 ];
 
-function distanceToRange(guess: number, answer: YearRange): number {
-  if (guess >= answer.from && guess <= answer.to) return 0;
-  return Math.min(Math.abs(guess - answer.from), Math.abs(guess - answer.to));
+export function answerRange(
+  answer: Answer,
+  era: Era,
+  currentYear: number,
+): { from: number; to: number } {
+  if (!isPointAnswer(answer)) return answer;
+  if (!answer.margin) return { from: answer.year, to: answer.year };
+  if (typeof answer.margin === "string") {
+    const size = PERIOD_SIZES[answer.margin];
+    const start = Math.floor(answer.year / size) * size;
+    return { from: start, to: start + size - 1 };
+  }
+  const { width } = eraRange(era, currentYear);
+  const delta = Math.floor(width * answer.margin);
+  return { from: answer.year - delta, to: answer.year + delta };
 }
 
-function directionOf(guess: number, answer: YearRange): Direction {
-  if (guess >= answer.from && guess <= answer.to) return "match";
-  return guess < answer.from ? "later" : "earlier";
+export function distanceToRange(guess: number, range: { from: number; to: number }): number {
+  if (guess >= range.from && guess <= range.to) return 0;
+  return Math.min(Math.abs(guess - range.from), Math.abs(guess - range.to));
+}
+
+function directionOf(guess: number, range: { from: number; to: number }): Direction {
+  if (guess >= range.from && guess <= range.to) return "match";
+  return guess < range.from ? "later" : "earlier";
 }
 
 export function scoreGuess(
   guess: number,
-  answer: YearRange,
+  answer: Answer,
   era: Era,
   currentYear: number,
 ): { distanceRatio: number; bucket: Bucket; direction: Direction } {
   const { width } = eraRange(era, currentYear);
-  const d = distanceToRange(guess, answer);
+  const range = answerRange(answer, era, currentYear);
+  const d = distanceToRange(guess, range);
   const distanceRatio = Math.min(d / width, 1);
-  const direction = directionOf(guess, answer);
+  const direction = directionOf(guess, range);
 
   if (d === 0) return { distanceRatio: 0, bucket: "perfect", direction };
   for (const { bucket, max } of THRESHOLDS) {
