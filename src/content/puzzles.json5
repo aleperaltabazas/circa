@@ -399,4 +399,25 @@
     },
     dateAnchored: true,
   },
+  {
+    id: 'forrest-gump-1994',
+    era: 'recent',
+    answer: {
+      year: 1994,
+    },
+    par: 4,
+    hints: {
+      es: [
+        'Este día se estrena Forrest Gump',
+        'Dos años antes se disuelve la República Federativa Socialista de Yugoslavia',
+        'El mismo año se disputa un mundial de fútbol',
+        'Oasis debuta con *Definitely Maybe*, Green Day publica *Dookie*, Fito Páez publica *Circo Beat*',
+        'El mismo año ocurre el atentado a la AMIA',
+      ],
+    },
+    description: {
+      es: 'El 6 de julio de 1994 se estrenó *Forrest Gump*, dirigida por Robert Zemeckis y protagonizada por Tom Hanks, película por la cual cada uno se llevaría un premio Óscar a casa (mejor director y mejor actor, respectivamente), así como cuatro más para el resto de la producción.',
+    },
+    dateAnchored: true,
+  },
 ]
