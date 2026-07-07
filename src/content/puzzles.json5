@@ -171,7 +171,7 @@
     answer: {
       year: 1914,
     },
-    par: 3,
+    par: 1,
     hints: {
       es: [
         "*I say, 'Don't you know?'; You say 'You don't know'; I say 'Take me out!'*",
@@ -430,14 +430,35 @@
     hints: {
       es: [
         'Se publica la novena entrada numerada de la saga de vídeojuegos *Final Fantasy*',
-        'Previo a la caída de las torres gemelas',
+        'El mismo año: se estrenan *El camino hacia el dorado*, *Requiem for a dream*, *Gladiator*',
         'Entre la última entrada de la saga y la novena pasaron 23 años',
-        'El mismo año: se estrenan *El camino hacia el dorado**, *Requiem for a dream*, *Gladiator*',
+        'Previo a la caída de las torres gemelas',
         'Se especulaba que podría haber un colapso informático global por un *overflow* al iniciar este año',
       ],
     },
     description: {
       es: 'El 7 de julio del 2000 Squaresoft publicó *Final Fantasy IX* para la *PlayStation* en Japón. Si bien fue el juego más vendido del año en Estados Unidos y Japón, no logró alcanzar el éxito de las entregas anteriores; actualmente ocupa el tercer puesto en número de ventas de la franquicia.',
+    },
+    dateAnchored: true,
+  },
+  {
+    id: 'brasil-2014',
+    era: 'recent',
+    answer: {
+      year: 2014,
+    },
+    par: 3,
+    hints: {
+      es: [
+        'Miroslav Klose se convierte en el máximo goleador en mundiales',
+        'La misma década: muere Gabriel García Márquez a los 87 años, asume el primer papa americano, se inventa una deliciosa sopa de Murciélagos en Wuhan sin ningún tipo de consecuencia adversa',
+        'El gol de Klose es en semifinales contra el país anfitrión',
+        'El mismo año: Taylor Swift publica *1989*, Coldplay publica *Ghost Stories*; se estrena *Capitán América: El Soldado del Invierno*',
+        'Este partido es recordado por la gran diferencia de goles: 7-1',
+      ],
+    },
+    description: {
+      es: 'El 8 de julio de 2014 Brasil, anfitrión de la copa del mundo, sufrió la goleada más grande en la historia de los mundiales en semifinales, cayendo 7-1 contra el eventual campeón, Alemania. En este partido Miroslav Klose anota un único gol y con este rompe el récord (al momento del hecho) de goles en mundiales con 16.',
     },
     dateAnchored: true,
   },
