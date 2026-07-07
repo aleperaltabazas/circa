@@ -420,4 +420,25 @@
     },
     dateAnchored: true,
   },
+  {
+    id: 'final-fantasy-ix-2000',
+    era: 'recent',
+    answer: {
+      year: 2000,
+    },
+    par: 4,
+    hints: {
+      es: [
+        'Se publica la novena entrada numerada de la saga de vídeojuegos *Final Fantasy*',
+        'Previo a la caída de las torres gemelas',
+        'Entre la última entrada de la saga y la novena pasaron 23 años',
+        'El mismo año: se estrenan *El camino hacia el dorado**, *Requiem for a dream*, *Gladiator*',
+        'Se especulaba que podría haber un colapso informático global por un *overflow* al iniciar este año',
+      ],
+    },
+    description: {
+      es: 'El 7 de julio del 2000 Squaresoft publicó *Final Fantasy IX* para la *PlayStation* en Japón. Si bien fue el juego más vendido del año en Estados Unidos y Japón, no logró alcanzar el éxito de las entregas anteriores; actualmente ocupa el tercer puesto en número de ventas de la franquicia.',
+    },
+    dateAnchored: true,
+  },
 ]
