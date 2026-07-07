@@ -10,6 +10,7 @@ import { GuessInput } from "./GuessInput";
 import { LocaleToggle } from "./LocaleToggle";
 import { ParBadge } from "./ParBadge";
 import { MarginBadge } from "./MarginBadge";
+import { HistoryIcon } from "./icons/HistoryIcon";
 import styles from "./Board.module.css";
 
 export function Board({
@@ -20,6 +21,7 @@ export function Board({
   locale,
   onLocaleChange,
   onHelpClick,
+  onOpenPrevious,
   onGuess,
 }: {
   state: GameState;
@@ -29,6 +31,7 @@ export function Board({
   locale: Locale;
   onLocaleChange: (loc: Locale) => void;
   onHelpClick: () => void;
+  onOpenPrevious: () => void;
   onGuess: (year: number) => void;
 }) {
   const s = STRINGS[locale];
@@ -45,6 +48,11 @@ export function Board({
           </button>
           <LocaleToggle locale={locale} onChange={onLocaleChange} />
         </div>
+      </div>
+      <div className={styles.previousRow}>
+        <button className={styles.previousBtn} type="button" onClick={onOpenPrevious}>
+          <HistoryIcon /> {s.previousPuzzles.buttonLabel}
+        </button>
       </div>
       <div className={styles.contextRow}>
         <EraPill era={state.puzzle.era} locale={locale} />

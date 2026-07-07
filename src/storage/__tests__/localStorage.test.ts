@@ -39,9 +39,10 @@ describe("localStorage boundary", () => {
     expect(load(storage)).toEqual(data);
   });
 
-  it("EMPTY has DEFAULT_LOCALE and schemaVersion 4", () => {
+  it("EMPTY has DEFAULT_LOCALE, schemaVersion 5, and empty history", () => {
     expect(EMPTY.locale).toBe("es");
-    expect(EMPTY.schemaVersion).toBe(4);
+    expect(EMPTY.schemaVersion).toBe(5);
+    expect(EMPTY.history).toEqual({});
   });
 
   it("returns EMPTY when stored schemaVersion is 3 (old schema)", () => {
@@ -52,5 +53,46 @@ describe("localStorage boundary", () => {
   it("returns EMPTY for unknown schema versions", () => {
     storage.setItem("circa", JSON.stringify({ schemaVersion: 999 }));
     expect(load(storage)).toEqual(EMPTY);
+  });
+
+  it("migrates schemaVersion 4 lastResult into history keyed by lastPlayedDate", () => {
+    const lastResult = { puzzle: { id: "p1" }, guesses: [], outcome: "won", hintsRevealed: 5 };
+    storage.setItem(
+      "circa",
+      JSON.stringify({
+        schemaVersion: 4,
+        lastPlayedDate: "2026-06-19",
+        lastResult,
+        stats: { currentStreak: 1, maxStreak: 1, lastWinDate: "2026-06-19" },
+        locale: "es",
+      }),
+    );
+    expect(load(storage)).toEqual({
+      schemaVersion: 5,
+      lastPlayedDate: "2026-06-19",
+      history: { "2026-06-19": lastResult },
+      stats: { currentStreak: 1, maxStreak: 1, lastWinDate: "2026-06-19" },
+      locale: "es",
+    });
+  });
+
+  it("migrates schemaVersion 4 with no lastResult into empty history", () => {
+    storage.setItem(
+      "circa",
+      JSON.stringify({
+        schemaVersion: 4,
+        lastPlayedDate: null,
+        lastResult: null,
+        stats: { currentStreak: 0, maxStreak: 0, lastWinDate: null },
+        locale: "es",
+      }),
+    );
+    expect(load(storage)).toEqual({
+      schemaVersion: 5,
+      lastPlayedDate: null,
+      history: {},
+      stats: { currentStreak: 0, maxStreak: 0, lastWinDate: null },
+      locale: "es",
+    });
   });
 });
