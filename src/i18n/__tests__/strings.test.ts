@@ -41,6 +41,18 @@ describe("STRINGS", () => {
     }
   });
 
+  it("has previousPuzzles strings for every locale", () => {
+    for (const loc of LOCALES) {
+      const p = STRINGS[loc].previousPuzzles;
+      expect(typeof p.buttonLabel).toBe("string");
+      expect(typeof p.title).toBe("string");
+      expect(typeof p.won).toBe("string");
+      expect(typeof p.lost).toBe("string");
+      expect(typeof p.inProgress).toBe("string");
+      expect(typeof p.notStarted).toBe("string");
+    }
+  });
+
   it("renders parameterized strings without leaking placeholders", () => {
     for (const loc of LOCALES) {
       const s = STRINGS[loc];

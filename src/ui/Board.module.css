@@ -42,6 +42,26 @@
   font-family: inherit;
 }
 .helpBtn:hover { background: #f0f0f0; }
+.previousRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.previousBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  font-family: inherit;
+}
+.previousBtn:hover { background: #f0f0f0; }
 .contextRow {
   display: flex;
   align-items: center;

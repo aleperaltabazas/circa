@@ -63,6 +63,14 @@ export const STRINGS = {
       wentTooFar: "te alejaste",
     },
     guessAria: (year: number, dirLabel: string) => `${year}, ${dirLabel}`,
+    previousPuzzles: {
+      buttonLabel: "Ver puzzles anteriores",
+      title: "Puzzles anteriores",
+      won: "Ganado",
+      lost: "Perdido",
+      inProgress: "En curso",
+      notStarted: "Sin jugar",
+    },
   },
 } as const;
 

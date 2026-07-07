@@ -87,3 +87,71 @@ describe("App", () => {
     expect(screen.getByText("Sobre este puzzle")).toBeInTheDocument();
   });
 });
+
+describe("App — previous puzzles", () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+    vi.useFakeTimers({ toFake: ["Date"] });
+    vi.setSystemTime(new Date("2026-06-25T15:00:00Z"));
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it("opens a modal listing today plus previous scheduled dates when the button is clicked", async () => {
+    render(<App />);
+    await screen.findByText(/película argentina/i);
+    await userEvent.click(screen.getByRole("button", { name: /ver puzzles anteriores/i }));
+    expect(screen.getByText("Puzzles anteriores")).toBeInTheDocument();
+    expect(screen.getByText("25/06")).toBeInTheDocument();
+    expect(screen.getByText("24/06")).toBeInTheDocument();
+    expect(screen.getByText("20/06")).toBeInTheDocument();
+  });
+
+  it("orders puzzle cards oldest-to-newest, with today last", async () => {
+    render(<App />);
+    await screen.findByText(/película argentina/i);
+    await userEvent.click(screen.getByRole("button", { name: /ver puzzles anteriores/i }));
+    const cardDates = screen
+      .getAllByText(/^\d{2}\/06$/)
+      .map((el) => el.textContent);
+    expect(cardDates).toEqual(["20/06", "21/06", "22/06", "23/06", "24/06", "25/06"]);
+  });
+
+  it("switches the active puzzle when a previous date is selected", async () => {
+    render(<App />);
+    await screen.findByText(/película argentina/i);
+    await userEvent.click(screen.getByRole("button", { name: /ver puzzles anteriores/i }));
+    await userEvent.click(screen.getByText("24/06"));
+    expect(await screen.findByText(/jugador de fútbol en Rosario/i)).toBeInTheDocument();
+    expect(screen.queryByText(/película argentina/i)).not.toBeInTheDocument();
+  });
+
+  it("lists today alongside previous dates so the user can navigate back", async () => {
+    render(<App />);
+    await screen.findByText(/película argentina/i);
+    await userEvent.click(screen.getByRole("button", { name: /ver puzzles anteriores/i }));
+    await userEvent.click(screen.getByText("24/06"));
+    await screen.findByText(/jugador de fútbol en Rosario/i);
+
+    await userEvent.click(screen.getByRole("button", { name: /ver puzzles anteriores/i }));
+    await userEvent.click(screen.getByText("25/06"));
+    expect(await screen.findByText(/película argentina/i)).toBeInTheDocument();
+  });
+
+  it("does not update stats/streak when finishing a previous day's puzzle", async () => {
+    render(<App />);
+    await screen.findByText(/película argentina/i);
+    await userEvent.click(screen.getByRole("button", { name: /ver puzzles anteriores/i }));
+    await userEvent.click(screen.getByText("24/06"));
+    await screen.findByText(/jugador de fútbol en Rosario/i);
+    await userEvent.type(screen.getByRole("spinbutton"), "1987");
+    await userEvent.click(screen.getByRole("button", { name: /adivinar/i }));
+    await screen.findByText("¡Lo lograste!");
+
+    const persisted = JSON.parse(window.localStorage.getItem("circa")!);
+    expect(persisted.stats.currentStreak).toBe(0);
+    expect(persisted.history["2026-06-24"].outcome).toBe("won");
+  });
+});
