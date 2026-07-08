@@ -171,7 +171,7 @@
     answer: {
       year: 1914,
     },
-    par: 1,
+    par: 3,
     hints: {
       es: [
         "*I say, 'Don't you know?'; You say 'You don't know'; I say 'Take me out!'*",
@@ -447,18 +447,40 @@
     answer: {
       year: 2014,
     },
-    par: 3,
+    par: 2,
     hints: {
       es: [
         'Miroslav Klose se convierte en el máximo goleador en mundiales',
-        'La misma década: muere Gabriel García Márquez a los 87 años, asume el primer papa americano, se inventa una deliciosa sopa de Murciélagos en Wuhan sin ningún tipo de consecuencia adversa',
+        'En la misma década: muere Hugo Chávez, asume el primer papa americano, se inventa una deliciosa sopa de Murciélagos en Wuhan sin ningún tipo de consecuencia adversa',
         'El gol de Klose es en semifinales contra el país anfitrión',
-        'El mismo año: Taylor Swift publica *1989*, Coldplay publica *Ghost Stories*; se estrena *Capitán América: El Soldado del Invierno*',
-        'Este partido es recordado por la gran diferencia de goles: 7-1',
+        'El mismo año: El Cuarteto de Nos publica *Habla tu espejo*, Taylor Swift publica *1989*, Coldplay publica *Ghost Stories*',
+        'Este partido es recordado por la diferencia de goles: 7-1',
       ],
     },
     description: {
       es: 'El 8 de julio de 2014 Brasil, anfitrión de la copa del mundo, sufrió la goleada más grande en la historia de los mundiales en semifinales, cayendo 7-1 contra el eventual campeón, Alemania. En este partido Miroslav Klose anota un único gol y con este rompe el récord (al momento del hecho) de goles en mundiales con 16.',
+    },
+    dateAnchored: true,
+  },
+  {
+    id: 'sudan-2005',
+    era: 'recent',
+    answer: {
+      year: 2005,
+      margin: 'luster',
+    },
+    par: 5,
+    hints: {
+      es: [
+        'Este día se celebra la independencia de una nueva nación',
+        'Pocos años más tardes ese mismo país entraría en una guerra civil que terminaría en 2020',
+        'Luego del alunizaje',
+        'El mismo año: Coldplay publica *X&Y*, Calle 13 debuta con *Calle 13*, Babasónicos publica *Anoche*',
+        'El mismo año: se crea YouTube',
+      ],
+    },
+    description: {
+      es: 'El 9 de julio de 2005 la República de Sudán del Sur se separó de la República de Sudán por cuestiones políticas, económicas y religiosas: el norte principalmente poblado por árabes y musulmanes tras las conquistas musulmanas en el medioevo, y el sur un popurrí de etnias y religiones, incluyendo cristianos y otras religiones africanas tradicionales. No obstante la libertad no fue fácil para Sudán del sur: del 2011 a 2020 se vio sumergida en una guerra civil con estimaciones de cientos de miles de muertos.',
     },
     dateAnchored: true,
   },
