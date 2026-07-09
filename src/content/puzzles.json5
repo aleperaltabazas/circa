@@ -473,14 +473,36 @@
     hints: {
       es: [
         'Este día se celebra la independencia de una nueva nación',
-        'Pocos años más tardes ese mismo país entraría en una guerra civil que terminaría en 2020',
-        'Luego del alunizaje',
+        'Posterior al alunizaje',
+        'Casi 20 años después de su independencia, su selección de básquet se enfrenta a Estados Unidos y pierde por solo 1 punto (101-100)',
         'El mismo año: Coldplay publica *X&Y*, Calle 13 debuta con *Calle 13*, Babasónicos publica *Anoche*',
-        'El mismo año: se crea YouTube',
+        'La nación en cuestión es *Sudán del Sur*, país que se encontró en guerra civil hasta 2020',
       ],
     },
     description: {
       es: 'El 9 de julio de 2005 la República de Sudán del Sur se separó de la República de Sudán por cuestiones políticas, económicas y religiosas: el norte principalmente poblado por árabes y musulmanes tras las conquistas musulmanas en el medioevo, y el sur un popurrí de etnias y religiones, incluyendo cristianos y otras religiones africanas tradicionales. No obstante la libertad no fue fácil para Sudán del sur: del 2011 a 2020 se vio sumergida en una guerra civil con estimaciones de cientos de miles de muertos.',
+    },
+    dateAnchored: true,
+  },
+  {
+    id: 'dirraquio-48bc',
+    era: 'ancient',
+    answer: {
+      year: -48,
+      margin: 'century',
+    },
+    par: 1,
+    hints: {
+      es: [
+        'Se disputa la batalla de Dirraquio',
+        'Posterior a la segunda guerra púnica',
+        'En el mismo siglo: *Espartaco* libera una rebelión de esclavos; *Virgilio* escribe *La Eneida*',
+        'Se enfrenta el ejército *Cneo Pompeyo Magno* contra el ejército de la posiblemente más conocida figura de la historia romana',
+        'El contrincante de Pompeyo es *Cayo Julio Cèsar* y sería asesinado solo 4 años más adelante',
+      ],
+    },
+    description: {
+      es: 'El 10 de julio del año 48 a.C. se disputó una batalla entre las fuerzas del conservador *Cneo Pompeyo Magno* y *Julio Cèsar* en las afueras de la ciudad de Dirraquio, actual Durrës, Albania. Si bien Pompeyo resultó victorioso no logró destruir por completo las fuerzas de César, quien logró escapar y un mes más tarde tomó revancha en la batalla de Farsalla, victoria decisiva para su futuro como regente absoluto de Roma.',
     },
     dateAnchored: true,
   },
