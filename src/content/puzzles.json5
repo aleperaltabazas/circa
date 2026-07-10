@@ -550,4 +550,26 @@
     },
     dateAnchored: true,
   },
+  {
+    id: 'hamilton-1806',
+    era: 'recent',
+    answer: {
+      year: 1806,
+      margin: 'decade',
+    },
+    par: 3,
+    hints: {
+      es: [
+        'Muere una importante figura de la política estadounidense en un duelo con pistola',
+        'Anterior a la muerte de Belgrano',
+        'Un musical de Broadway lleva su nombre',
+        'También comparte nombre con un corredor de Formula 1',
+        'En la misma década Napoleón se convierte en el gobernante más poderoso de toda Europa',
+      ],
+    },
+    description: {
+      es: 'El 12 de julio sucumbió a sus heridas de bala Alexander Hamilton tras haberse batido a duelo con pistolas con Aaron Burr, vicepresidente de la nación estadounidense, el día anterior. Antes del duelo, Hamilton escribió una defensa de su decisión de batirse en duelo mientras que, al mismo tiempo, pretendía desperdiciar su tiro.',
+    },
+    dateAnchored: true,
+  },
 ]
