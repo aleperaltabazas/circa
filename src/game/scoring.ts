@@ -22,9 +22,9 @@ export function answerRange(
     const start = Math.floor(answer.year / size) * size;
     return { from: start, to: start + size - 1 };
   }
-  const { width } = eraRange(era, currentYear);
+  const { from: eraFrom, to: eraTo, width } = eraRange(era, currentYear);
   const delta = Math.floor(width * answer.margin);
-  return { from: answer.year - delta, to: answer.year + delta };
+  return { from: Math.max(answer.year - delta, eraFrom), to: Math.min(answer.year + delta, eraTo) };
 }
 
 export function distanceToRange(guess: number, range: { from: number; to: number }): number {

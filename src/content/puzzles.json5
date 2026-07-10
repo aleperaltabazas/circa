@@ -506,4 +506,48 @@
     },
     dateAnchored: true,
   },
+  {
+    id: 'holy-roman-empire-1806',
+    era: 'recent',
+    answer: {
+      year: 1806,
+      margin: 0.1,
+    },
+    par: 5,
+    hints: {
+      es: [
+        'Abdica el emperador Francisco II, poniendo fin a una institución milenaria',
+        'El año anterior habría sufrido una aplastante derrota en *Austerlitz* junto a sus aliado el zar Alejandro I de Rusia',
+        'El imperio en cuestión es *El Sacro Imperio Romano Germánico*',
+        'Anterior a la *Batalla de Caseros*',
+        'Este evento está encuadrado en las guerras napoleónicas',
+      ],
+    },
+    description: {
+      es: 'El 6 de agosto de 1806 el emperador Francisco II renuncia a la corona del Sacro Imperio Romano Germánico, marcando el fin de un imperio de casi mil años.',
+    },
+    dateAnchored: true,
+  },
+  {
+    id: 'srebrenica-1995',
+    era: 'recent',
+    answer: {
+      year: 1995,
+      margin: 0.005,
+    },
+    par: 4,
+    hints: {
+      es: [
+        'Este día ocurriría la *Masacre de Srebrenica* donde más de 8000 civiles bosnios son asesinados por *los Escorpiones*',
+        'Posterior a la última dictadura Argentina',
+        'El mismo año Bosnia obtiene su independencia',
+        "El mismo año: Green Day publica *Insomniac*, Oasis publica *(What's the Story) Morning Glory?*, Los Rodríguez publica *Palabras más, palabras menos*",
+        'Unos pocos años antes se disolvía Yugoslavia',
+      ],
+    },
+    description: {
+      es: 'Por la tarde del 11 de julio de 1995 se congreraron aproximadamente 25000 refugiados musulmanes en Potočari; ese mismo día el general del VRS (Ejército de la República Srpska) anuncia su deseo de limpieza étnica contra los musulmanes ante las cámaras. Entre el 13 y el 22 de julio el VRS y *los Escorpiones*, una fuerza paramilitar, asesinan 8372 mosnios, principalmente musulmanes, y entre ellos incluídos niños y ancianos.',
+    },
+    dateAnchored: true,
+  },
 ]
