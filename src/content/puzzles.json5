@@ -572,4 +572,25 @@
     },
     dateAnchored: true,
   },
+  {
+    id: 'corbatas-1977',
+    era: 'recent',
+    answer: {
+      year: 1977
+    },
+    par: 2,
+    hints: {
+      es: [
+        '13 abogados son secuestrados por el gobierno',
+        'Posterior a la segunda guerra mundial',
+        'El mismo año: Aerosmith publica *Draw the Line*, se estrena *Star Wars IV*, muere *Elvis Presley* a los 42 años',
+        'Antes de la disolución de la Unión Soviética',
+        'El mismo año marchan por primera vez las Madres de Plaza de Mayo'
+      ]
+    },
+    dateAnchored: true,
+    description: {
+      es: 'El 13 de julio de 1977 marcó el fin de la operación conocida como **la noche de las corbatas** en la cual 14 abogados, principalmente laboralistas, y familiares fueron secuestrados por el gobierno militar. Si bien existen 5 sobrevivientes del evento, Norberto Centeno y Jorge Candeloro fueron asesinados; el resto siguen desaparecidos al día de hoy.'
+    }
+  }
 ]
