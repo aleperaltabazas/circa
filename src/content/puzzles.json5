@@ -289,7 +289,7 @@
       ],
     },
     description: {
-      es: 'El 14 de julio de 1789 revolucionarios franceses asaltaron la Bastilla, una fortaleza de París, en busca de armas y pólvora para defenderse de las tropas del ejÃ©rcito realista.',
+      es: 'El 14 de julio de 1789 revolucionarios franceses asaltaron la Bastilla, una fortaleza de París, en busca de armas y pólvora para defenderse de las tropas del ejército realista.',
     },
     dateAnchored: true,
   },
@@ -395,7 +395,7 @@
       ],
     },
     description: {
-      es: 'El 5 de julio de 1975 Cabo Verde obvtuvo su independencia de Portugal reconocida por el resto del mundo. Desde 1951 Cabo Verde fue incorporado como departamento de la RepÃºblica Portuguesa, pero sus habitantes se mantuvieron firmes en sus reclamos de independencia total.',
+      es: 'El 5 de julio de 1975 Cabo Verde obvtuvo su independencia de Portugal reconocida por el resto del mundo. Desde 1951 Cabo Verde fue incorporado como departamento de la República Portuguesa, pero sus habitantes se mantuvieron firmes en sus reclamos de independencia total.',
     },
     dateAnchored: true,
   },
