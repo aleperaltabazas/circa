@@ -614,4 +614,26 @@
     },
     dateAnchored: true,
   },
+  {
+    id: 'hegira-622',
+    era: 'medieval',
+    answer: {
+      year: 622,
+      margin: 'century',
+    },
+    par: 5,
+    hints: {
+      es: [
+        'Mahoma inicia su peregrinación desde **La Meca** hacia **Medina**',
+        'Antes de que los vikingos llegaran a América',
+        'Este siglo se lo conoce como el «**Siglo del Islam**» por la pronunciada difusión de la religión',
+        'Después del gobierno de Justiniano I de Bizancio',
+        'Casi un milenio antes de la llegada de los españoles a América',
+      ],
+    },
+    description: {
+      es: 'El 16 de julio del año 622 Mahoma, ante las hostilidades y persecuciones de politeístas en la ciudad de **La Meca**, emprende un viaje con rumbo a **Medina**, donde unificó a varias tribus y comunidades de árabes bajo el Íslam. Este evento, conocida como la **Hégira**, marca el inicio del calendario musulmán.',
+    },
+    dateAnchored: true,
+  },
 ]
