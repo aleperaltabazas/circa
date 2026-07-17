@@ -105,8 +105,8 @@ describe("answerRange", () => {
     expect(answerRange(named(1927, "century"), "recent", 2026)).toEqual({ from: 1900, to: 1999 });
   });
 
-  it("millennium: 1927 → 1000–1999", () => {
-    expect(answerRange(named(1927, "millennium"), "recent", 2026)).toEqual({ from: 1000, to: 1999 });
+  it("millennium: 1927 in recent era → clamped to era start–1999", () => {
+    expect(answerRange(named(1927, "millennium"), "recent", 2026)).toEqual({ from: 1789, to: 1999 });
   });
 
   it("decade BCE: -43 → -50 to -41", () => {

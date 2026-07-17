@@ -636,4 +636,26 @@
     },
     dateAnchored: true,
   },
+  {
+    id: 'charles-vii-1429',
+    era: 'medieval',
+    answer: {
+      year: 1429,
+      margin: 'century',
+    },
+    par: 5,
+    hints: {
+      es: [
+        '**Carlos VII** de la dinastía *Valois* es coronado rey de Francia',
+        'El siglo es conocido como «**Siglo de las Innovaciones**»',
+        'En el marco de la **guerra de los cien años**',
+        'Posterior a las cruzadas',
+        'En el mismo siglo nace y muere la *Doncella de Orleans*',
+      ],
+    },
+    description: {
+      es: 'El 17 de julio de 1429 Carlos VII de Francia, también conocido con los títulos de "el Victorioso" o "Bien Servido", fue coronado como rey en la Catedral de Reims tras la exitosa campaña de Juana de Arco en la guerra de los Cien Años contra los ingleses.',
+    },
+    dateAnchored: true,
+  },
 ]

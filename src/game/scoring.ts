@@ -20,7 +20,8 @@ export function answerRange(
   if (typeof answer.margin === "string") {
     const size = PERIOD_SIZES[answer.margin];
     const start = Math.floor(answer.year / size) * size;
-    return { from: start, to: start + size - 1 };
+    const { from: eraFrom, to: eraTo } = eraRange(era, currentYear);
+    return { from: Math.max(start, eraFrom), to: Math.min(start + size - 1, eraTo - 1) };
   }
   const { from: eraFrom, to: eraTo, width } = eraRange(era, currentYear);
   const delta = Math.floor(width * answer.margin);
