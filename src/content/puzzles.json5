@@ -658,4 +658,26 @@
     },
     dateAnchored: true,
   },
+  {
+    id: 'san-marino-2021',
+    era: 'recent',
+    answer: {
+      year: 2021,
+      margin: 0.01,
+    },
+    par: 5,
+    hints: {
+      es: [
+        'San Marino obtiene su **primera medalla olímpica**',
+        'En los mismos juegos: Argentina gana la medalla de plata en hockey femenino',
+        'Después del corralito',
+        'En los mismos juegos: Argentina gana la medalla de bronce en vóley masculino',
+        'Los juegos se jugaron en Tokio fuera del ciclo de 4 años',
+      ],
+    },
+    description: {
+      es: 'El 29 de julio de 2021 la tiradora Alessandra Perilli ganó la medalla de bronce en tiro en fosa en los Juegos Olímpicos de Tokio 2020. Esto significó la primera medalla olímpica para San Marino en toda su historia, convirtiéndose en el país con menos población (34.000 habitantes) en subirse a un podio olímpico en toda la historia de las olimpiadas.',
+    },
+    dateAnchored: true,
+  },
 ]
