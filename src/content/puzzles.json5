@@ -680,4 +680,25 @@
     },
     dateAnchored: true,
   },
+  {
+    id: 'uruguay-wc-1930',
+    era: 'recent',
+    answer: {
+      year: 1930,
+    },
+    par: 1,
+    hints: {
+      es: [
+        'La selección uruguaya se consagra como la primera campeona del mundial de fútbol',
+        'Posterior a la **primera** guerra mundial',
+        'El mismo año: nacen Sean Connery, Estela de Carlotto y Edsger Dijkstra',
+        'Anterior a la **segunda** guerra mundial',
+        'El próximo mundial se celebraría el centenario',
+      ],
+    },
+    description: {
+      es: 'El 30 de julio de 1930 la selección uruguaya derrotó a la seleccion argentina 4 a 2 en la primera edición de la copa mundial de la FIFA, convirtiéndose así en la primera nación campeona de un mundial de fútbol.',
+    },
+    dateAnchored: true,
+  },
 ]
