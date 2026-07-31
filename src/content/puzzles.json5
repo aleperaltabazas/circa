@@ -701,4 +701,26 @@
     },
     dateAnchored: true,
   },
+  {
+    id: 'ortega-1974',
+    era: 'recent',
+    answer: {
+      year: 1974,
+      margin: 'luster',
+    },
+    par: 4,
+    hints: {
+      es: [
+        'Muere el político argentino Rodolfo Ortega Peña',
+        'Posterior al alunizaje',
+        'El mismo año: ABBA publica *Waterloo*, Queen publica *Sheer Heart Attack*, Deep Purple publica *Burn*',
+        'Anterior a la guerra de Malvinas',
+        'Ortega Peña Muere víctima de un asesinato perpetrado por la **Triple A**',
+      ],
+    },
+    description: {
+      es: 'El 31 de julio de 1974 el abogado Rodolfo Ortega Peña fue asesinado por la Triple A (Alianza Anticomunista Argentina), acribillado cuando salía de su estudio. En enero de ese mismo año, Juan Domingo Perón, presidente de la nación, convocó a una reunión a los diputados que estaban en desacuerdo con su reforma del código penal y los amenazó para que renunciaran. Ortega se negó.',
+    },
+    dateAnchored: true,
+  },
 ]
