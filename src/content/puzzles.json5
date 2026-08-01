@@ -723,4 +723,25 @@
     },
     dateAnchored: true,
   },
+  {
+    id: 'office-1989',
+    era: 'recent',
+    answer: {
+      year: 1989,
+    },
+    par: 5,
+    hints: {
+      es: [
+        'Se lanza la primera versión de Microsoft Office que incluía Excel, PowerPoint y Word',
+        'Antes de los cinco presidentes en una semana',
+        'El mismo año: Nintendo comercialzia la *Game Boy*, se estrena *Volver al Futuro II*, Neil Gaiman publica *The Sandman*',
+        'Posterior a la última dictadura argentina',
+        'Una famosa canción de la banda *Sumo* hace referencia a este año',
+      ],
+    },
+    description: {
+      es: 'El 1 de agosto de 1989 se publicó la primera versión de Microsoft Office. Este paquete incluyó Excel, PowerPoint y Word, y la versión *pro* además Access y Schedule Plus.',
+    },
+    dateAnchored: true,
+  },
 ]
