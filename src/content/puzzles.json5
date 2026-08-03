@@ -744,4 +744,25 @@
     },
     dateAnchored: true,
   },
+  {
+    id: 'ww1-declarations-1914',
+    era: 'recent',
+    answer: {
+      year: 1914,
+    },
+    par: 3,
+    hints: {
+      es: [
+        'Alemania le declara la guerra a Francia',
+        'Al día siguiente, Reino Unido le declara la guerra a Alemania',
+        'Tres días después, el imperio austro-húngaro le declara la guerra a Rusia',
+        'Tres semanas después, Japón le declara la guerra a Alemania',
+        'Dos meses después, Rusia le declara la guerra al Imperio Otomano',
+      ],
+    },
+    description: {
+      es: 'El **3 de agosto de 1914** Alemania le declara la guerra a Francia, en el contexto de la primera guerra mundial. Si bien este no fue el inicio (la primera declaración ocurrió el 28 de julio, cuando el Imperio Austro-húngaro le declaróa la guerra a Serbia), luego de esta declaración se empezaron a desencadenar sucesivamente declaraciones de guerra entre las distintas alianzas establecidas por las potencias europeas.',
+    },
+    dateAnchored: true,
+  },
 ]
